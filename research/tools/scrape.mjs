@@ -1,6 +1,6 @@
 // Fetches every linked X post via the fxtwitter API (threads, articles, quoted posts)
 // and renders each to sources/<id>.md for analysis.
-// Usage: node tools/scrape.mjs
+// Usage: node research/tools/scrape.mjs [id...]   (no ids: every post in links.txt)
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const ROOT = new URL('../', import.meta.url).pathname;
@@ -104,7 +104,11 @@ const render = async (id, meta, depth = 0) => {
 	return out.join('\n');
 };
 
-const lines = (await readFile(`${ROOT}tools/links.txt`, 'utf8')).trim().split('\n');
+const only = process.argv.slice(2);
+const lines = (await readFile(`${ROOT}tools/links.txt`, 'utf8'))
+	.trim()
+	.split('\n')
+	.filter((line) => !only.length || only.includes(line.split('\t')[2]));
 await mkdir(`${ROOT}sources`, { recursive: true });
 await Promise.all(
 	lines.map(async (line) => {
