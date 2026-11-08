@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import CheckCard from '#lib/CheckCard.svelte';
 	import Diagram from '#lib/Diagram.svelte';
+	import ListenBar from '#lib/ListenBar.svelte';
 	import { progress } from '#lib/progress.svelte.ts';
 	import { checkIds, review } from '#lib/review.svelte.ts';
 
@@ -97,6 +98,8 @@
 	<div class="mt-8 lg:grid lg:grid-cols-[minmax(0,42rem)_15rem] lg:justify-between lg:gap-12">
 		<article class="min-w-0">
 			<h1 class="text-4xl leading-[1.08] font-[800] tracking-tight text-balance sm:text-5xl">{data.lesson.title}</h1>
+
+			{#if data.audio}<div class="mt-6"><ListenBar src={data.audio} /></div>{/if}
 
 			<div class="lesson mt-8">
 				{#each data.lesson.blocks as block, i (i)}
