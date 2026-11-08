@@ -124,7 +124,34 @@ const build = (): Course => {
 		return { slug, number: index + 1, title: meta.title ?? slug, summary: meta.summary ?? '', lessons };
 	});
 
-	return { modules, lessons: modules.flatMap((m) => m.lessons) };
+	const lessons = modules.flatMap((m) => m.lessons);
+	linkTitles(lessons, [
+		...modules.map((m) => [m.title, `/#${m.slug}`] as const),
+		...lessons.map((l) => [l.title, l.href] as const)
+	]);
+	return { modules, lessons };
+};
+
+const unescapeHtml = (html: string) =>
+	html
+		.replace(/&#39;/g, "'")
+		.replace(/&quot;/g, '"')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&amp;/g, '&');
+
+/** Turns an italic lesson or module title, like `*Test titles for quick wins*`, into a link to it. */
+const linkTitles = (lessons: Lesson[], targets: (readonly [title: string, href: string])[]) => {
+	const hrefs = new Map(targets);
+	const link = (html: string) =>
+		html.replace(/<em>([^<]+)<\/em>/g, (match, title: string) => {
+			const href = hrefs.get(unescapeHtml(title));
+			return href ? `<a href="${href}"><em>${title}</em></a>` : match;
+		});
+	for (const lesson of lessons) {
+		lesson.html = link(lesson.html);
+		for (const trick of lesson.tricks) trick.html = link(trick.html);
+	}
 };
 
 /** The whole course, parsed once per server process (prerendered at build). */

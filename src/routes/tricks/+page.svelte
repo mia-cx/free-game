@@ -51,12 +51,12 @@
 	{/each}
 </div>
 
-<ul class="mt-8 columns-1 gap-5 md:columns-2">
+<ul class="mt-8 grid items-start gap-5 md:grid-cols-2">
 	{#each shown as trick (trick.key)}
 		<li
 			id={trick.key}
 			tabindex="-1"
-			class="callout mb-5 break-inside-avoid {picked === trick.key ? 'ring-4 ring-ink' : ''}"
+			class="callout {picked === trick.key ? 'ring-4 ring-ink' : ''}"
 			data-kind="trick"
 		>
 			<p class="callout-title">{trick.title}</p>
