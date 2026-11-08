@@ -51,6 +51,15 @@ The plan is the author's own playbook. The post was bookmarked 223 times, but it
 > [!DO] Do day 1 now
 > Open a doc and answer the five clarity questions in one sentence each. Leave any you can't answer highlighted: that's your first conversation with the founders or with yourself.
 
+> [!CHECK] On day 1 of marketing a brand-new product, what five questions do you answer?
+> What do we do, what problem do we solve, in which category do we compete, why are we better, and who exactly are we for?
+
+> [!CHECK] It's day 3 of marketing a new product and you have no designer. What do you post?
+> Post anyway, using screenshots, mockups or Loom demos. A line like "We're building X for Y. Early testers wanted." is enough to start.
+
+> [!CHECK] Why answer the five clarity questions before you post anything about a new product?
+> If you can't answer them, you don't understand the product yet. Any question you can't answer is your first conversation with the founders.
+
 ## Sources
 
 - [@kunalvg: a seven-day plan for a day-0 project](https://x.com/kunalvg/status/1985573315830772193)

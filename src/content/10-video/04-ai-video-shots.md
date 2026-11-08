@@ -152,6 +152,15 @@ Agents can't feel motion or hear sound. Watching and listening stays your job.
 > [!DO] Make one character sheet
 > Pick one character for your film. List every fixed detail with its position ("tattoo on left forearm", "red scarf, knot on the right"), then generate a front view and a side view from that list. Save both images with the list as `characters/<name>.md`.
 
+> [!CHECK] In AI video, in what order do you fix a bad clip?
+> Trim it if the problem is only at the start or end, then try fixing it in code, and reshoot only after changing the prompt or frames. Keep the old take.
+
+> [!CHECK] A character's tattoo vanishes halfway through an AI video clip. How do you prevent it?
+> Draw the tattoo in both the first and last frame, and write its position on the character sheet ("tattoo on left forearm").
+
+> [!CHECK] In AI video prompts, why phrase fixes positively instead of saying what shouldn't happen?
+> Models often ignore negatives, so "the spout doesn't pour" still pours. Write what should happen, like "only the people in the first frame appear".
+
 ## Sources
 
 - [@EianLu: AI video workflow with Claude Code, Codex and Seedance (original in Chinese)](https://x.com/EianLu/status/2118317430665613741)

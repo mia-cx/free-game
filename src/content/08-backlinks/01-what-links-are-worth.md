@@ -15,6 +15,8 @@ summary: Score a link prospect, then aim it at a page it can actually move.
 
 A useful listing, a tool people keep referencing, or a real editorial mention outweighs a hundred placeholder pages that exist only to hold a URL. High DR on a site your buyers never visit is worth little.
 
+> [!DIAGRAM] link-value
+
 ## Score every prospect on five things
 
 Before you spend time on a site, score it on these. If it fails relevance or eligibility, stop there, whatever its DR.
@@ -46,6 +48,15 @@ You will only earn a few links, so spend them where they move something. Pages G
 
 > [!DO] Pick your five link targets
 > Open Search Console, find five pages ranking between positions 10 and 30, and paste their URLs into a doc titled "Link targets". If your site isn't in Search Console yet, set it up first (see *Get your site found at all*).
+
+> [!CHECK] What five things do you score a backlink prospect on?
+> Relevance, eligibility, cost, placement and audience. If it fails relevance or eligibility, stop there, whatever its Domain Rating.
+
+> [!CHECK] You earned two new backlinks this month. Which of your pages should they point to?
+> Pages ranking at positions 10 to 30, not your home page. Google already finds those pages relevant, so a link can push them onto page one.
+
+> [!CHECK] Why is a high Domain Rating not enough reason to chase a backlink?
+> A link is a path for a person before it is a signal for Google. High DR on a site your buyers never visit is worth little.
 
 ## Sources
 

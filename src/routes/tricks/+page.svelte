@@ -58,10 +58,12 @@
 			tabindex="-1"
 			class="callout {picked === trick.key ? 'ring-4 ring-ink' : ''}"
 			data-kind="trick"
+			data-hue
+			style="--hue: {trick.hue}"
 		>
 			<p class="callout-title">{trick.title}</p>
 			<div class="lesson text-[0.95rem]">{@html trick.html}</div>
-			<a href={trick.lesson.href} class="mt-3 block text-sm font-semibold underline underline-offset-4">
+			<a href={trick.lesson.href} class="from mt-3 block text-sm font-semibold underline underline-offset-4">
 				From: {trick.lesson.title}
 			</a>
 		</li>
@@ -86,5 +88,6 @@
 	}
 	.callout {
 		margin-top: 0;
+		box-shadow: inset 0 4px 0 var(--accent);
 	}
 </style>

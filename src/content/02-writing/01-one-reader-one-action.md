@@ -40,6 +40,15 @@ Storytelling only works when the product makes a real change in someone's life. 
 > [!DO] Write a three-line post plan
 > Take your next post idea and write three lines above the draft: "Reader: ___", "Action: ___" (one of read, reply, share, follow, buy) and "Takeaway: ___" (one sentence). Cut anything in the draft that doesn't serve those three.
 
+> [!CHECK] In copywriting, what three things does every post need?
+> A clear takeaway, a specific reader and a specific call to action.
+
+> [!CHECK] Your draft post covers three separate ideas. What do you do?
+> Split it into three posts. One idea per post is easier to remember and pass on.
+
+> [!CHECK] On X, why does a post about three topics reach fewer of the right people?
+> X shows posts to clusters of people with shared interests, and mixed topics confuse which cluster the post belongs to.
+
 ## Sources
 
 - [@ryangrowthh: copywriting guide (action, clarity, one idea)](https://x.com/ryangrowthh/status/2118723940638138486)

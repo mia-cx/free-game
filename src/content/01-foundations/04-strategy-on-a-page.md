@@ -52,6 +52,15 @@ The same marketer runs execution with three tools:
 > [!DO] Fill in your one-page strategy
 > Copy the template or open a blank page with the four headings: Brand promise, Target audience, Growth strategy, Marketing initiatives. Write two or three lines under each, and one macro KPI with one micro KPI for the next three months.
 
+> [!CHECK] What are the four steps of a GACC marketing brief, in order?
+> Goal, audience, creative, channel. You fill them in that order for every task.
+
+> [!CHECK] Your three-month goal is to improve bounce rate by 10%. What goal do you pair with it?
+> An input goal you control, such as publishing 3 articles a month. You can't force the outcome, but you can force the inputs.
+
+> [!CHECK] In a GACC brief, why does the channel come last?
+> You can't choose where to post until you know what the post is for and who should see it.
+
 ## Sources
 
 - [@kunalvg: execution and the GACC brief](https://x.com/kunalvg/status/1832046081703584110)

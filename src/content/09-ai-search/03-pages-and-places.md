@@ -51,6 +51,15 @@ AI assistants look for tools to use on a person's behalf. If your product has an
 > [!DO] Name your two segment pages
 > Pick the category where AI names you least. Write the two buyer segments who decide differently in it, and the exact page title for each (for example, "X for small teams" and "X for enterprises").
 
+> [!CHECK] How do you list your API as an agent skill on skills.sh?
+> Write a `SKILL.md` that tells an agent how to use your API, put it in a public GitHub repo, and run `npx skills add your-org/your-repo` once.
+
+> [!CHECK] AI rarely names you for "accounts payable software". What pages do you write?
+> One page per buyer segment, such as "accounts payable software for small businesses" and "for large businesses", supported by related comparison pages.
+
+> [!CHECK] On Reddit, why answer a question in full before you add your link?
+> A link dropped without context gets treated as spam. The full answer is what the community values, and the link only helps where it adds something.
+
 ## Sources
 
 - [@wespreadjam: Ramp's pages per buying decision](https://x.com/wespreadjam/status/2117333079106932897)

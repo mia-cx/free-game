@@ -46,6 +46,15 @@ You don't need the script on day one. A spreadsheet and ten questions asked by h
 > [!DO] Start your question sheet
 > Write 10 real buyer questions in a spreadsheet. Ask each one in ChatGPT and fill two columns: brands named, URLs cited.
 
+> [!CHECK] When you track AI search, what is your unit of measurement?
+> A question a buyer asks before choosing, such as "What's the best meeting notes app for a sales team?" It carries the decision, which a bare keyword doesn't.
+
+> [!CHECK] Your page climbs in Google. Can you assume your AI visibility rose too?
+> No. Keep separate numbers for Google and AI, because a page can climb in one and barely move in the other.
+
+> [!CHECK] Why track new users from AI search next to your AI citation counts?
+> Citations are only a signal. The real test is whether qualified visitors and customers arrive.
+
 ## Sources
 
 - [@wespreadjam: Granola's buyer-decision workflow for AI search](https://x.com/wespreadjam/status/2115568290307469548)

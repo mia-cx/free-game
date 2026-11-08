@@ -70,6 +70,15 @@ For how to keep an agent from doing damage on its own, see *Keep bots from doing
 > [!DO] Pull your competitors' ads
 > Open linkedin.com/ad-library, search the 3 companies you lose deals to (last 30 days), and paste the text of 5 ads into a doc with the problem each one opens with.
 
+> [!CHECK] When an agent researches and drafts your LinkedIn DMs, which step stays yours?
+> Approving every send. LinkedIn's terms prohibit third-party automation of messaging, so the agent only researches and drafts.
+
+> [!CHECK] You have three LinkedIn DM drafts and 1,000 buyers on your list. How do you send them?
+> Send each draft to 50 people. After a week, write three new versions of the one with the most replies and send those to the rest.
+
+> [!CHECK] Why open a cold LinkedIn DM with a problem your competitors all pay to advertise?
+> A problem several competitors pay to show buyers is on those buyers' minds right now, so you aren't guessing what they care about.
+
 ## Sources
 
 - [@DinScales26: competitor ads into LinkedIn DMs, testing and automation](https://x.com/DinScales26/status/2119077318769385871)

@@ -21,6 +21,8 @@ It's tempting to treat marketing as acquisition: get people in the door. But the
 | Retention | Why do they stay or leave? | Users segmented by usage, churn reasons tracked, win-back campaigns planned |
 | Monetisation | How does this pay? | Why, how and what you'll charge, written down on day one |
 
+> [!DIAGRAM] funnel
+
 ## Define onboarding as one event
 
 "Onboarded" should be a single event you can count: the first action that delivers value. In a crypto product that might be "wallet connected" or "first transaction". In a note-taking app it might be the first saved note. Design that flow with whoever builds the product, then engineer the first "aha" moment inside it.
@@ -42,6 +44,15 @@ Products now have short shelf lives, and keeping users is harder than it used to
 
 > [!DO] Write your onboarding event
 > Finish this sentence for your product and pin it where you work: "A user is onboarded when they ___." Then write the number of users who did that last week, or "unknown" if you can't measure it yet.
+
+> [!CHECK] What are the five stages of the marketing funnel?
+> Acquisition, onboarding, engagement, retention and monetisation.
+
+> [!CHECK] You're defining "onboarded" for a note-taking app. What should the definition be?
+> One countable event: the first action that gives the user value, such as saving their first note.
+
+> [!CHECK] In the marketing funnel, why should most of your time go into retention rather than acquisition?
+> Getting users is the easy part and keeping them is hard. Products have short shelf lives now, so retention is where the work pays off.
 
 ## Sources
 

@@ -43,6 +43,15 @@ The end of a post isn't the only spot for an ask.
 > [!DO] Add one ask to your next post
 > Decide whether your next post is for strangers, regulars or warm readers. Pick the matching ask from the table, write it as the last line, and add the same line as a reply under your best-performing post.
 
+> [!CHECK] In a post's call to action, what should you ask readers who don't know you yet?
+> A follow or a share. A sale is too big a jump for a stranger.
+
+> [!CHECK] Your post is for warm readers who already trust you and are ready. What do you ask for at the end?
+> The sale, a DM or a sign-up. Readers at the bottom of the funnel are ready for the bigger ask.
+
+> [!CHECK] Why should a post's call to action sometimes go early instead of only at the end?
+> More people are still reading early in a post than at the end, so an early ask reaches more of them.
+
 ## Sources
 
 - [@ryangrowthh: copywriting guide (calls to action by funnel stage)](https://x.com/ryangrowthh/status/2118723940638138486)

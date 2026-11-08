@@ -23,6 +23,8 @@ The workflow in this lesson and the next comes from @EianLu, who attributes a ve
 
 The original prompts are in Chinese at the source link. The ones here are English translations.
 
+> [!DIAGRAM] cost-ladder
+
 ## Put one agent in the director's chair
 
 You talk to one coding agent only. It calls the image and video models for you.
@@ -151,6 +153,15 @@ Once the shot list and palette are approved, move on to *Generate AI shots witho
 
 > [!DO] Get a story for a 15-second film
 > Fill in the first three lines of the story prompt (film idea, 15 seconds, song or none) for a short film about your product. Paste it into any chat model, answer its questions, and save the shot-by-shot story it returns as `story.md`.
+
+> [!CHECK] In an AI video setup with Claude Code, Codex and Seedance, what does each one do?
+> Claude Code directs: story, prompts, checks and post-production. Codex draws the frames, and Seedance animates between first and last frames, while you approve direction and spend.
+
+> [!CHECK] Your AI film story has one continuous scene where people cross paths holding small objects. What do you change?
+> Make it episodic, so no shot has to match the one before, and cut shots AI gets wrong, like people crossing and hands holding small objects.
+
+> [!CHECK] In AI video, why approve the story before any image, and images before any video?
+> Each stage costs more than the last: prompt edits are free, images are cheap, video is billed per second. Catch every error at the cheapest stage.
 
 ## Sources
 

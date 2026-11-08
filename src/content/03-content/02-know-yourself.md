@@ -49,6 +49,15 @@ A note on evidence: this is Koe's client process, described anecdotally, and Koe
 > [!DO] Answer the first two sections
 > Paste sections 1 and 2 of the brand interview into Claude, let it ask you the questions, and save your answers as `brand.md`.
 
+> [!CHECK] In building a personal brand, what are the two documents you feed to AI every time you plan or draft?
+> A brand document, the transcript of an interview about you and your audience, and a voice document on what makes your favourite writers distinctive.
+
+> [!CHECK] You love a writer's style and want your posts to sound like theirs. What do you do instead of having AI clone it?
+> Write down what makes their voice distinctive: core ideas, turns of phrase and worldview. Then combine it with others in your own way.
+
+> [!CHECK] In a brand interview, why do you record the exact words your reader uses when complaining to a friend?
+> That language is what your posts should use. Exact words matter more than polish.
+
 ## Sources
 
 - [@thedankoe: the brand interview and voice-extraction prompt](https://x.com/thedankoe/status/2117664712532123680)

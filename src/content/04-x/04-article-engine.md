@@ -50,6 +50,15 @@ Platform guides like the ones this module draws on run to thousands of words. Ry
 > [!DO] Write ten titles
 > Pick your one topic and write 10 article titles for it, each with a number in the first line. Save them as your next two weeks of articles.
 
+> [!CHECK] On X, what three parts of an article show in the feed and should tell one story?
+> The cover image, the title and the first line.
+
+> [!CHECK] You add more posts each day on X and each post now reaches fewer people. What do you do?
+> Cut back to the posts that pull. Falling reach per post means you're flooding, so every post needs its own job.
+
+> [!CHECK] In a daily X article routine, why stick to one topic?
+> One topic keeps you inside one interest community, so X knows who to show your articles to.
+
 ## Sources
 
 - [@NicholasDulait: 5,000 followers in 5 months with daily articles](https://x.com/NicholasDulait/status/2119431609472397409)

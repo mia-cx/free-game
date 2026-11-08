@@ -50,6 +50,8 @@ When an agent summarises customer calls, research or data, open a couple of the 
 
 ## Step review down as the bot earns it
 
+> [!DIAGRAM] qa-arc
+
 Hunt puts the AI error rate at 1 to 5% (his estimate), which clients won't accept. So every new bot starts at full review, and review only drops as a measured clean-run rate earns it.
 
 > [!TRICK] The review ladder
@@ -64,6 +66,15 @@ Hunt puts the AI error rate at 1 to 5% (his estimate), which clients won't accep
 
 > [!DO] Turn your top revision reason into a check
 > Paste your recent revision comments (from email, Slack or doc comments) into the diagnostic prompt above. Copy the top reason it finds into your bot's charter as one pass/fail line.
+
+> [!CHECK] On the review ladder for a new bot, when do you review less?
+> Start at 100% review. Drop to 50% once 9 of the last 10 runs pass without revision, then to 10% spot checks once 18 of the last 20 do.
+
+> [!CHECK] A bot hands you a wrong draft. What do you fix?
+> The charter or shared config, not the draft. Most bad output traces to missing input, so fixing the brief stops the next mistake too.
+
+> [!CHECK] Why have a fresh agent review the work instead of the agent that made it?
+> The agent you worked with fills gaps from context it shares with you. A fresh one reads like a first-time viewer and finds what is actually unclear or wrong.
 
 ## Sources
 

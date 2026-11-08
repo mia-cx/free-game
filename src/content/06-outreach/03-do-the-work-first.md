@@ -69,6 +69,15 @@ Note the last lines: the bot builds the list, and you do the reaching out. Then 
 > [!DO] Pick one target and draft one post
 > Choose one account you'd want as a client or partner. Read their last 10 posts, then write one post for them in their voice and save it in a doc with their handle at the top.
 
+> [!CHECK] What is the "permissionless apprentice" way to land a client?
+> Do free work for a client you'd love to have, such as 10 posts written for them, and send it. Ask them to use it, then hire you for more or give you a testimonial.
+
+> [!CHECK] You sent a creator 10 posts you wrote for them, and the DM got no answer. What next?
+> Post the work in public where they can see it, and tag them.
+
+> [!CHECK] When you pick creators to partner with, why look past follower count?
+> Follower count misleads. Views compared with followers, and commenters who look like your buyer, show whether their audience would buy from you.
+
 ## Sources
 
 - [@thedankoe: the permissionless apprentice approach](https://x.com/thedankoe/status/2117664712532123680)

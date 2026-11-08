@@ -123,6 +123,15 @@ The bots read and write a shared `social/` folder. Start with `social/brief.md`:
 > [!DO] Find one outlier in your niche
 > Pick a creator in your niche with under 100,000 followers. Scroll their last 20 videos and find the one with the most views compared with the rest. Write down its first line word for word and its beats in order, in a doc called `social/templates.md`.
 
+> [!CHECK] In short-form video, what is an outlier?
+> A video that did far better than its creator's usual views or follower count. The gap shows the format did the work, not the audience.
+
+> [!CHECK] You want to reuse a short-form video format that broke out. What do you take, and what stays yours?
+> Take the structure: the opening, the beats, the framing. The subject, words, footage and claims stay yours.
+
+> [!CHECK] In short-form video, why reuse a proven format instead of inventing your own?
+> Platforms push formats they already recognise. Inventing a new format is the slow road.
+
 ## Sources
 
 - [@tuanle: copying proven formats instead of chasing originality](https://x.com/tuanle/status/2119097657658597491)

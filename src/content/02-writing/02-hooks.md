@@ -63,6 +63,15 @@ You don't know what the post promises until it's written. So write the body firs
 > [!DO] Write five hooks for one post
 > Take a post you've drafted or already published. Write five new first lines for it, each using a different type from the list of eight. Cut to the one you'd stop scrolling for, and save all five in a doc.
 
+> [!CHECK] What is the one job of a hook in a post?
+> To get the next line read. It does that by opening a gap the reader wants closed and making it about them.
+
+> [!CHECK] Your hook says "I grew fast." How do you make it stronger?
+> Make it specific with a number, a name or a timeframe, as in "I hit 5.8M impressions in my first month." Specifics beat vague promises.
+
+> [!CHECK] Why should you write a post's hook after the body?
+> You don't know what the post promises until it's written. Then you write 5 to 10 hooks and cut to the best one.
+
 ## Sources
 
 - [@ryangrowthh: copywriting guide (hooks, levers, eight types, formats)](https://x.com/ryangrowthh/status/2118723940638138486)

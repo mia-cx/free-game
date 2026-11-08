@@ -66,6 +66,15 @@ These BPM ranges are the author's opinion, but they give you a starting point in
 > [!DO] Write your video rulebook
 > Open a doc and write the rules for your next product video: 3 colours (hex codes), 1 background, 1 font, and a BPM range from the table. Keep it next to your editor and check every frame against it.
 
+> [!CHECK] In a product video, what three animation habits make motion look expensive?
+> Ease and overlap your keyframes, let one scene flow into the next instead of cutting, and vary the pace by section.
+
+> [!CHECK] Your product video feels cheap, with hype music and lots of sound effects. What do you change?
+> Pick the music by tempo for the feeling you want, then do a sound pass and delete every effect that doesn't help people stay engaged or understand the product.
+
+> [!CHECK] Why do fixed rules, like the same 3 colours and backgrounds in every video, make a product video feel premium?
+> Nothing looks accidental. When choices never wander, viewers assume someone decided them.
+
 ## Sources
 
 - [@leomeethewoo: making product videos look expensive (Apple framework)](https://x.com/leomeethewoo/status/2103529310208606701)

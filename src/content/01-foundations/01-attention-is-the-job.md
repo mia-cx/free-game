@@ -30,6 +30,8 @@ Spend your effort from the centre outwards:
 
 If a user can't figure out your product, no ad fixes that. Read the original: [The circles of marketing](https://seths.blog/2012/07/the-circles-of-marketing/).
 
+> [!DIAGRAM] circles
+
 ## Community follows a good product
 
 A great community forms around a great product. Teams that build a community before they have something worth gathering around end up with nothing that lasts. That's one marketer's observation (@kunalvg) from watching many crypto projects.
@@ -42,6 +44,15 @@ Good execution of the right strategy beats great execution of a mediocre one, an
 
 > [!DO] Draw your four circles
 > On one page, write one line for each of Godin's four rings as it stands for your product today. Circle the weakest ring. That's where your next hour of marketing goes.
+
+> [!CHECK] In Seth Godin's circles of marketing, what sits at the centre and what sits in the outermost ring?
+> The product sits at the centre, then usability and support, then story, price, community and tribe. Ads, hype, buzz and clicks sit in the outermost ring.
+
+> [!CHECK] New users arrive from your ads but can't figure out how to use your product. Where does your next hour of marketing go?
+> Into usability and support, the ring next to the product. No ad fixes a product users can't figure out.
+
+> [!CHECK] Why does a community built before the product has much to offer rarely last?
+> A lasting community forms around a product worth gathering around. Without one, there is nothing to hold people together.
 
 ## Sources
 

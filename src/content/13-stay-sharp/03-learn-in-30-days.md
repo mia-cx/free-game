@@ -91,6 +91,15 @@ Check any course or channel it names before you pay for it. The prompt asks it t
 > [!DO] Start your learning plan
 > Fill in the brackets of the learning-plan prompt for one skill, paste it into your AI assistant, answer its questions, and save the chat with a name you'll find next week.
 
+> [!CHECK] In a 30-day plan for learning an AI skill, what happens each week?
+> Week 1, pick one skill and one real problem; week 2, build version 1; week 3, use it on real work and log the time saved; week 4, share how you built it and offer it to 3 people.
+
+> [!CHECK] You've listed every task in your week. Which ones get an AI assistant?
+> The ones where AI drafts and you fix, out of three groups: AI does it alone, AI drafts and you fix, AI can't help yet. Time each one before and after.
+
+> [!CHECK] When AI drafts most of a task, why is the last 20% the part people pay for?
+> Choosing, fixing and catching mistakes is the skill. AI writes 50 ads in a minute; knowing which 3 to test is the job.
+
 ## Sources
 
 - [@notkvtwts: five AI skills, the 30-day plan, the week audit and the learning-plan prompt](https://x.com/notkvtwts/status/2115810173830750575)

@@ -86,6 +86,15 @@ If your product is an AI system, one reproducible benchmark is a credible market
 > [!DO] Write down your weekly report as steps
 > Pick the one report or check you do by hand every week. In a doc, list every step in order, including each decision you make ("skip it if the price didn't change"). That doc is the agent's first brief.
 
+> [!CHECK] What is the difference between a marketing automation and a marketing agent?
+> An automation follows fixed steps. An agent gets a goal and works out the steps.
+
+> [!CHECK] You want your first marketing agent. What do you start with, and how?
+> A report or check you do by hand every week. Write every step including your decisions, have the agent send the results to you for approval, and run it 2 to 3 weeks before you trust it.
+
+> [!CHECK] Why review a sample before uploading a thousand AI-generated ads?
+> Volume can spend real money on weak creative. Review, cap spend per ad set, and scale only the angles tracked to revenue.
+
 ## Sources
 
 - [@codyschneider: the environment a coding agent needs for marketing](https://x.com/codyschneider/status/2119173056673309041)

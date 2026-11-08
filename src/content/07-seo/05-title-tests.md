@@ -31,6 +31,8 @@ Look for pages that rank well but get skipped. Click rate (CTR) depends on posit
 > 3. Flag any page getting 40%+ less CTR than its position benchmark. A position-4 page under 1% CTR is a first target.
 > 4. Open that page's queries. A page can do fine on its main keyword but get skipped on queries where it sits at 5 or 6, usually because the title lacks the words people type.
 
+> [!DIAGRAM] ctr-check
+
 ## See the results page as a searcher does
 
 Before you rewrite, search the query in a private window. **Google rewrites many titles**, usually to your H1, when the title is too long, stuffed with keywords, repeated across pages, or off-topic. You can ask Claude to run the search several times until it catches a rewrite. Keep the title and H1 saying the same thing.
@@ -74,6 +76,15 @@ If you want an answer before touching the page, you can buy one.
 
 > [!DO] Find one underperforming title
 > In Search Console, filter pages to position 3 to 10, find the one furthest below its CTR benchmark, and write three new titles for it with the recipe above.
+
+> [!CHECK] Which pages make the best SEO title-test targets?
+> Pages ranking 3 to 10 whose click rate is 40% or more below normal for their position. A position-4 page under 1% is a first target.
+
+> [!CHECK] After a title change, impressions rose, click rate fell and clicks went up. Did the new title win?
+> Yes. Judge title tests on clicks, because a new title often ranks for new long-tail queries, which raises impressions and lowers click rate.
+
+> [!CHECK] Why do title tests teach you faster than new articles in SEO?
+> Search Console shows a new title's effect in about two weeks, while a new article can take months to tell you anything.
 
 ## Sources
 

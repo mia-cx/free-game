@@ -64,6 +64,15 @@ Programmatic SEO means generating many pages from one template and a data source
 > [!DO] List your purchase pages
 > Write down the five purchase pages from the list above, mark which ones you already have, and draft the headline and three bullet points for the first missing one.
 
+> [!CHECK] Which pages do buyers look for before they pay?
+> Pricing, comparisons against each rival, "alternative to X" pages, migration guides, and feature or integration demos. Put a trial or demo button on every one.
+
+> [!CHECK] One keyword gets 1,000 searches from casual readers, another gets 50 from people comparing plans. Which do you target?
+> The 50. Choose SEO keywords by how close they are to a purchase, not by search volume.
+
+> [!CHECK] Why does every programmatic SEO page need its own real facts?
+> Pages that only swap a keyword into the same text count as scaled content abuse and can get dropped or penalised. If a row has no facts of its own, don't make it a page.
+
 ## Sources
 
 - [@borjafat: buyer keywords, purchase pages, topical authority, programmatic pages](https://x.com/borjafat/status/2116164330014007296)

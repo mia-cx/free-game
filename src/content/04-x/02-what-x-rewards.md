@@ -47,6 +47,8 @@ These numbers are Ryan's (@ryangrowthh) reading of X's open-source ranking code.
 >
 > Profile clicks count for 0, so posts built to send people to your profile earn nothing for it.
 
+> [!DIAGRAM] x-score
+
 ## Aim at the goal, not the numbers
 
 The weights move silently. Ryan noticed the like weight went from 0.5 in August to 0.66 by October 2026, with no announcement. Strategy built on one exact number breaks the next time it changes.
@@ -70,6 +72,15 @@ Because shares, replies and quotes dominate the score, the posts that win are or
 
 > [!DO] Find the share reason
 > For each of your last 5 posts, write one line: why would someone send this to a friend or reply? Rewrite the post with the weakest answer as a new draft.
+
+> [!CHECK] In X's ranking, roughly how many likes is a share by copied link worth?
+> About 30 likes. Shares, replies and quotes count far more than likes.
+
+> [!CHECK] Your posts get likes and a handful of mutes. Why is that a problem on X?
+> One mute cancels roughly 89 likes, so a few mutes can wipe out hundreds of likes. Avoid content that makes people mute you.
+
+> [!CHECK] Why shouldn't you build an X tactic around an exact action weight?
+> The weights change without notice. Aim at what they serve instead: sharing, conversation and time on the platform.
 
 ## Sources
 

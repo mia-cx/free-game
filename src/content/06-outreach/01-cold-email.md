@@ -32,6 +32,8 @@ Without a benchmark, every result feels like failure. The same cheat sheet gives
 
 So a list of 1,000 contacts that brings in 2 to 3 leads is working.
 
+> [!DIAGRAM] cold-email-doctor
+
 ## Write for the inbox they use
 
 Your prospect's email provider changes how they respond. Per the cheat sheet, prospects on Google Workspace reply about 6.5 times more than those on Microsoft.
@@ -55,6 +57,15 @@ When someone replies with interest, **answer within 5 minutes**.
 
 > [!DO] Write one cold email under 40 words
 > Write an email for one real prospect: no AI first line, one clear offer, under 40 words. Then write follow-up #4 as a two-word bump.
+
+> [!CHECK] In cold email, what do these symptoms point to: 0 replies and 0 bounces, replies with no interest, bounces over 2%?
+> Spam placement, the offer, and the list. Fix only the part the symptom points to instead of rewriting everything.
+
+> [!CHECK] Your cold email campaign to 1,000 contacts brought in 2 leads. Is it failing?
+> No, it's working. One lead per 300 contacts is a great campaign, and one per 500 is still solid.
+
+> [!CHECK] Why turn off open-rate tracking in cold email?
+> The tracking pixel itself hurts your inbox placement, so the number costs more than it tells you.
 
 ## Sources
 

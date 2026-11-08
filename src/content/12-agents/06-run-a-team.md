@@ -48,6 +48,8 @@ DeepSeek's team built the same split into an always-on agent, called Router/Work
 > ```
 > The folders it reads belong to the worker bots: the Auditor below, the Call Notes bot (*Turn one conversation into ten posts*), and the Check-ins and Month-End bots (*Keep and convert*).
 
+> [!DIAGRAM] bot-team
+
 ## A worker to start with: the Auditor
 
 If you sell audits, proposals or diagnostics, the first draft is a good worker job. The bot ties every finding to the client's own numbers; you spend your review time tracing those numbers.
@@ -78,6 +80,15 @@ A routine that pings you with no news trains you to mute it, and then you miss t
 
 > [!DO] Write your coordinator's reading list
 > List every bot, report or inbox that produces work for you. Paste the list into the "Read everything new" section of the chief-of-staff prompt, and set the time it runs.
+
+> [!CHECK] In a team of bots, what does the coordinator do, and what does it never do?
+> It reads the other bots' output, routes work, and tells you what needs you. It never does the work itself.
+
+> [!CHECK] Your bots work well, but finished work keeps waiting on your review. What's the next move?
+> Hire a person. When the constraint is you, another bot won't remove it.
+
+> [!CHECK] Why should a scheduled bot send nothing when nothing changed?
+> A routine that pings you with no news trains you to mute it, and then you miss the day it matters.
 
 ## Sources
 

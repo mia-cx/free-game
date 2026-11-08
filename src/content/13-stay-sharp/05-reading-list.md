@@ -61,6 +61,15 @@ For *Stay sharp*:
 > [!DO] Read one essay for your hardest module
 > Pick the module you found hardest and open its first essay above (no essay listed: open the first source of its first lesson). Read it, then write one sentence in your one-page strategy (from *Fit your strategy on one page*) that changes because of it.
 
+> [!CHECK] What do the four parts of a GACC marketing brief stand for?
+> Goal, Audience, Creative, Channel.
+
+> [!CHECK] You finished a marketing course and found launching the hardest part. Which classic essay do you read first?
+> One written for launching, such as "The Bullseye framework for getting traction", and you apply it to something you're working on now. Don't start with essay 1.
+
+> [!CHECK] What is Brian Balfour's rule for building a growth machine?
+> Process first, tactics second.
+
 ## Sources
 
 - [@kunalvg: twenty marketing essays that still hold up](https://x.com/kunalvg/status/2090754749297819741)

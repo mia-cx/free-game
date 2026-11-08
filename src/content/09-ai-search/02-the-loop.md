@@ -34,6 +34,8 @@ When you lose a prompt, the reflex is to write a new article. Most lost prompts 
 
 Granola, the AI meeting-notes company, ran this diagnosis on every lost prompt. As relayed by an AI-search vendor selling audits, credited to Discovered Labs, over 7 months: monthly new active users from AI search up 4,600%, non-branded AI citation rate up 558%, non-branded mention rate up 739%, organic sessions up 134%. Secondhand numbers, so read them as direction, not promise.
 
+> [!DIAGRAM] ai-loop
+
 ## Sort the sources AI trusts
 
 For a third-party problem, the question is not "how do we get more backlinks?" It is "which sources shape this specific recommendation, and why are competitors better represented there?"
@@ -50,6 +52,15 @@ For a third-party problem, the question is not "how do we get more backlinks?" I
 
 > [!DO] Diagnose one lost prompt
 > Pick one buyer question where AI names competitors but not you. Open every source it cites, label each own, claim, earn or contest in your sheet, and write which of the four causes applies.
+
+> [!CHECK] When AI names competitors for a buyer question but not you, what are the four possible causes?
+> A missing page, a weak page, a crawl or index problem, or a third-party problem. Each needs a different fix, so diagnose before you write anything new.
+
+> [!CHECK] AI keeps citing a review-site profile of your company that you never filled in. How do you label it in own, claim, earn, contest, and what do you do?
+> Claim: take the profile over and complete it.
+
+> [!CHECK] When you work on AI visibility, why make one change and then rerun the same saved prompts?
+> It shows you which change moved the result. A fixed prompt set keeps every check comparable.
 
 ## Sources
 

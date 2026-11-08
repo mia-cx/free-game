@@ -57,6 +57,15 @@ If you want AI to write first drafts, keep the last pass for yourself and make t
 > [!DO] Write a five-line voice card
 > In a note, write: how you want to come across (pick one: smart, funny or blunt), two opinions you hold that others in your field don't, one story that actually happened to you, and one quirk you'll keep. Keep the note open next to your drafts.
 
+> [!CHECK] In writing, why is your voice the lasting difference between you and others posting on the same topic?
+> Anyone can copy your hooks and formats, but nobody can copy how you sound.
+
+> [!CHECK] An AI draft looks polished and confident. How do you decide whether to publish it?
+> Judge it against your own standard: publish it only if you'd put your name on it. AI output always looks polished, so polish tells you nothing.
+
+> [!CHECK] When you use AI for your writing, what role should it play if you write the drafts yourself?
+> An editor that holds your drafts to a set of writing rules, for example by rewriting hooks and pointing out where a reader would stop.
+
 ## Sources
 
 - [@ryangrowthh: copywriting guide (voice)](https://x.com/ryangrowthh/status/2118723940638138486)

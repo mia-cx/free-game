@@ -44,6 +44,15 @@ Your account carries a credibility score, worked out PageRank-style from who fol
 > [!DO] Check your labels
 > Open X's transparency tool and look for labels on your account or posts. Write down what you find, even if it's "none".
 
+> [!CHECK] On X, how long does a post have to take off before it's filtered out of the feed?
+> About 48 hours. A post makes or misses its reach within two days.
+
+> [!CHECK] A troll keeps replying to your X posts. What do you do?
+> Block or mute them, and don't argue. If they mute or block you, your reach drops.
+
+> [!CHECK] On X, why does engagement from well-connected accounts in your niche matter more than a big follower count?
+> Your account's reputation score is worked out from who follows and engages with you. That score lifts or caps every post.
+
 ## Sources
 
 - [@ryangrowthh: filters, reputation and the small-account boost](https://x.com/ryangrowthh/status/2117684231983800732)

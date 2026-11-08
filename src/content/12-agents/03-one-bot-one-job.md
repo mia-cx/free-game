@@ -85,6 +85,15 @@ One clean run only proves the easy case. Run the job manually on 3 different inp
 > [!DO] Score three jobs against the checks
 > Write down 3 tasks you did last week. Next to each, mark yes or no for weekly, 2+ apps and stable steps. Circle the one with three yeses: that's your first bot.
 
+> [!CHECK] What three checks should the job for your first bot pass?
+> It happens every week, it touches 2 or more of your apps, and its steps don't change from run to run.
+
+> [!CHECK] A new bot's first live run comes out clean. Do you put it on a schedule?
+> Not yet. Run it by hand on 3 different inputs, fixing the charter each time, because one clean run only proves the easy case.
+
+> [!CHECK] Why ask a new bot to describe its plan before its first real run?
+> A misread job then shows up as a chat message instead of bad work, and the fix is one line in the charter.
+
 ## Sources
 
 - [@huntkyle: one job per bot, the charter, and the first-week plan](https://x.com/huntkyle/status/2118086670918750341)

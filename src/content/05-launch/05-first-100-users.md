@@ -60,6 +60,15 @@ Write that core once, then adjust the wording to each site's audience instead of
 > [!DO] Pick your five places
 > From the lists above, choose five places your buyers already browse. Write them in a doc with your two-sentence description underneath: what it does, for whom, how it differs.
 
+> [!CHECK] What three things should every launch site or directory description say?
+> What the product does, for whom, and how it differs. "The ultimate AI-powered productivity platform" says none of them.
+
+> [!CHECK] You have a list of 50 launch sites and directories. How do you choose where to submit?
+> Pick the few where your buyer would browse when they need what you make. Five good fits beat fifty submissions.
+
+> [!CHECK] In communities like Reddit or Hacker News, why take part before you post your product link?
+> Communities reward members, not visitors, and most ban or downvote plain self-promotion. Share the product as a story or a request for feedback once you belong.
+
 ## Sources
 
 - [@solyatic: 50 places to get your first 100 users](https://x.com/solyatic/status/2117540123294171201)

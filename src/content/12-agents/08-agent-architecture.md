@@ -62,6 +62,15 @@ The fix is structural: the coordinator has no tools to do the work, and workers 
 > [!DO] Write your agent's filter table
 > List every source your agent watches (inboxes, channels, repos, calendars). Next to each, write one mode: explicit requests only, candidate events, or ignore.
 
+> [!CHECK] In an always-on agent, what three modes can you set for each incoming source?
+> Respond only to explicit requests, treat as candidate events, or ignore.
+
+> [!CHECK] A tool your always-on agent calls takes ten minutes. How should it run?
+> In the background: it returns "Started" at once and delivers the result later as a new event. A blocking call leaves the agent deaf until it finishes.
+
+> [!CHECK] Why build delegation into an agent's structure instead of telling it to delegate?
+> An agent told to delegate decides case by case whether work is "small", so it often doesn't. Give the coordinator no tools to do the work, and it has to delegate.
+
 ## Sources
 
 - [@DeepSeekHarness: super-agent architecture](https://x.com/DeepSeekHarness/status/2116857257245987236)

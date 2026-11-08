@@ -20,6 +20,8 @@ Every rule follows from one goal: **keep people on the platform**. When you're u
 
 Ryan isn't on the X team and some parts of the system are closed, so treat this as a well-informed reading, not a spec.
 
+> [!DIAGRAM] x-feed
+
 ## Four places X finds posts
 
 Reach beyond your followers comes from the two sources that don't depend on follows.
@@ -47,6 +49,15 @@ The main post has to stand alone: everything a stranger needs, with nothing left
 
 > [!DO] Name your cluster
 > Write one line naming the interest community you want X to put you in. Then tick each of your last 10 posts that stays inside it, and count the ticks.
+
+> [!CHECK] What three stages does every post pass through in X's For You feed?
+> X finds candidate posts, scores each one per viewer, then filters some out.
+
+> [!CHECK] You plan to announce a launch on X across five tweets. What do you change?
+> Put the whole launch in one self-contained post. X shows one post per conversation, so the other tweets never reach non-followers.
+
+> [!CHECK] On X, why do the rules for what gets reach all point the same way?
+> They serve one goal: keep people on the platform. When unsure what X rewards, ask what keeps a viewer scrolling and talking.
 
 ## Sources
 

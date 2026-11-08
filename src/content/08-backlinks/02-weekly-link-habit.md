@@ -72,6 +72,15 @@ These lists are for discovery: pick only entries where you qualify and your buye
 > [!DO] Build your submission kit
 > Create a folder named "Link kit" with your URL, a one-line and a one-paragraph description, your logo, three screenshots and a two-sentence founder bio. Next Monday, use it on your first five prospects.
 
+> [!CHECK] What does each weekday of the five-a-week backlink routine cover?
+> Monday research and qualify five prospects, Tuesday prepare materials, Wednesday submit or pitch, Thursday follow up, Friday check approvals and update your tracker.
+
+> [!CHECK] A directory emails to say your listing is approved. Do you have the backlink?
+> Not yet. Open the published page and check the link itself, because it may be missing, unclickable or nofollow.
+
+> [!CHECK] Why build a submission kit before you start asking for backlinks?
+> Most submissions ask for the same things, so gathering them once makes each submission take minutes.
+
 ## Sources
 
 - [@2whazzuup: 200 backlink opportunities and a weekly workflow](https://x.com/2whazzuup/status/2119247229601062993)

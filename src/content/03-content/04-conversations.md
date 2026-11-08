@@ -73,6 +73,15 @@ Posting the same article on five sites reaches nobody new. Take one piece of res
 > [!DO] Ask one user for five minutes
 > Send one user a message asking for a 5-minute recorded call this week about how they use what you built.
 
+> [!CHECK] What are the steps of the five-minute conversation chain for content?
+> Record a 5-minute conversation with a user, post it as a video, turn it into an X thread, then a LinkedIn post, then pull each central idea out as its own post.
+
+> [!CHECK] You sell to businesses and want content that speeds up sales. What do you write?
+> Case studies, each repackaged into different formats for different prospects.
+
+> [!CHECK] When you reuse one piece of research on several platforms, why rebuild it for each instead of posting the same article everywhere?
+> The same article on five sites reaches nobody new. Each platform rewards its own native form, and rewording one thin article across many sites is link spam.
+
 ## Sources
 
 - [@kunalvg: conversations as content](https://x.com/kunalvg/status/1696130516045471844)

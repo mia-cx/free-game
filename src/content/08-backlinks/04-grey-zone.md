@@ -68,6 +68,15 @@ Press-release sites host your announcement; they are not news coverage. Use them
 > [!DO] Write your link policy
 > In your marketing doc, write one line per tactic above: paid roundups, link exchanges, exact-match domains, press releases. Mark each "yes", "no" or "only if", with your reason.
 
+> [!CHECK] When does Google allow a paid link?
+> Only when it's marked `rel="sponsored"` or `nofollow`, so it passes no ranking credit. An unmarked paid link counts as link spam.
+
+> [!CHECK] A roundup owner will add your product for a fee. If you pay, what do you ask for, and what are you buying?
+> Ask for the sponsored label. You're buying the spot's readers and AI citations, not ranking credit.
+
+> [!CHECK] Why treat buying exact-match "best X" domains as a bet rather than a plan?
+> The evidence is one unverified claim, amplified by a domain broker. Google also demoted low-quality exact-match domains in 2012, so results may not last.
+
 ## Sources
 
 - [@SimonHoiberg: pay listicle owners directly](https://x.com/SimonHoiberg/status/2119368837208686724)

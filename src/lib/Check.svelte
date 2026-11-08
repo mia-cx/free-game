@@ -5,7 +5,7 @@
 
 <span
 	class="mt-[0.2em] grid size-5 shrink-0 place-items-center rounded-full border-2 {done
-		? 'border-go bg-go text-go-ink'
+		? 'border-accent bg-accent text-accent-ink'
 		: 'border-line'}"
 >
 	{#if done}

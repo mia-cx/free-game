@@ -77,6 +77,15 @@ For a long job you won't watch, pair the worker with agents that check it. EianL
 > [!DO] Audit one bot's access
 > Open the settings of the agent tool you use most. Switch send, publish, delete and pay to ask first, then write down every login it's connected to and remove one it doesn't need.
 
+> [!CHECK] Which bot actions should be set to "ask first" in the agent tool's settings?
+> Sending, publishing, deleting and paying. Keep pricing behind ask-first too.
+
+> [!CHECK] A bot only needs your revenue numbers for a monthly report. How do you give it access?
+> Export the report to a folder and hand it the file instead of a billing login. If the job runs off the file, give the bot no login at all.
+
+> [!CHECK] Why isn't a charter line like "stay out of billing" enough to keep a bot safe?
+> A rule in the prompt is only a request and enforces nothing. Real limits live in the tool's permission settings and in what you connect.
+
 ## Sources
 
 - [@huntkyle: ask-first gates and least-privilege logins](https://x.com/huntkyle/status/2118086670918750341)

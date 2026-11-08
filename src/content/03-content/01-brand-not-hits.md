@@ -56,6 +56,15 @@ From Kunal's list of content mistakes:
 > [!DO] Write your first three posts
 > Name your one platform in a doc. Under it, write three post drafts, each about one thing you built, fixed or learned this week.
 
+> [!CHECK] In content marketing, what is the test for whether you have a brand?
+> If you stopped posting, would anyone ask where you went? A viral post followed by silence means the post worked and the brand doesn't exist.
+
+> [!CHECK] You can't decide between posting daily or 3 times a week. How do you choose?
+> Pick the number you can keep up for months. Consistency beats volume, and you can raise it later.
+
+> [!CHECK] Early on, why post from your own account instead of a company account or ads?
+> A founder's own account drives more early growth than a brand page or paid campaigns, because attention goes to people others already know and trust.
+
 ## Sources
 
 - [@thedankoe: brand versus viral hits and the three content roles](https://x.com/thedankoe/status/2117664712532123680)

@@ -97,6 +97,15 @@ You don't have to write the process doc from scratch. Give AI your finished work
 > [!DO] Build the context folder
 > Make one folder for the job you most want to hand off. Put in 3 finished examples you're proud of and a text file with 10 banned words or phrases. That folder is what every future bot run reads first.
 
+> [!CHECK] Before you hand a job to a bot, what three things do you gather for it to read?
+> A step-by-step process doc, 3 finished examples you were happy with, and a style guide with a banned-words list.
+
+> [!CHECK] You've corrected a bot twice and its output still misses. What do you do?
+> Stop tweaking and rewrite the prompt. Then add the correction as a new rule in its standing context file.
+
+> [!CHECK] Why write the brief yourself before asking an agent for help?
+> A vague request lets the agent fill the gaps and return something that only looks finished. If you can't write the brief, have the agent interview you.
+
 ## Sources
 
 - [@huntkyle: feeding bots past work and extracting playbooks](https://x.com/huntkyle/status/2118086670918750341)

@@ -234,6 +234,15 @@ Trend Radar judges each trend on one thing: would your buyer care. Size doesn't 
 > [!DO] Write social/brief.md
 > Create a `social/` folder and a `brief.md` inside it with four lines: what you sell, who buys it, claims that are off limits, and the result you want from content (calls, signups or sales). Every bot reads this file first.
 
+> [!CHECK] In a team of social research bots, how do the bots share their work?
+> Through files in one shared folder. Each bot writes to its own file, and a head bot reads them all and sends you the best ideas.
+
+> [!CHECK] A research bot finds a pattern across 4 of your videos. How should it report it?
+> With the sample size, marked as early, since any pattern under 6 videos is early. Its reason why it worked is marked as opinion.
+
+> [!CHECK] Why should a bot watching competitors sort their ads oldest first?
+> The oldest ads are the ones they've kept paying for, which makes them the most likely to work.
+
 ## Sources
 
 - [@dsqjaffa: scheduled social research bots sharing one folder](https://x.com/dsqjaffa/status/2119160045263077664)

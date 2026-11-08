@@ -41,6 +41,8 @@ Platforms take credit for more sales than they cause. Korzhov puts it at 2 to 5 
 > [!RISK] You lose sales in the test regions
 > Four weeks without ads in five regions means four weeks of lost sales there. Pick regions small enough that you can afford the drop.
 
+> [!DIAGRAM] holdout
+
 ## Rebuild what already works, in volume
 
 **Run time is the only public performance signal for ads.** Nobody keeps paying for an ad that loses money, so an ad live for two months is probably paying for itself.
@@ -83,6 +85,15 @@ Competitors' ad accounts are increasingly run by agents bidding in the same auct
 
 > [!DO] List a competitor's long-running ads
 > Open the Meta Ad Library, search your closest competitor, and list every ad that has been live for more than 60 days: its first line, its format (video, image, carousel) and its landing page. Save the list in a doc.
+
+> [!CHECK] In paid ads, what is the only public signal that a competitor's ad performs?
+> How long it has run. Nobody keeps paying for a losing ad, so one live for 60+ days probably pays for itself.
+
+> [!CHECK] Meta says your ads drove most of your sales. How do you find out what they really add?
+> Switch ads off in a few matched regions for a few weeks and compare the real sales drop with what Meta claimed. Pick regions small enough to afford the lost sales.
+
+> [!CHECK] In paid ads, why must every sale be counted exactly once?
+> Ad algorithms learn from the sale events you send them. Duplicated or missing sales teach them from wrong data.
 
 ## Sources
 

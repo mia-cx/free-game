@@ -9,6 +9,8 @@ summary: Define your onboarded event, find what brings users back, and message o
 > - Trigger email and SMS on what people do, and hold 10% back to prove the messages add revenue.
 > - Check-ins say what happens next and by when. They don't wait for approval nobody needs to give.
 
+> [!DIAGRAM] funnel
+
 ## Define onboarded as one event
 
 *Map the whole funnel* named the stages. This lesson works through the ones after acquisition, starting with onboarding.
@@ -62,6 +64,15 @@ If you sell a service or a membership, weekly check-ins are part of retention. *
 
 > [!DO] Write your onboarded event
 > Write one sentence naming the single action that means a new user got value. Then check your analytics: how many of last month's sign-ups did it? Write both down at the top of your roadmap.
+
+> [!CHECK] In retention, how do you define "onboarded"?
+> As one event: the first action that delivers value, such as "first document shared" in a writing app.
+
+> [!CHECK] You send emails triggered by what customers do. How do you prove they add revenue?
+> Hold out 10% of customers who receive nothing, then compare revenue between the two groups.
+
+> [!CHECK] Why should a client check-in end with what happens next and by when, instead of "let me know what you think"?
+> Asking for feedback leaves the team waiting days for approvals the client never needed to give. Stating the next step keeps delivery moving.
 
 ## Sources
 

@@ -17,6 +17,8 @@ Nobody chooses to slide. You read one answer carefully, skim the next, scan the 
 
 You don't need to hold everything in your head. It's fine to rebuild understanding of one part on demand by asking the agent to explain that slice, as long as you know which parts you no longer hold.
 
+> [!DIAGRAM] surrender-scale
+
 ## Hand off only what's cheap to get wrong
 
 Delegate the whole decision when a mistake costs little. Addy Osmani, who works on Claude Code at Anthropic, let AI pick between three similarly rated hotels and would do it again. Not for investing money, advising kids on careers, or product calls, though.
@@ -58,6 +60,15 @@ For how to check AI work once it's done, see *Check the work before it ships*.
 
 > [!DO] Log one guess and one gap
 > Before your next AI task today, write one line in a note: what you expect the answer to be. When it finishes, add a second line: one thing it didn't check.
+
+> [!CHECK] What is the test for whether you've surrendered your judgment to AI output?
+> Whether you can explain it. If someone asks about a line and you can't, you've surrendered it.
+
+> [!CHECK] Your agents finish work faster than you can review it. What do you do?
+> Tighten the checks so less needs you, or slow down. Another session won't help, because your attention is the limit.
+
+> [!CHECK] Why write down your own guess before you ask AI a non-trivial question?
+> Once you've read a polished answer, it's hard to picture any other.
 
 ## Sources
 

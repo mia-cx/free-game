@@ -50,6 +50,15 @@ For the checking half, see *Use AI without surrendering your judgment*. See *Rea
 > [!DO] Write a three-line offer
 > Pick one task you already do well with AI. In a note, write three lines: who pays for it, the result they get, and the price you'd charge for that result.
 
+> [!CHECK] When you sell outbound outreach as a service, which companies make good clients?
+> B2B companies with high-priced offers that already sell, shown by a case study with a number in it.
+
+> [!CHECK] AI cuts the time to deliver your $5,000 audit from 5 hours to 1. What happens to the price?
+> It stays at $5,000. Clients pay for the result, not your time, so you take the margin.
+
+> [!CHECK] Why run an agent for yourself for a few weeks before you sell it to other businesses?
+> Running it fixes what breaks and gives you a count of hours saved, and that count is your pitch.
+
 ## Sources
 
 - [@thedankoe: the one-person creative team](https://x.com/thedankoe/status/2117664712532123680)

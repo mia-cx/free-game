@@ -101,6 +101,15 @@ These checks repeat, so hand them to an agent with a written playbook. Borja Fat
 > [!DO] Refresh your top page
 > Export the last 3 months of queries for your top page from Search Console, run the refresh prompt above, and add the first suggested section to the page.
 
+> [!CHECK] In Search Console, where do you find what a ranking page is missing?
+> The page's Queries tab. Searches the page appears for but never mentions are what to add.
+
+> [!CHECK] Your article opens with a 300-word story before it gets to the point. What do you change?
+> Answer the main question in the first two paragraphs. Then check the main keyword appears in the title, the meta description and the first paragraph.
+
+> [!CHECK] Why improve a page ranking at positions 10 to 30 before writing a new one?
+> Google already finds that page relevant but incomplete, so adding the missing answers can move it up. A brand-new page starts from nothing.
+
 ## Sources
 
 - [@asaio87: query-gap refresh, intro check and internal link prompts](https://x.com/asaio87/status/2119171723849245031)

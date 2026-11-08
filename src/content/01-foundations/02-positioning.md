@@ -50,6 +50,15 @@ Your positioning names a group. Your writing needs a person. Before you write an
 > [!DO] Write your positioning doc
 > Open a blank doc and answer the six questions in one or two sentences each, then add one line: "We are against ___." Leave a blank where you're unsure; that blank is your research list for *Research a market in an afternoon*.
 
+> [!CHECK] In positioning, what does it mean when you can't answer one of the six positioning questions?
+> It means you don't understand the product well enough yet to market it. The blank becomes your research list.
+
+> [!CHECK] Your messaging tries to appeal to everyone and nobody remembers it. What do you add?
+> Name what you're against: a status quo, a bad habit or an incumbent way of doing things. Then write your messaging around that opposing force.
+
+> [!CHECK] Why does weak positioning hurt the product as well as the marketing?
+> The product drifts because nobody is obsessed with a specific user. The go-to-market plan also ends up with no clear ideal customer or chosen channels.
+
 ## Sources
 
 - [@kunalvg: positioning questions and exercise](https://x.com/kunalvg/status/1709147454606565816)

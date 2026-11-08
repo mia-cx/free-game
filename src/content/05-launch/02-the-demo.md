@@ -35,6 +35,15 @@ Start with a screen recording of the extreme moment. When you want it to look pr
 > [!DO] Write your demo's shot list
 > Write your answers to the two questions, then list the three moments you would film to prove them, one line each.
 
+> [!CHECK] What two questions should a launch demo answer?
+> What is the most extreme thing your product can do, and how do you make people believe it happened? Film only the moments that answer both.
+
+> [!CHECK] Viewers say your software launch demo looks staged. What do you show instead?
+> The real input, the real output, and anything you fixed by hand. A launch demo's job is to make people think "this is real", and the hand fixes make it believable.
+
+> [!CHECK] Why did Tesla jump the Roadster over a whole row of cars, live in front of a crowd?
+> Jumping the whole fleet is extreme enough to send to friends, and doing it live made it impossible to dismiss as CGI.
+
 ## Sources
 
 - [@mattepstein: push the product to its extreme and make the proof real](https://x.com/mattepstein/status/2117351855856779486)

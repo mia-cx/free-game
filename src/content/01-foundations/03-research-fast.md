@@ -60,6 +60,15 @@ The ads a competitor keeps running the longest are the ones paying for themselve
 > [!DO] Copy ten buyer phrases
 > Open a competitor's reviews on any one site (G2, Trustpilot, an app store) and read 30. Paste the 10 most vivid phrases into a doc, word for word, each tagged "complaint" or "reason to buy".
 
+> [!CHECK] When you research a market with an AI model, what kind of questions should you ask it?
+> Ask for synthesis, not summary: questions that force it to think, such as what beliefs the whole industry takes for granted. Summaries only repeat the material back.
+
+> [!CHECK] You want ad hooks that sound like your buyers. Where do you get the words?
+> From customer reviews of your product and your competitors. They already say why people buy and complain, in phrasing you can reuse word for word.
+
+> [!CHECK] Why should you sort a competitor's ads oldest first?
+> The ads a competitor keeps running longest are the ones paying for themselves. Nobody keeps paying for an ad that loses money.
+
 ## Sources
 
 - [@romanbuildsaas: three-hour AI market research](https://x.com/romanbuildsaas/status/2119091729181880583)

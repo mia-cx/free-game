@@ -23,6 +23,8 @@ The shape Dan Koe uses:
 
 Even at the low end that's 3 × 5 × 5 × 4 = 300 angles. Koe says one run gives about six months of ideas. That's unverified, but at 3 to 5 posts a week, the arithmetic leaves room to spare.
 
+> [!DIAGRAM] content-map
+
 ## Merge your lens with what already works
 
 The map has two inputs. Your brand and voice documents (from *Write down what makes you you*) supply the pillars and the lens: how you see things differently. Research supplies the proof: which ideas and formats have actually performed in those topics over the past 6 to 12 months.
@@ -48,6 +50,15 @@ One way to stay original: research platforms you don't post on. Koe says that's 
 
 > [!DO] Sketch the top of your map
 > In `content-map.md`, write 3 pillars. Under the one you know best, write 5 topics. Run the full prompt later, once your brand document exists.
+
+> [!CHECK] What are the four levels of a content map, from broadest to narrowest?
+> Pillars, topics, ideas and angles. A typical map has 3 to 4 pillars, 5 to 7 topics each, 5 to 10 ideas per topic and 4 to 5 angles per idea.
+
+> [!CHECK] Research shows a post structure that has performed well in your topic. How do you use it without copying?
+> Take the pattern, such as the structure, hook shape or format, and fill it with your own ideas. Never copy a post 1:1.
+
+> [!CHECK] Why does a content map need both your own lens and research on what performs?
+> Your lens alone gives original posts nobody asked for. Research alone gives the same posts as everyone else.
 
 ## Sources
 

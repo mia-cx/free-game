@@ -75,6 +75,15 @@ Existing articles already have readers. Find what they're missing and offer it.
 > [!DO] Find five roundups to pitch
 > Search your main buying query in Google and ChatGPT, open the cited "best X" lists, and log five in a sheet with the author's contact and one buyer need each list misses.
 
+> [!CHECK] What question does every earned backlink answer for the writer who adds it?
+> "What does this give my readers?" A pitch that hands over a finished improvement is easy to say yes to.
+
+> [!CHECK] A competitor's page that still has backlinks now returns an error. How do you turn that into a link?
+> Read the archived page, publish a matching replacement, and send the editor the broken link plus yours.
+
+> [!CHECK] Why work to get into "best X for Y" roundups?
+> Google and ChatGPT mostly cite those listicles for buying queries, so one spot puts you in front of buyers and in AI answers at once.
+
 ## Sources
 
 - [@borjafat: 69 backlink tactics, ranked by tier](https://x.com/borjafat/status/2116164330014007296)

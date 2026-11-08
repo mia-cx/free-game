@@ -54,6 +54,15 @@ The bot sorts and suggests. Talking to the client stays your job.
 > [!DO] Work out your close rate
 > Make a sheet with three columns: date, call, closed (yes or no). Fill in your last 10 sales calls and calculate the close rate. If it's above 40%, write a higher price for your next proposal.
 
+> [!CHECK] What close rate on sales calls suggests your price is too low?
+> Above about 40%.
+
+> [!CHECK] A client's 90-day time log shows far more hours than their contract covers. What are your options?
+> Reprice, rescope or sunset that client. A bot can sort and suggest, but talking to the client stays your job.
+
+> [!CHECK] Why count gross margin per client, with your own hours priced at what it would cost to replace you?
+> Revenue reports hide which clients cost you money. Counting your hours reveals the ones near or below zero margin.
+
 ## Sources
 
 - [@huntkyle: running business operations with bots, including close rate, month-end and scope checks](https://x.com/huntkyle/status/2118086670918750341)

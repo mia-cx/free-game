@@ -9,6 +9,8 @@ summary: Build a list of people who will quote your launch, each with their own 
 > - Seed different angles (founder story, implications, a sceptical try-out) so each quote reaches a different crowd.
 > - Pick a few creators who fit over many who are big, and brief them so they write their own take.
 
+> [!DIAGRAM] launch-timeline
+
 ## Ask for quotes, not retweets
 
 A follower can see you. A connection has an audience and will answer your text. **When a connection quotes your launch, it becomes a new post from them**, shown to their followers. A retweet does far less.
@@ -68,6 +70,15 @@ Fit means they live with the problem and their audience would plausibly try the 
 
 > [!DO] Draft your top-25 quote list
 > In a spreadsheet, list 25 people who could quote your next launch, with one column for their reach into your customer and one for the angle you'd ask them to take.
+
+> [!CHECK] In a product launch, what is a thunderclap?
+> Founders, friends and partners all post about the launch at the same set time. You line up the list in advance.
+
+> [!CHECK] You were about to message an investor "We're launching Tuesday, would love a retweet". What do you ask for instead?
+> Ask them to quote the launch post, and show them an example of a great quote from a similar launch. A quote becomes a new post shown to their followers, while a retweet does far less.
+
+> [!CHECK] When you pick creators to post about your launch, why choose fit over reach?
+> Mediocre influencers deliver numbers that turn into nothing. A few who live with the problem bring the right audience and shape the right story.
 
 ## Sources
 

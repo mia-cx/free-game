@@ -57,6 +57,15 @@ When you hit something beyond your understanding, learn it properly instead of p
 > [!DO] Score three skills
 > Write a three-row table in a note: three skills you're considering, with yes or no for each of the three questions. Circle the one that gets three yeses.
 
+> [!CHECK] What three questions tell you a skill is worth learning now that AI exists?
+> Whether people already pay for the result, whether AI makes you faster rather than doing it without you, and whether it needs knowledge of a field.
+
+> [!CHECK] You're a solo marketer whose buyers work in healthcare. How broad or deep should your skills be?
+> Broad across channels at a working level, and deep in healthcare.
+
+> [!CHECK] Why practise on purpose the skills you use to check AI's work?
+> Skills you stop using fade, and supervising AI needs exactly those skills.
+
 ## Sources
 
 - [@notkvtwts: the three-question skill test and the studies behind it](https://x.com/notkvtwts/status/2115810173830750575)

@@ -56,6 +56,15 @@ AI removes the excuses for skipping audits, but it can't choose which keywords m
 > [!DO] Find one gap in your best page
 > Paste your most important article into the prompt above, pick one of the three angles it suggests, and write one paragraph from your own experience to add to the page.
 
+> [!CHECK] What signals make a page easy for readers and Google to trust?
+> A real byline linked to the author's experience, firsthand tests shown on the page, a factual About page, and the same company facts everywhere you appear.
+
+> [!CHECK] The top 10 Google results for your keyword all say the same thing. How does your page win?
+> Add what they lack from your own experience: your tests, data, screenshots or a new angle. AI can find the gap, but only you can fill it.
+
+> [!CHECK] Why should a page's title never promise more than the page delivers?
+> Google ranks pages partly on how people click, and clicks that bounce straight back count against the page.
+
 ## Sources
 
 - [@borjafat: click signals, NavBoost and the 2024 leak](https://x.com/borjafat/status/2119227612258054502)

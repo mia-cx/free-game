@@ -50,6 +50,15 @@ All of this comes from one launch agency founder's practice (0xfJuan, Ark Media)
 > [!DO] Set up the launch log
 > Create a shared doc with five columns: question or comment, link, type (question, objection, issue, use case), answer given, owner. Add the first row from any reply you've had this month.
 
+> [!CHECK] What should you measure a product launch by, instead of views?
+> The trials, relevant DMs and sales calls it produced. Views only tell you the post travelled.
+
+> [!CHECK] Someone liked your launch post but didn't reply. Should you DM them?
+> No. A like on its own tells you nothing, so DM only when you have a clear reason that fits what someone said, and check their profile first.
+
+> [!CHECK] Why log every launch question, objection and surprise use in one shared doc?
+> It tells you what to fix, explain and post next, and it outlasts launch week. Repeated questions become your FAQ, and confusing features get a walkthrough.
+
 ## Sources
 
 - [@0xfJuan: working the launch conversation and running a second wave](https://x.com/0xfJuan/status/2114746175026798821)

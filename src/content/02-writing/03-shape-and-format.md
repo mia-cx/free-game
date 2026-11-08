@@ -38,6 +38,8 @@ Most people read on their phone, and they scan before they read. Format so a sca
 > - Add connector lines that pull readers down: "Let me explain...", "But here's what nobody tells you:".
 > - Preview the post on your phone before you publish.
 
+> [!DIAGRAM] post-anatomy
+
 ## Make every word earn its place
 
 Tight, plain words read faster and keep you from sounding machine-written. The test is simple: if deleting a word doesn't change the meaning, delete it.
@@ -52,6 +54,15 @@ Tight, plain words read faster and keep you from sounding machine-written. The t
 
 > [!DO] Reformat one post
 > Take your last post or a draft. Break it into lines of one thought each, cut every "really, very, just, actually", and rewrite the last line as a takeaway, a question or a tease. Preview it on your phone and save the new version.
+
+> [!CHECK] What are the three ways to close a post firmly?
+> The takeaway in 1 to 2 lines, a question, or a tease of what's next.
+
+> [!CHECK] Your post is one four-line paragraph with a long sentence full of "and"s. How do you fix it for phone readers?
+> Break it into paragraphs of 1 to 3 lines with one thought per line, and split the long sentence. Then preview it on your phone.
+
+> [!CHECK] When editing a post, how do you decide whether a word stays?
+> Delete it if removing it doesn't change the meaning. Tight, plain words read faster and sound less machine-written.
 
 ## Sources
 

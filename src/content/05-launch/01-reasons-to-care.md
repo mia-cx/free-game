@@ -58,6 +58,15 @@ A launch is a single moment. Your brand is what people see the rest of the year 
 > [!DO] Answer the six questions for your next launch
 > Open a doc and write one line for each of the six narrative questions, then one line for "what could a stranger add to this?". Keep it next to you when you write the launch post.
 
+> [!CHECK] What question does every launch post have to answer for a stranger scrolling past?
+> "Why do I care?" They decide in under a second, so announcement language like "We're excited to announce" never passes.
+
+> [!CHECK] Your launch post says "Excited to announce our new platform". What do you replace it with?
+> A specific demo strangers can examine, dispute or try: the real input, the real output, and what you fixed by hand. That gives them something to add when they quote it.
+
+> [!CHECK] Why start launch copy from a conversation people already have, instead of from your product?
+> Attaching your claim to something people already feel makes it read bigger than the product. It also gives them something to argue about in the replies.
+
 ## Sources
 
 - [@mattepstein: the "why do I care" filter and narrative questions](https://x.com/mattepstein/status/2117351855856779486)

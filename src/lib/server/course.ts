@@ -1,15 +1,17 @@
 /**
  * Builds the course from markdown in `src/content/`.
  *
- * Layout: `src/content/<NN-module>/_module.md` holds the module's frontmatter,
- * `src/content/<NN-module>/<NN-lesson>.md` holds one lesson. The `NN-` prefix sets
- * the order and is dropped from the URL.
+ * Layout: `src/content/<NN-module>/_module.md` holds the module's frontmatter
+ * (`title`, `summary`, optional `diagram`), `src/content/<NN-module>/<NN-lesson>.md`
+ * holds one lesson. The `NN-` prefix sets the order and is dropped from the URL.
  *
- * Lessons use GitHub-style callouts, which render as `<aside class="callout">`:
- * `> [!TLDR]`, `> [!TRICK] Title`, `> [!RISK] Title`, `> [!DO] Title`.
+ * Lessons use GitHub-style callouts:
+ * - `> [!TLDR]`, `> [!TRICK] Title`, `> [!RISK] Title`, `> [!DO] Title` render as `<aside class="callout">`.
+ * - `> [!CHECK] Question?` with the answer as its body becomes a review card, kept out of the lesson body.
+ * - `> [!DIAGRAM] name` places the component `src/lib/diagrams/<name>.svelte` at that point.
  */
 import { Marked, type Tokens } from 'marked';
-import type { Callout, CalloutKind, Course, Lesson, Trick } from '#lib/course.ts';
+import type { Block, Callout, CalloutKind, Check, Course, Lesson, Module, Trick } from '#lib/course.ts';
 
 const files = import.meta.glob<string>('/src/content/*/*.md', {
 	query: '?raw',
@@ -17,8 +19,13 @@ const files = import.meta.glob<string>('/src/content/*/*.md', {
 	eager: true
 });
 
-const CALLOUT = /^\[!(TLDR|TRICK|RISK|DO)\][ \t]*(.*)(?:\n|$)/;
+const CALLOUT = /^\[!(TLDR|TRICK|RISK|DO|CHECK|DIAGRAM)\][ \t]*(.*)(?:\n|$)/;
 const ORDER_PREFIX = /^\d+-/;
+const DIAGRAM_MARKER = /<!--diagram:([\w-]+)-->/;
+const SOURCES_HEADING = '<h2 id="sources">Sources</h2>';
+const WORDS_PER_MINUTE = 200;
+/** Module hues in course order: a walk round the colour wheel that skips the olive yellows, which turn muddy at text contrast. */
+const MODULE_HUES = [25, 50, 72, 145, 168, 190, 215, 240, 265, 290, 315, 340, 5];
 
 /** Splits `---` frontmatter of flat `key: value` lines from the body. */
 export const parseFrontmatter = (raw: string) => {
@@ -50,7 +57,9 @@ const marked: Marked = new Marked({
 		blockquote({ text, tokens }: Tokens.Blockquote): string {
 			const callout = readCallout(text);
 			if (!callout) return `<blockquote>${this.parser.parse(tokens)}</blockquote>`;
-			const title = callout.title ? `<p class="callout-title">${marked.parseInline(callout.title)}</p>` : '';
+			if (callout.kind === 'check') return '';
+			if (callout.kind === 'diagram') return `<!--diagram:${callout.title}-->`;
+			const title = callout.title ? `<p class="callout-title">${inline(callout.title)}</p>` : '';
 			return `<aside class="callout" data-kind="${callout.kind}">${title}${render(callout.body)}</aside>`;
 		},
 		code({ text }: Tokens.Code) {
@@ -71,6 +80,10 @@ function render(markdown: string) {
 	return marked.parse(markdown, { async: false });
 }
 
+function inline(markdown: string) {
+	return marked.parseInline(markdown, { async: false });
+}
+
 const escapeHtml = (text: string) =>
 	text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] ?? c);
 
@@ -81,19 +94,45 @@ const slugify = (markdown: string) =>
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-|-$/g, '');
 
-/** Pulls the `##` sections and `> [!TRICK]` callouts out of a lesson body. */
-const outline = (body: string) => {
+/** Reading time for the prose, leaving out code blocks (prompts are pasted, not read). */
+const minutesToRead = (body: string) => {
+	const words = body
+		.replace(/```[\s\S]*?```/g, '')
+		.split(/\s+/)
+		.filter(Boolean).length;
+	return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+};
+
+/** Pulls the `##` sections and the trick and check callouts out of a lesson body. */
+const extract = (body: string, lessonId: string) => {
 	const tokens = marked.lexer(body);
+	const callouts = tokens
+		.filter((t): t is Tokens.Blockquote => t.type === 'blockquote')
+		.map((t) => readCallout(t.text))
+		.filter((c) => c !== null);
 	return {
 		sections: tokens
 			.filter((t): t is Tokens.Heading => t.type === 'heading' && t.depth === 2)
-			.map((t) => ({ id: slugify(t.text), title: plain(t.text) })),
-		tricks: tokens
-			.filter((t): t is Tokens.Blockquote => t.type === 'blockquote')
-			.map((t) => readCallout(t.text))
-			.filter((c): c is Callout => c?.kind === 'trick')
-			.map((c): Trick => ({ title: c.title, html: render(c.body) }))
+			.map((t) => ({ id: slugify(t.text), title: plain(t.text) }))
+			.filter((s) => s.id !== 'sources'),
+		tricks: callouts.filter((c) => c.kind === 'trick').map((c): Trick => ({ title: c.title, html: render(c.body) })),
+		checks: callouts
+			.filter((c) => c.kind === 'check')
+			.map((c, i): Check => ({ id: `${lessonId}#${i}`, question: inline(c.title), answer: render(c.body) }))
 	};
+};
+
+/** Splits rendered HTML at diagram markers into alternating HTML and diagram blocks. */
+const toBlocks = (html: string): Block[] =>
+	html
+		.split(DIAGRAM_MARKER)
+		.map((part, i): Block => (i % 2 ? { kind: 'diagram', name: part } : { kind: 'html', html: part }))
+		.filter((b) => b.kind === 'diagram' || b.html.trim() !== '');
+
+/** Separates the closing `## Sources` list so the page can place the review cards before it. */
+const splitSources = (html: string) => {
+	const [body, sources = ''] = html.split(SOURCES_HEADING);
+	return { blocks: toBlocks(body), sources: sources.trim() };
 };
 
 const build = (): Course => {
@@ -102,34 +141,61 @@ const build = (): Course => {
 		([path]) => path.split('/').at(-2) ?? ''
 	);
 
-	const modules = Object.entries(byModule).map(([dir, entries = []], index) => {
+	const drafts = Object.entries(byModule).map(([dir, entries = []], index) => {
 		const slug = dir.replace(ORDER_PREFIX, '');
-		const intro = entries.find(([path]) => path.endsWith('/_module.md'));
-		const meta = parseFrontmatter(intro?.[1] ?? '').data;
+		const meta = parseFrontmatter(entries.find(([path]) => path.endsWith('/_module.md'))?.[1] ?? '').data;
 		const lessons = entries
 			.filter(([path]) => !path.endsWith('/_module.md'))
-			.map(([path, raw]): Lesson => {
+			.map(([path, raw], lessonIndex) => {
 				const lessonSlug = (path.split('/').at(-1) ?? '').replace(/\.md$/, '').replace(ORDER_PREFIX, '');
+				const id = `${slug}/${lessonSlug}`;
 				const { data, body } = parseFrontmatter(raw);
 				return {
-					id: `${slug}/${lessonSlug}`,
-					href: `/${slug}/${lessonSlug}`,
-					module: slug,
-					title: data.title ?? lessonSlug,
-					summary: data.summary ?? '',
-					html: render(body),
-					...outline(body)
+					lesson: {
+						id,
+						href: `/${slug}/${lessonSlug}`,
+						module: slug,
+						number: lessonIndex + 1,
+						title: data.title ?? lessonSlug,
+						summary: data.summary ?? '',
+						minutes: minutesToRead(body),
+						...extract(body, id)
+					},
+					html: render(body)
 				};
 			});
-		return { slug, number: index + 1, title: meta.title ?? slug, summary: meta.summary ?? '', lessons };
+		const module = {
+			slug,
+			href: `/${slug}`,
+			number: index + 1,
+			hue: MODULE_HUES[index % MODULE_HUES.length],
+			title: meta.title ?? slug,
+			summary: meta.summary ?? '',
+			diagram: meta.diagram || undefined
+		};
+		return { module, lessons };
 	});
 
-	const lessons = modules.flatMap((m) => m.lessons);
-	linkTitles(lessons, [
-		...modules.map((m) => [m.title, `/#${m.slug}`] as const),
-		...lessons.map((l) => [l.title, l.href] as const)
+	const link = linker([
+		...drafts.map(({ module }) => [module.title, module.href] as const),
+		...drafts.flatMap(({ lessons }) => lessons.map(({ lesson }) => [lesson.title, lesson.href] as const))
 	]);
-	return { modules, lessons };
+
+	const modules = drafts.map(
+		({ module, lessons }): Module => ({
+			...module,
+			lessons: lessons.map(
+				({ lesson, html }): Lesson => ({
+					...lesson,
+					...splitSources(link(html)),
+					tricks: lesson.tricks.map((t) => ({ ...t, html: link(t.html) })),
+					checks: lesson.checks.map((c) => ({ ...c, answer: link(c.answer) }))
+				})
+			)
+		})
+	);
+
+	return { modules, lessons: modules.flatMap((m) => m.lessons) };
 };
 
 const unescapeHtml = (html: string) =>
@@ -140,18 +206,14 @@ const unescapeHtml = (html: string) =>
 		.replace(/&gt;/g, '>')
 		.replace(/&amp;/g, '&');
 
-/** Turns an italic lesson or module title, like `*Test titles for quick wins*`, into a link to it. */
-const linkTitles = (lessons: Lesson[], targets: (readonly [title: string, href: string])[]) => {
+/** Returns a function that turns italic lesson or module titles, like `*Test titles for quick wins*`, into links. */
+const linker = (targets: (readonly [title: string, href: string])[]) => {
 	const hrefs = new Map(targets);
-	const link = (html: string) =>
+	return (html: string) =>
 		html.replace(/<em>([^<]+)<\/em>/g, (match, title: string) => {
 			const href = hrefs.get(unescapeHtml(title));
 			return href ? `<a href="${href}"><em>${title}</em></a>` : match;
 		});
-	for (const lesson of lessons) {
-		lesson.html = link(lesson.html);
-		for (const trick of lesson.tricks) trick.html = link(trick.html);
-	}
 };
 
 /** The whole course, parsed once per server process (prerendered at build). */

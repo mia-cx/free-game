@@ -49,6 +49,15 @@ For reshaping one piece of research into each platform's own format, see *Turn o
 > [!DO] Find one platform that ranks for you
 > Search your three most important buyer questions in a private window and list every third-party platform (LinkedIn, YouTube, Reddit, Medium) on page one. Pick one and note the headline you'd publish there.
 
+> [!CHECK] Before you write about a rising search in Google Trends, what do you check?
+> Its history, to tell seasonal demand from a real spike. Then read the original announcement, not the coverage of it.
+
+> [!CHECK] Google shows videos on the results page for one of your buyer questions. What do you make?
+> A video of your product completing that exact task, with the task named in the title. Embed it next to the written answer on your site.
+
+> [!CHECK] When your own site is new, why publish answers on platforms like LinkedIn or Medium?
+> A new site takes months to earn rankings, and those platforms already rank for your query. Your answer there links back to your site as the next step.
+
 ## Sources
 
 - [@borjafat: parasite SEO, YouTube demos and Google Trends](https://x.com/borjafat/status/2116164330014007296)

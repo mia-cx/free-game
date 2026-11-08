@@ -1,43 +1,55 @@
 # Design
 
-Free Game is read by people with ADHD who are learning marketing from zero. The design serves three needs: know where you are, start the next thing without deciding, and skim a lesson and still get it.
+Free Game is read by people with ADHD who are learning marketing from zero. The design serves four needs: know where you are, start the next thing without deciding, skim a lesson and still get it, and remember it next week.
 
-## Layout
+## Learning model
 
-- **Map (`/`)**: one dark card with the next unfinished lesson and a single button. Below it, every module as a numbered list with done marks and a count. No decisions needed to start; the whole course is visible when wanted.
-- **Lesson (`/<module>/<lesson>`)**: module name, a row of lesson pips (current, done, not done) and "3 of 6" at the top. One 40rem column. On wide screens a sticky list of the lesson's sections sits to the right. The footer has the previous lesson and one primary button that marks the lesson done and opens the next. ← and → also move between lessons.
-- **Tricks (`/tricks`)**: every cheap trick from every lesson as cards, filterable by module, with "Pick one for me" to jump to a random one. Each card links back to its lesson.
+- **Advance organiser**: every module opens with its signature diagram and the list of lessons, so the reader sees the shape before the detail.
+- **Short version first**: each lesson starts with its TLDR and keeps sections short.
+- **Doing over reading**: diagrams are interactive (pick, toggle, step, adjust) and every lesson ends with one small "Do it now" task.
+- **Retrieval practice**: three check cards per lesson. The reader answers in their head, then reveals.
+- **Spaced review**: finishing a lesson adds its cards to the review deck. Recalled cards come back after 3, 7, 16, then 35 days; missed cards come back tomorrow (`src/lib/review.svelte.ts`).
+- **Visible progress**: the route map, module rings, lesson pips, reading bar and done animation all show movement.
+
+## Routes
+
+- **Map (`/`)**: one card with the next lesson, a Continue button, a review nudge when cards are due, and overall progress. Below it, the route: one station per module on a trail. Stations show a progress ring and one pip per lesson; the trail between finished modules is solid and colour-shifts from one module hue to the next, and draws itself as you scroll (CSS `view()` timeline). On wide screens stations alternate sides of a central trail.
+- **Module (`/<module>`)**: giant module number in the module colour, summary, Start or Continue, lessons as steps with summary and reading time, and the signature diagram beside them (sticky on wide screens).
+- **Lesson (`/<module>/<lesson>`)**: reading progress bar along the top (CSS `scroll()` timeline), module pips, lesson body with diagrams placed in it, Check yourself cards, sources, and a footer whose button marks the lesson done (with a check-draw animation), adds its cards to the deck and opens the next lesson. A sticky outline on wide screens highlights the section being read. ← and → move between lessons.
+- **Review (`/review`)**: one card at a time with a progress bar. Space reveals, 1 is "Not yet", 2 is "Got it". When nothing is due it says when cards come back and offers a practice round.
+- **Tricks (`/tricks`)**: every cheap trick as a card in course order, filterable by module, with "Pick one for me".
+- **Lab (`/lab`)**: every diagram under any module colour, for building and checking diagrams. Not linked from the nav.
 
 ## Lesson anatomy
 
-Every lesson has the same shape, enforced by `src/lib/server/course.spec.ts`:
+Enforced by `src/lib/server/course.spec.ts`: title, summary, TLDR first, a DO, exactly three CHECK cards, and only diagrams that exist. Callouts render by kind: **Cheap trick** (highlighter yellow), **Watch out** (red), **Do it now** (green).
 
-1. Short version (TLDR) first.
-2. 2 to 5 short sections.
-3. Callouts by kind, each with its own colour and label: **Cheap trick** (highlighter yellow), **Watch out** (red), **Do it now** (green, always last).
-4. Sources.
+## Diagrams
 
-Code blocks (mostly prompts) get a Copy button.
+One Svelte component per file in `src/lib/diagrams/`, registered by file name. A lesson places one with `> [!DIAGRAM] name`; a module picks its signature one with `diagram:` in `_module.md`. Each is a `<figure class="diagram">` framed in the module accent, uses native controls, announces computed results politely, takes every fact from the lesson, and works from 320 to 720px wide. Shared pieces (`.diagram-chips`, `.diagram-chip`, `.diagram-output`) live in `layout.css`. Contract: `research/tools/diagrams-brief.md`.
 
 ## Type
 
-Atkinson Hyperlegible Next (variable) for text and Atkinson Hyperlegible Mono for code. It was designed for legibility, with distinct letterforms that reduce misreads. Base size 18px, line height 1.65, 40rem measure. Headings are heavy (750 to 800) and tight so structure reads at a glance.
+Atkinson Hyperlegible Next (variable) for text and Atkinson Hyperlegible Mono for code, chosen for legibility. Base size 18px, line height 1.65, 40rem measure. Headings are heavy (750 to 800) and tight so structure reads at a glance. Module numbers are not zero-padded because the font's slashed zero reads as Ø at display size.
 
 ## Colour
 
-Role tokens in `src/routes/layout.css`, exposed to Tailwind through `@theme`:
+Role tokens in `src/routes/layout.css`, exposed to Tailwind through `@theme inline`:
 
 | Token | Role |
 | --- | --- |
 | `paper`, `surface`, `ink`, `muted`, `line` | Page, raised surface, text, secondary text, rules |
-| `go`, `go-ink` | Primary action and done state |
-| `trick-bg`, `trick-edge` | Cheap trick callouts |
-| `risk-bg`, `risk-edge` | Watch out callouts |
-| `do-bg`, `do-edge` | Do it now callouts |
+| `accent`, `accent-ink`, `accent-soft`, `accent-line` | The current module's colour: actions, progress, diagram frames |
+| `go`, `go-ink` | Course-level action when no module applies |
+| `trick-*`, `risk-*`, `do-*` | Callout kinds |
 | `focus` | Focus ring |
 
-Light is warm paper; dark follows the system setting with the same roles. No theme switcher.
+Each module has a hue from a hand-picked walk round the colour wheel that skips olive yellows (`MODULE_HUES` in `src/lib/server/course.ts`). Any element with `data-hue style="--hue: N"` recomputes the accent roles in OKLCH from that hue, in light and dark. Light is warm paper; dark follows the system setting. No theme switcher.
 
-## Progress
+## Motion
 
-Done lessons are stored in `localStorage` under `free-game:done`, per browser. When storage is blocked, progress lasts for the visit.
+Durations and easings are the transitions.dev motion tokens in `layout.css`. Scroll-linked effects (reading bar, trail drawing, diagram entrance) use CSS scroll and view timelines, with no JavaScript per frame. Under reduced motion every animation is off and the content is unchanged; the reading bar stays because it reports position rather than moving on its own.
+
+## Storage
+
+Done lessons (`free-game:done`) and the review deck (`free-game:review`) live in `localStorage`, per browser. When storage is blocked, both last for the visit.

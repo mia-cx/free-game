@@ -66,6 +66,15 @@ This order comes from a case study of Granola's AI search work, relayed secondha
 > [!DO] Inspect your three money pages
 > Open Google Search Console, run URL Inspection on your three most important pages (home, pricing, main product page), and write down for each one whether it is indexed and any problem it lists.
 
+> [!CHECK] Which two items on the technical SEO checklist can't a coding agent do for you?
+> Writing that doesn't read like AI filler, and earning links from sites people trust.
+
+> [!CHECK] A site audit tool gives you 300 SEO warnings. Where do you start?
+> On the pages tied to real buying questions: pricing, comparisons and the product pages people land on before they pay. The same warning on an old blog tag page can wait.
+
+> [!CHECK] Why check SEO fixes in Search Console after your coding agent says they're done?
+> An agent saying "done" is not Google seeing the page. URL Inspection shows whether Google can actually index it.
+
 ## Sources
 
 - [@suraj_sharma14: technical SEO checklist prompt](https://x.com/suraj_sharma14/status/2116062550416871512)

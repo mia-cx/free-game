@@ -90,6 +90,15 @@ Run the audits in order of impact, one block a week, then switch to a steady rou
 > [!DO] Run the category audit
 > Run the category audit prompt for your main service and city, and add one secondary category the map-pack leaders have that you're missing.
 
+> [!CHECK] On a Google Business Profile, what change often gives the fastest local ranking win?
+> Adding a secondary category the map-pack leaders have and you're missing. Your categories decide which searches show you on the map.
+
+> [!CHECK] One local competitor has 200 reviews, mostly two years old. Another has 90 and gains 15 a month. Which is ahead on the map?
+> The one gaining 15 a month. Track review pace, not total count or star rating, because recent reviews count for more.
+
+> [!CHECK] Why should a plumber list every service from their website on their Google Business Profile?
+> A service missing from the profile is invisible for that map search, even when the website offers it.
+
 ## Sources
 
 - [@bloggersarvesh: local SEO with AI, GBP audit prompts and five-week plan](https://x.com/bloggersarvesh/status/2088983373859725755)
