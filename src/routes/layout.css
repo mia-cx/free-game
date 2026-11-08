@@ -2,42 +2,34 @@
 @import "@fontsource-variable/atkinson-hyperlegible-next";
 @import "@fontsource/atkinson-hyperlegible-mono/400.css";
 
-/* Roles, not hues. See DESIGN.md. */
+/*
+ * Roles, not hues. See DESIGN.md. Each token is `light-dark(light, dark)`: the page follows the
+ * system setting until the reader picks a theme, which sets `data-theme` on <html>.
+ */
 :root {
 	color-scheme: light dark;
-	--paper: #fbf8f2;
-	--surface: #f3eee4;
-	--ink: #1d1b18;
-	--muted: #6b655c;
-	--line: #e3dccf;
-	--go: #0f7a4a;
-	--go-ink: #ffffff;
-	--trick-bg: #fff3a6;
-	--trick-edge: #d9b300;
-	--risk-bg: #fde6e2;
-	--risk-edge: #c8412e;
-	--do-bg: #dff3e7;
-	--do-edge: #0f7a4a;
-	--focus: #2563eb;
+	--paper: light-dark(#fbf8f2, #15140f);
+	--surface: light-dark(#f3eee4, #1e1c17);
+	--ink: light-dark(#1d1b18, #ece7dd);
+	--muted: light-dark(#6b655c, #a39d92);
+	--line: light-dark(#e3dccf, #322f28);
+	--go: light-dark(#0f7a4a, #4cc38a);
+	--go-ink: light-dark(#ffffff, #0c1a12);
+	--trick-bg: light-dark(#fff3a6, #3a3210);
+	--trick-edge: light-dark(#d9b300, #e6c64a);
+	--risk-bg: light-dark(#fde6e2, #3a1a17);
+	--risk-edge: light-dark(#c8412e, #f07a66);
+	--do-bg: light-dark(#dff3e7, #12301f);
+	--do-edge: light-dark(#0f7a4a, #4cc38a);
+	--focus: light-dark(#2563eb, #7aa7ff);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--paper: #15140f;
-		--surface: #1e1c17;
-		--ink: #ece7dd;
-		--muted: #a39d92;
-		--line: #322f28;
-		--go: #4cc38a;
-		--go-ink: #0c1a12;
-		--trick-bg: #3a3210;
-		--trick-edge: #e6c64a;
-		--risk-bg: #3a1a17;
-		--risk-edge: #f07a66;
-		--do-bg: #12301f;
-		--do-edge: #4cc38a;
-		--focus: #7aa7ff;
-	}
+:root[data-theme="light"] {
+	color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
 }
 
 /* Motion scale from transitions.dev. */
@@ -66,20 +58,10 @@
  */
 :root,
 [data-hue] {
-	--accent: oklch(0.52 0.13 var(--hue, 155));
-	--accent-ink: #ffffff;
-	--accent-soft: oklch(0.95 0.035 var(--hue, 155));
-	--accent-line: oklch(0.84 0.07 var(--hue, 155));
-}
-
-@media (prefers-color-scheme: dark) {
-	:root,
-	[data-hue] {
-		--accent: oklch(0.78 0.12 var(--hue, 155));
-		--accent-ink: oklch(0.2 0.03 var(--hue, 155));
-		--accent-soft: oklch(0.26 0.04 var(--hue, 155));
-		--accent-line: oklch(0.42 0.07 var(--hue, 155));
-	}
+	--accent: light-dark(oklch(0.52 0.13 var(--hue, 155)), oklch(0.78 0.12 var(--hue, 155)));
+	--accent-ink: light-dark(#ffffff, oklch(0.2 0.03 var(--hue, 155)));
+	--accent-soft: light-dark(oklch(0.95 0.035 var(--hue, 155)), oklch(0.26 0.04 var(--hue, 155)));
+	--accent-line: light-dark(oklch(0.84 0.07 var(--hue, 155)), oklch(0.42 0.07 var(--hue, 155)));
 }
 
 @theme inline {

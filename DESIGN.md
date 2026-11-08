@@ -44,7 +44,7 @@ Role tokens in `src/routes/layout.css`, exposed to Tailwind through `@theme inli
 | `trick-*`, `risk-*`, `do-*` | Callout kinds |
 | `focus` | Focus ring |
 
-Each module has a hue from a hand-picked walk round the colour wheel that skips olive yellows (`MODULE_HUES` in `src/lib/server/course.ts`). Any element with `data-hue style="--hue: N"` recomputes the accent roles in OKLCH from that hue, in light and dark. Light is warm paper; dark follows the system setting. No theme switcher.
+Each module has a hue from a hand-picked walk round the colour wheel that skips olive yellows (`MODULE_HUES` in `src/lib/server/course.ts`). Any element with `data-hue style="--hue: N"` recomputes the accent roles in OKLCH from that hue, in light and dark. Light is warm paper. Every colour token is `light-dark(light, dark)`, so the page follows the system setting until the reader uses the sun/moon button in the header; that choice is saved (`free-game:theme`) and applied before first paint by a small script in `app.html`, which sets `data-theme` on `<html>` and with it `color-scheme`.
 
 ## Motion
 
@@ -52,4 +52,4 @@ Durations and easings are the transitions.dev motion tokens in `layout.css`. Scr
 
 ## Storage
 
-Done lessons (`free-game:done`) and the review deck (`free-game:review`) live in `localStorage`, per browser. When storage is blocked, both last for the visit.
+Done lessons (`free-game:done`), the review deck (`free-game:review`), the theme (`free-game:theme`) and playback speed (`free-game:speed`) live in `localStorage`, per browser. When storage is blocked, both last for the visit.

@@ -5,6 +5,7 @@
 	import { progress } from '#lib/progress.svelte.ts';
 	import { review } from '#lib/review.svelte.ts';
 	import { copyCode } from '#lib/copy.ts';
+	import ThemeToggle from '#lib/ThemeToggle.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
@@ -31,13 +32,14 @@
 
 <header class="mx-auto flex max-w-6xl items-center gap-4 px-4 py-4 sm:px-6">
 	<a href="/" class="mr-auto text-lg font-[800] tracking-tight whitespace-nowrap">Free Game</a>
-	<nav class="flex items-center gap-4 text-[0.95rem] sm:gap-5">
+	<nav class="flex items-center gap-3 text-[0.95rem] sm:gap-5">
 		<a href="/" aria-current={current('/')} class="nav-link">Map</a>
 		<a href="/review" aria-current={current('/review')} class="nav-link">
 			Review{#if due}<span class="badge"><span class="sr-only">,</span> {due}<span class="sr-only"> due</span></span>{/if}
 		</a>
 		<a href="/tricks" aria-current={current('/tricks')} class="nav-link">Tricks</a>
 		<span class="text-muted tabular-nums max-sm:hidden">{progress.done.size}/{total} done</span>
+		<ThemeToggle />
 	</nav>
 </header>
 
