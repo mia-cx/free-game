@@ -13,11 +13,7 @@ summary: Read a cold email campaign's numbers and know which part to fix.
 
 When a campaign fails, don't rewrite everything. **The pattern of failure tells you which part is broken.**
 
-| Symptom | Cause | Fix |
-| --- | --- | --- |
-| 0 replies and 0 bounces | You're landing in spam | Fix sending setup before touching copy |
-| Replies, but no interest | The offer | Change what you're offering |
-| Bounces over 2% | The list | Clean or replace the list |
+> [!DIAGRAM] cold-email-doctor
 
 Turn off open-rate tracking. The tracking pixel itself hurts your inbox placement, so the number costs more than it tells you.
 
@@ -31,8 +27,6 @@ Without a benchmark, every result feels like failure. The same cheat sheet gives
 - 1 lead per 500 is still solid.
 
 So a list of 1,000 contacts that brings in 2 to 3 leads is working.
-
-> [!DIAGRAM] cold-email-doctor
 
 ## Write for the inbox they use
 

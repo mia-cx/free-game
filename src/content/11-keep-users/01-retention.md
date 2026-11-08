@@ -9,8 +9,6 @@ summary: Define your onboarded event, find what brings users back, and message o
 > - Trigger email and SMS on what people do, and hold 10% back to prove the messages add revenue.
 > - Check-ins say what happens next and by when. They don't wait for approval nobody needs to give.
 
-> [!DIAGRAM] funnel
-
 ## Define onboarded as one event
 
 *Map the whole funnel* named the stages. This lesson works through the ones after acquisition, starting with onboarding.
@@ -31,6 +29,8 @@ Retention is harder than acquisition, so answer these questions early:
 
 Pricing belongs here too. Write down why, how and what you'll charge on day one. Free with no revenue model doesn't last. *Read your pricing from your numbers* covers the signals that tell you the price is wrong.
 
+> [!DIAGRAM] funnel
+
 ## Message people on what they did
 
 Selling again to someone who already bought costs a fraction of finding a new customer, so send messages based on what each person did. The holdout is what makes them measurable: without a group that gets nothing, you can't tell what the messages added.
@@ -42,6 +42,8 @@ Selling again to someone who already bought costs a fraction of finding a new cu
 > 4. Compare revenue between the two groups.
 
 The source, @korzhov_dm, writes for online stores and says most have one abandoned-cart email and nothing else (his claim). Swap in your own product's events, such as signed up, reached the aha moment, went quiet.
+
+> [!DIAGRAM] holdout
 
 ## Make check-ins state the next step
 
