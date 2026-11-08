@@ -22,4 +22,4 @@ To add sources: append to `links.txt`, scrape, analyse into a new batch file, pl
 
 ## State
 
-v1: 61 lessons across 13 modules, built from 54 posts (one inaccessible). Not deployed yet.
+v1: 61 lessons (about 48,500 words, 137 tricks) across 13 modules, built from 54 posts (one inaccessible). Private repo, not deployed yet.
