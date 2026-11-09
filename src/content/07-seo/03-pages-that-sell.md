@@ -21,6 +21,13 @@ Find the words in three places:
 
 Then search each one and look at what ranks. The live results show which page format buyers expect: a list, a comparison, a tool, a guide. Group searches that need the same answer onto one page. To compete in a crowded space, narrow it to a specific buyer plus a use case ("crm for dentists" rather than "crm").
 
+> [!TRICK] Find keywords you can actually rank for
+> - LowFruits and KWFinder find long-tail keywords with low competition, which are easier to rank for.
+> - AnswerThePublic lists the questions people search.
+> - Keywords Everywhere and Keyword Surfer show search volume beside Google's results while you search.
+>
+> The list comes from an SEO consultant who sells a strategy database, and it names tools without results. Run what they find through the buyer-intent filter above.
+
 ## Build the pages buyers check before paying
 
 Before someone pays, they look for the same handful of answers. Make each one a page:
@@ -77,3 +84,4 @@ Programmatic SEO means generating many pages from one template and a data source
 
 - [@borjafat: buyer keywords, purchase pages, topical authority, programmatic pages](https://x.com/borjafat/status/2116164330014007296)
 - [@korzhov_dm: programmatic SEO from one spreadsheet](https://x.com/korzhov_dm/status/2118984106335756532)
+- [@hridoyreh: keyword research tools](https://x.com/hridoyreh/status/2118957811581526027)
