@@ -28,6 +28,14 @@ Then search each one and look at what ranks. The live results show which page fo
 >
 > The list comes from an SEO consultant who sells a strategy database, and it names tools without results. Run what they find through the buyer-intent filter above.
 
+> [!TRICK] Three filters before you write a page
+> From Nicholas Dulait, who co-founded ChatSEO, an SEO agent he sells.
+> 1. **Intent**: search the keyword. If blog posts and a definition box rank, skip it for now. If product and category pages with prices rank, it's a target.
+> 2. **Your size**: if the top 10 are all big brands, mark it "later".
+> 3. **Already yours**: Search Console → Performance → filter on the exact search → Pages tab. If one of your pages already shows up, improve that page. Two pages chasing one search split Google's attention, and neither wins.
+>
+> When an AI model helps you sort keywords, give it volumes from a real tool and tell it never to estimate one. A volume no tool gave it is a guess.
+
 ## Build the pages buyers check before paying
 
 Before someone pays, they look for the same handful of answers. Make each one a page:
@@ -67,6 +75,8 @@ Programmatic SEO means generating many pages from one template and a data source
 
 > [!RISK] Scaled content abuse
 > Google's spam policy on scaled content abuse targets mass-produced pages with little unique value. Hundreds of near-identical pages can get dropped or penalised. If a row has no facts of its own, don't make it a page.
+>
+> Pace matters on a new site too. Dulait's earlier product, a business plan generator, had real demand and low competition, and never ranked: a brand-new domain with no brand searches and no backlinks, publishing at a rate that looked like generated content. Start slower than you can produce.
 
 > [!DO] List your purchase pages
 > Write down the five purchase pages from the list above, mark which ones you already have, and draft the headline and three bullet points for the first missing one.
@@ -85,3 +95,4 @@ Programmatic SEO means generating many pages from one template and a data source
 - [@borjafat: buyer keywords, purchase pages, topical authority, programmatic pages](https://x.com/borjafat/status/2116164330014007296)
 - [@korzhov_dm: programmatic SEO from one spreadsheet](https://x.com/korzhov_dm/status/2118984106335756532)
 - [@hridoyreh: keyword research tools](https://x.com/hridoyreh/status/2118957811581526027)
+- [@NicholasDulait: keyword filters, duplicate pages and a new domain that never ranked](https://x.com/NicholasDulait/status/2120063043614716174)

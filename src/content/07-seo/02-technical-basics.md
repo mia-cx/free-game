@@ -52,6 +52,7 @@ An agent saying "done" is not the same as Google seeing the page. Confirm each f
 - Inspect key URLs in Search Console to confirm they can be indexed.
 - Look for blocks or noindex tags you didn't mean to add.
 - Make sure every page is in your navigation and sitemap, reached by normal crawlable links.
+- After every publish, check the new page is in the sitemap. Sitemaps can stop updating without any warning: one founder found a live page missing from his the day after he published it.
 - Check the rendered page actually shows the answer, not an empty shell waiting for JavaScript.
 - Keep structured data matching the facts visible on the page. Test it with Google's Rich Results Test.
 - Compress images, remove scripts you don't need, and fix anything broken on mobile.
@@ -80,3 +81,4 @@ This order comes from a case study of Granola's AI search work, relayed secondha
 - [@suraj_sharma14: technical SEO checklist prompt](https://x.com/suraj_sharma14/status/2116062550416871512)
 - [@borjafat: indexability, rendering and structured data checks](https://x.com/borjafat/status/2116164330014007296)
 - [@wespreadjam: Granola case study, fixing buyer pages first](https://x.com/wespreadjam/status/2115568290307469548)
+- [@NicholasDulait: the sitemap that stopped updating](https://x.com/NicholasDulait/status/2120063043614716174)

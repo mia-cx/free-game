@@ -30,7 +30,7 @@ Readers and search engines both ask "should I trust this?" Make the answer easy:
 
 The top 10 results for most queries say the same things in the same way. **Your page wins by adding what they lack**: your own tests, your own data, screenshots of you doing the thing, a new angle.
 
-Split the work. AI researches the gap: it reads the top results, YouTube transcripts, forum threads and review complaints, and compares what buyers ask with what pages answer. You fill the gap. Have Claude interview you for examples, analyse your own records, count complaints in reviews, run the same task in competing products and note what happened. Write those sentences yourself.
+Split the work. AI researches the gap: it reads the top results, YouTube transcripts, forum threads and review complaints, and compares what buyers ask with what pages answer. You fill the gap. Have Claude interview you for examples, analyse your own records, count complaints in reviews, run the same task in competing products and note what happened. Write those sentences yourself. When AI drafts the page, have it mark every fact it couldn't verify as `[CHECK]`, then clear every mark before publishing.
 
 > [!TRICK] Ask AI where your article is generic
 > This prompt is from @asaio87, who runs an SEO agency:
@@ -74,3 +74,4 @@ AI removes the excuses for skipping audits, but it can't choose which keywords m
 - [@kunalvg: staff writing up solved problems](https://x.com/kunalvg/status/1697157671567470819)
 - [@kunalvg: underserved search demand](https://x.com/kunalvg/status/1685889947461402624)
 - [@bloggersarvesh: AI research and the offline edge](https://x.com/bloggersarvesh/status/2088983373859725755)
+- [@NicholasDulait: marking unverified facts for review](https://x.com/NicholasDulait/status/2120063043614716174)

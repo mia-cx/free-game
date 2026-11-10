@@ -40,6 +40,13 @@ Search Console tells you what's missing. Every page has a Queries tab listing th
 > 4. Search Console → URL Inspection → Request indexing for each updated page.
 > 5. Wait 7 to 14 days, pull the queries again, repeat.
 
+> [!TRICK] The Monday version
+> Nicholas Dulait (who sells an SEO agent, ChatSEO) runs a lighter loop for one hour every Monday:
+> 1. Search Console, last 28 days: list searches where your average position is 5 to 15, with clicks, impressions and the ranking page.
+> 2. Group them by page.
+> 3. For the 3 pages with the most impressions, decide what to add or change so the page answers those searches better.
+> 4. Skip any page you edited in the last 60 days. Google hasn't re-read it yet.
+
 ## Other refreshes worth doing
 
 - Find pages losing clicks. Compare against the same season last year so a recurring dip doesn't look like a new problem.
@@ -115,3 +122,4 @@ These checks repeat, so hand them to an agent with a written playbook. Borja Fat
 - [@asaio87: query-gap refresh, intro check and internal link prompts](https://x.com/asaio87/status/2119171723849245031)
 - [@borjafat: refresh moves, internal links and the Claude SEO playbook](https://x.com/borjafat/status/2116164330014007296)
 - [@borjafat: running SEO with Claude and Search Console](https://x.com/borjafat/status/2119227612258054502)
+- [@NicholasDulait: the weekly positions 5 to 15 loop](https://x.com/NicholasDulait/status/2120063043614716174)
