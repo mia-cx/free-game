@@ -13,6 +13,10 @@ pnpm dev
 
 `pnpm test` checks every lesson has the parts the reader relies on. `pnpm lint` runs Biome and svelte-check.
 
+## Agent skills
+
+The course's methods ship as agent skills from [mia-cx/skills](https://github.com/mia-cx/skills): `gtm`, `seo` and `marketing-agents` with their branches. `pnpm skills:sync` copies them into `static/.well-known/agent-skills/` with an `index.json`, so `npx skills add <site>` installs them and every `SKILL.md` is a plain URL. Links to skills the site doesn't serve point at GitHub. `/llms.txt` lists the skills and every lesson for agents.
+
 ## Deploy to Cloudflare
 
 The app runs on Cloudflare Workers through `@sveltejs/adapter-cloudflare`. Every page is prerendered into static assets, so the Worker only answers requests no page matches.

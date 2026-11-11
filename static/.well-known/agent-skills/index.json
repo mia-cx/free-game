@@ -1,0 +1,196 @@
+{
+	"source": "https://github.com/mia-cx/skills/tree/c78261e49b7ee49cab30e0d7b86fff75ca637d7d/skills",
+	"skills": [
+		{
+			"name": "gtm",
+			"description": "Use when the user asks for go-to-market work: positioning, finding people who have the problem, cold emails, replies or DMs, posts or a content plan, posting on X, LinkedIn, Reddit or YouTube, a launch, a product video, retention or pricing, paid ads, or a whole go-to-market plan.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-ai-film",
+			"description": "Direct a short film with image and video models, catching errors before they cost money.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-foundations",
+			"description": "Position a product, research its market, and fit the go-to-market plan on one page.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-launch",
+			"description": "Plan a launch, from the story and demo to who shares it, where it's listed, and the conversation after.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-linkedin",
+			"description": "Post, publish articles that rank, and draft DMs to buyers on LinkedIn.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-organic",
+			"description": "Plan content and build a brand from the questions people already ask.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-outreach",
+			"description": "Find people who posted the problem and draft a reply, email or DM for each, with a send link.",
+			"files": [
+				"SKILL.md",
+				"references/scout-prompt.md"
+			]
+		},
+		{
+			"name": "gtm-paid-ads",
+			"description": "Run paid ads you can measure, from tracking and incrementality to creative in volume.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-reddit",
+			"description": "Research buyers on Reddit, pick the subreddits that fit, and post there without getting removed.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-retention",
+			"description": "Keep users with an onboarded event, behaviour messages and check-ins, and read pricing from the numbers.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-video",
+			"description": "Make a product video look premium, and build short-form videos on proven formats.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-writing",
+			"description": "Write posts and short copy that get read, with one reader, a hook, and one ask.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-x",
+			"description": "Grow an account on X by writing for what the For You feed rewards.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "gtm-youtube",
+			"description": "Publish product demos on YouTube that answer buyer questions and show up in Google.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents",
+			"description": "Use when the user asks to automate marketing with agents: automate our weekly report, give a bot our playbook, stop a bot sending or overspending, check a bot's work, put a coordinator over bots, build a research bot, design an always-on agent, or run this campaign with agents.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-campaign",
+			"description": "Plan, ticket and review a multi-channel campaign that agents build and the user approves.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-context",
+			"description": "Give a marketing agent the context folder, standing brief and playbook it needs to work at the user's level.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-coordinator",
+			"description": "Put a coordinator over worker agents, and design always-on agents that stay quiet until they matter.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-first-agent",
+			"description": "Turn one manual marketing task, like the weekly report, into a scheduled agent.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-guardrails",
+			"description": "Set permissions, spend caps and quality checks before a marketing agent runs unattended.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "marketing-agents-research-team",
+			"description": "Run research bots that share one folder and send the user a weekly shortlist of content ideas.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo",
+			"description": "Use when the user asks about SEO: pages missing from Google, lost organic traffic, content to rank for, backlinks, or getting cited in AI answers.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo-ai-search",
+			"description": "Track the questions buyers ask AI assistants, and fix why the answers skip the product.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo-content",
+			"description": "Choose keywords and pages, improve pages that already rank, and test titles from Search Console data.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo-links",
+			"description": "Earn backlinks from pages the buyers read, and aim them where they move rankings.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo-local",
+			"description": "Get a local business into Google's map pack by auditing its Business Profile against the businesses that rank.",
+			"files": [
+				"SKILL.md"
+			]
+		},
+		{
+			"name": "seo-technical",
+			"description": "Make pages crawlable and indexable for Google and AI search bots, and prove it with inspect.mjs and Search Console.",
+			"files": [
+				"SKILL.md",
+				"scripts/inspect.mjs"
+			]
+		}
+	]
+}

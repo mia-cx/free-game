@@ -133,6 +133,33 @@
 	</ul>
 </section>
 
+<section class="agents" aria-labelledby="agents-title">
+	<h2 id="agents-title">Give the course to your agent</h2>
+	<p>
+		The methods from these lessons are also {data.skills.reduce((n, g) => n + 1 + g.branches.length, 0)} agent skills:
+		your coding agent follows the steps and you approve what goes out. Install them all:
+	</p>
+	<div class="lesson">
+		<pre><code>npx skills add {page.url.origin}</code><button type="button" class="copy" data-copy>Copy</button></pre>
+	</div>
+	<p>
+		Or read any of them as plain Markdown. The full list is <a href="/.well-known/agent-skills/index.json">index.json</a>,
+		and <a href="/llms.txt">llms.txt</a> describes the whole site for agents.
+	</p>
+	<div class="skills">
+		{#each data.skills as { entry, branches } (entry.name)}
+			<div>
+				<h3><a href={entry.href}>{entry.name}</a></h3>
+				<ul>
+					{#each branches as skill (skill.name)}
+						<li><a href={skill.href}>{skill.name}</a></li>
+					{/each}
+				</ul>
+			</div>
+		{/each}
+	</div>
+</section>
+
 <section class="end">
 	<h2>Lesson 1 takes {first.minutes} minutes</h2>
 	<a href={first.href} class="cta">Start lesson 1 <span aria-hidden="true">→</span></a>
@@ -346,6 +373,41 @@
 			&:hover {
 				background: var(--line);
 			}
+		}
+	}
+
+	.agents {
+		margin-top: clamp(5rem, 12vw, 9rem);
+		& > p {
+			margin-top: 1rem;
+			max-width: 40rem;
+			font-size: 1.1rem;
+			line-height: 1.55;
+		}
+		& .lesson {
+			margin-top: 1.25rem;
+		}
+		& a {
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+	}
+
+	.skills {
+		margin-top: 2rem;
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+		& h3 {
+			font-size: 1.2rem;
+			font-weight: 800;
+		}
+		& ul {
+			margin-top: 0.5rem;
+			display: grid;
+			gap: 0.3rem;
+			font-family: var(--font-mono);
+			font-size: 0.9rem;
 		}
 	}
 

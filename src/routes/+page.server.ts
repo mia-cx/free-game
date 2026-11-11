@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { course } from '#lib/server/course.ts';
+import { skillGroups } from '#lib/server/skills.ts';
 
 /** The lesson the landing page takes apart: a short TLDR, an interactive diagram and small tricks. */
 const SHOWCASE = 'outreach/cold-email';
@@ -30,6 +31,7 @@ export const load = () => {
 		},
 		tricks: course.lessons.reduce((n, l) => n + l.tricks.length, 0),
 		posts: posts.size,
-		authors
+		authors,
+		skills: skillGroups
 	};
 };
