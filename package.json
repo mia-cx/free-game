@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"type": "module",
+	"packageManager": "pnpm@11.25.0",
 	"imports": {
 		"#lib": "./src/lib/index.js",
 		"#lib/*": "./src/lib/*"
@@ -10,7 +11,6 @@
 	"scripts": {
 		"dev": "svartz dev",
 		"build": "svartz build",
-		"deploy": "svartz build && wrangler deploy",
 		"skills:sync": "node research/tools/sync-skills.mjs",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -23,6 +23,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.6.6",
+		"@changesets/cli": "^3.0.3",
 		"@fontsource-variable/atkinson-hyperlegible-next": "5.3.0",
 		"@fontsource/atkinson-hyperlegible-mono": "5.3.0",
 		"@svartz/config": "2.3.0",

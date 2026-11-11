@@ -1,0 +1,105 @@
+name: Release
+
+# Every push to main deploys to staging.seo.mia.cx and opens or updates the Changesets release pull
+# request. Merging that pull request bumps the version in package.json; that commit deploys to
+# seo.mia.cx and becomes a tagged GitHub release.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      release: ${{ steps.release.outputs.release }}
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
+      # Only the release pull request changes the version, so a new version means it just merged.
+      - name: Identify a release
+        id: release
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          before="$(git show HEAD^:package.json | node -p "JSON.parse(require('fs').readFileSync(0, 'utf8')).version")"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if [ "$version" != "$before" ]; then echo release=true; else echo release=false; fi >> "$GITHUB_OUTPUT"
+
+  staging:
+    name: Staging
+    needs: check
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: staging
+    secrets: inherit
+
+  production:
+    name: Production
+    needs: check
+    if: needs.check.outputs.release == 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: production
+    secrets: inherit
+
+  tag:
+    name: Tag the release
+    needs: [check, production]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          notes="$(awk -v heading="## $VERSION" '$0 == heading { found = 1; next } /^## / { found = 0 } found' CHANGELOG.md)"
+          gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --notes "$notes"
+
+  release-pr:
+    name: Release pull request
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: release-pr
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Open or update the release pull request
+        uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2
+        with:
+          version: pnpm changeset version
+          commit: 'chore(release): version packages'
+          title: 'chore(release): version packages'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

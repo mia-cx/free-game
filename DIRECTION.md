@@ -25,4 +25,4 @@ To add sources: append to `links.txt`, scrape, analyse into a new batch file, pl
 
 ## State
 
-v1: 63 lessons (153 tricks) across 13 modules, built from 59 posts (one inaccessible). Private repo with a landing page, ready for Cloudflare Workers but not deployed: the domain (`SITE_URL`) isn't chosen.
+v1: 63 lessons (153 tricks) across 13 modules, built from 60 posts (one inaccessible). Private repo `mia-cx/free-game`. Lives at seo.mia.cx, released through Changesets release pull requests; every push to main deploys to staging.seo.mia.cx.

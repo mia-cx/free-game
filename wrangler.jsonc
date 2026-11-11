@@ -1,11 +1,21 @@
+// Every page is prerendered and served as a static asset; the Worker answers only what no page matches.
+// Production is `free-game` on seo.mia.cx, deployed when a release pull request merges. Staging is
+// `free-game-staging` on staging.seo.mia.cx, deployed from every push to main (.github/workflows/release.yml).
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "free-game",
+	"account_id": "492214885e7a580ccc1d141dfdb4dc5f",
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"compatibility_date": "2026-10-01",
+	"routes": [{ "pattern": "seo.mia.cx", "custom_domain": true }],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
-	"observability": { "enabled": true }
+	"observability": { "enabled": true },
+	"env": {
+		"staging": {
+			"routes": [{ "pattern": "staging.seo.mia.cx", "custom_domain": true }]
+		}
+	}
 }

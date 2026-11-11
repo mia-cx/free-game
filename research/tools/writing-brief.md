@@ -22,6 +22,7 @@ For each module you own, in `content/<module>/`:
 
 ```md
 ---
+
 title: <the module title from the outline>
 order: <the module's number>
 description: <the module summary from the outline>
@@ -32,6 +33,7 @@ One file per lesson, named exactly as in the outline (the file name is the URL):
 
 ```md
 ---
+
 title: <lesson title from the outline>
 order: <the lesson's position in the module>
 description: <one sentence, under 90 characters: what the reader can do after this lesson>

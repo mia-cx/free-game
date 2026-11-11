@@ -23,21 +23,16 @@ The course's methods ship as agent skills from [mia-cx/skills](https://github.co
 
 The app runs on Cloudflare Workers through `@sveltejs/adapter-cloudflare`. Every page is prerendered into static assets, so the Worker only answers requests no page matches.
 
-```sh
-SITE_URL=https://your-domain pnpm run deploy
-```
+GitHub Actions deploys it (`.github/workflows/release.yml`):
 
-(`pnpm deploy` without `run` is a different, built-in pnpm command.)
+- Every push to `main` deploys to [staging.seo.mia.cx](https://staging.seo.mia.cx), which tells every crawler to stay out, and opens or updates the Changesets release pull request.
+- Merging the release pull request bumps the version; that commit deploys to [seo.mia.cx](https://seo.mia.cx) and becomes a tagged GitHub release.
 
-`SITE_URL` is the public origin. Canonical URLs, the sitemap, robots.txt and the share image use it, and the build fails without it. `pnpm exec wrangler dev` serves the last build locally.
+Describe a change for the changelog with `pnpm changeset`. The Cloudflare token and account are the mia-cx organisation's `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
-After the first deploy:
+`SITE_URL` is the public origin. Canonical URLs, the sitemap, robots.txt and the share image use it, and the build fails without it. To build and serve locally: `SITE_URL=http://localhost:8787 pnpm build && pnpm exec wrangler dev`.
 
-1. Add the custom domain to the `free-game` Worker, and a redirect rule from `www.` to the bare domain.
-2. Check Security → Bots: AI bot blocking and Bot Fight Mode can stop the search and AI crawlers that robots.txt lets in.
-3. Submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
-
-Lesson narration in `static/audio/` is kept out of git, so deploy from a checkout that has it.
+Lesson narration in `static/audio/` is kept out of git, so deployed lessons have none yet.
 
 ## Write a lesson
 

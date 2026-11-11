@@ -4,7 +4,8 @@
 	/**
 	 * A page's search and share metadata: title, description, canonical URL, Open Graph and
 	 * structured data. The origin comes from `prerender.origin` in `vite.config.ts` (env `SITE_URL`).
-	 * Pages readers use privately (`/review`, `/lab`) pass `noindex` and no description.
+	 * Pages readers use privately (`/review`, `/lab`) pass `noindex` and no description. Every page of
+	 * a staging build is noindex, so staging never competes with the live site in search.
 	 * `crumbs` mirrors the visible trail above the page (module, then lesson) as a BreadcrumbList.
 	 */
 	let {
@@ -24,6 +25,7 @@
 		markdown?: string;
 	} = $props();
 
+	const hidden = $derived(noindex || page.url.hostname.startsWith('staging.'));
 	const absolute = (path: string) => new URL(path, page.url.origin).href;
 	const canonical = $derived(absolute(page.url.pathname));
 	const image = $derived(absolute('/og.png'));
@@ -51,7 +53,7 @@
 
 <svelte:head>
 	<title>{title}</title>
-	{#if noindex}
+	{#if hidden}
 		<meta name="robots" content="noindex" />
 	{:else}
 		{#if description}<meta name="description" content={description} />{/if}

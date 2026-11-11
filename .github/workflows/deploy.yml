@@ -1,0 +1,39 @@
+name: Deploy
+
+# Builds the site for one environment and deploys it to its Worker (wrangler.jsonc).
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: staging or production
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # One deploy per environment at a time; a newer push waits rather than cancelling a deploy.
+    concurrency:
+      group: deploy-${{ inputs.environment }}
+      cancel-in-progress: false
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.environment == 'production' && 'https://seo.mia.cx' || 'https://staging.seo.mia.cx' }}
+    env:
+      SITE_URL: ${{ inputs.environment == 'production' && 'https://seo.mia.cx' || 'https://staging.seo.mia.cx' }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm exec wrangler deploy ${{ inputs.environment == 'staging' && '--env staging' || '' }}

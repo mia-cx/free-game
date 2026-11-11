@@ -19,7 +19,10 @@ const ref = process.argv[2] ?? 'main';
 const sha = execFileSync('gh', ['api', `repos/${REPO}/commits/${ref}`, '--jq', '.sha'], { encoding: 'utf8' }).trim();
 const work = mkdtempSync(join(tmpdir(), 'skills-'));
 const tarball = join(work, 'skills.tgz');
-writeFileSync(tarball, Buffer.from(await (await fetch(`https://codeload.github.com/${REPO}/tar.gz/${sha}`)).arrayBuffer()));
+writeFileSync(
+	tarball,
+	Buffer.from(await (await fetch(`https://codeload.github.com/${REPO}/tar.gz/${sha}`)).arrayBuffer())
+);
 execFileSync('tar', ['-xzf', tarball, '-C', work, '--strip-components=1']);
 
 const source = join(work, 'skills');
