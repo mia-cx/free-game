@@ -4,5 +4,12 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+# Patched releases of build-time dependencies that Svartz, mermaid and @tailwindcss/typography pin
+# below their security fixes.
+overrides:
+  katex: ^0.18.2
+  minimatch: ^11.0.1
+  postcss-selector-parser: ^6.1.5
+  sharp: ^0.35.5
 patchedDependencies:
   svartz@2.3.0: patches/svartz@2.3.0.patch
