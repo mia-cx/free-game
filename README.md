@@ -25,7 +25,7 @@ The app runs on Cloudflare Workers through `@sveltejs/adapter-cloudflare`. Every
 
 GitHub Actions deploys it (`.github/workflows/release.yml`):
 
-- Every push to `main` deploys to [staging.seo.mia.cx](https://staging.seo.mia.cx), which tells every crawler to stay out, and opens or updates the Changesets release pull request.
+- Every push to `main` deploys to [staging.seo.mia.cx](https://staging.seo.mia.cx), which answers every request with `X-Robots-Tag: noindex`, and opens or updates the Changesets release pull request.
 - Merging the release pull request bumps the version; that commit deploys to [seo.mia.cx](https://seo.mia.cx) and becomes a tagged GitHub release.
 
 Describe a change for the changelog with `pnpm changeset`. The Cloudflare token and account are the mia-cx organisation's `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.

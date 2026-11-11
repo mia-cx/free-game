@@ -35,5 +35,10 @@ jobs:
           node-version-file: .node-version
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Staging stays out of search: every response, Markdown copies and skill files included, says
+      # noindex. The Cloudflare adapter serves a _headers file from the project root.
+      - name: Keep staging out of search
+        if: inputs.environment == 'staging'
+        run: printf '/*\n  X-Robots-Tag: noindex\n' > _headers
       - run: pnpm build
       - run: pnpm exec wrangler deploy ${{ inputs.environment == 'staging' && '--env staging' || '' }}
