@@ -1,0 +1,23 @@
+diff --git a/dist/index.js b/dist/index.js
+index d379fceb1627c119a2b654f2fffc7bb338c2e60d..8f244f9ba8b5255ee680b7ff644485cd05b3f556 100755
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -28,7 +28,7 @@ import {
+   clearPublicAssets
+ } from "@svartz/vite";
+ import {
+-  build as viteBuild,
++  createBuilder,
+   createServer,
+   loadConfigFromFile as loadConfigFromFile2,
+   mergeConfig,
+@@ -1426,7 +1426,8 @@ var buildVaults = (workspace, vaults) => Effect2.gen(function* () {
+         const config = await runEffect(
+           createAppConfig(workspace, supportedVaults, "production", "build")
+         );
+-        await viteBuild(config);
++        // Like `vite build`: SvelteKit 3 builds client and server as environments of one app build.
++        await (await createBuilder(config, null)).buildApp();
+       } finally {
+         if (!workspace.hostApp) await removeVaultKitSymlink(workspace.appRoot, supportedVaults[0]);
+       }

@@ -23,7 +23,7 @@ Free Game is read by people with ADHD who are learning marketing from zero. The 
 
 ## Search and sharing
 
-`src/lib/Seo.svelte` writes each page's title, description, canonical URL, Open Graph tags and structured data. The landing, modules, lessons and tricks are indexable and listed in `/sitemap.xml`; the map, review and lab are personal or internal, so they're `noindex`. Title and H1 say the same thing. Module and lesson pages mark up their visible trail as a `BreadcrumbList`; the landing page carries `WebSite`. Course rich results were retired by Google in 2025, so there's no `Course` markup. The share image `static/og.png` is rendered from `research/tools/og.html`.
+`src/lib/Seo.svelte` writes each page's title, description, canonical URL, Open Graph tags and structured data. The landing, modules, lessons and tricks are indexable and listed in `/sitemap.xml`; the map, review and lab are personal or internal, so they're `noindex`. Title and H1 say the same thing. Each module and lesson links its Markdown copy (written by Svartz) with `<link rel="alternate" type="text/markdown">`; `/llms.txt` lists the agent skills and every lesson's copy. Module and lesson pages mark up their visible trail as a `BreadcrumbList`; the landing page carries `WebSite`. Course rich results were retired by Google in 2025, so there's no `Course` markup. The share image `static/og.png` is rendered from `research/tools/og.html`.
 
 ## Lesson anatomy
 
@@ -31,7 +31,7 @@ Enforced by `src/lib/server/course.spec.ts`: title, summary, TLDR first, a DO, e
 
 ## Diagrams
 
-One Svelte component per file in `src/lib/diagrams/`, registered by file name. A lesson places one with `> [!DIAGRAM] name`; a module picks its signature one with `diagram:` in `_module.md`. Each is a `<figure class="diagram">` framed in the module accent, uses native controls, announces computed results politely, takes every fact from the lesson, and works from 320 to 720px wide. Shared pieces (`.diagram-chips`, `.diagram-chip`, `.diagram-output`) live in `layout.css`. Contract: `research/tools/diagrams-brief.md`.
+One Svelte component per file in `src/lib/diagrams/`, registered by file name. A lesson places one with `> [!DIAGRAM] name`; a module picks its signature one with `diagram:` in its `index.md`. Each is a `<figure class="diagram">` framed in the module accent, uses native controls, announces computed results politely, takes every fact from the lesson, and works from 320 to 720px wide. Shared pieces (`.diagram-chips`, `.diagram-chip`, `.diagram-output`) live in `layout.css`. Contract: `research/tools/diagrams-brief.md`.
 
 ## Type
 

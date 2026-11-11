@@ -16,25 +16,25 @@ Use only facts from these inputs. Never invent a number, tool, result or quote.
 
 ## Files you write
 
-For each module you own, in `src/content/<NN-module>/`:
+For each module you own, in `content/<module>/`:
 
-`_module.md`:
+`index.md`:
 
 ```md
 ---
-
 title: <the module title from the outline>
-summary: <the module summary from the outline>
+order: <the module's number>
+description: <the module summary from the outline>
 ---
 ```
 
-One file per lesson, named exactly as in the outline:
+One file per lesson, named exactly as in the outline (the file name is the URL):
 
 ```md
 ---
-
 title: <lesson title from the outline>
-summary: <one sentence, under 90 characters: what the reader can do after this lesson>
+order: <the lesson's position in the module>
+description: <one sentence, under 90 characters: what the reader can do after this lesson>
 ---
 
 > [!TLDR]
@@ -87,6 +87,6 @@ Do not touch any other file. Do not edit other writers' modules.
 
 ## Check your work
 
-Run `pnpm test` from the working directory (the PATH needs `/opt/homebrew/bin`). It checks every lesson has a title, summary, a TLDR first and a DO. Fix any failure in your files. Then re-read each lesson top to bottom as the reader: cut anything that repeats, check every trick kept its specifics.
+Run `pnpm test` from the working directory (the PATH needs `/opt/homebrew/bin`). It checks every lesson has a title, description, a TLDR first and a DO. Fix any failure in your files. Then re-read each lesson top to bottom as the reader: cut anything that repeats, check every trick kept its specifics.
 
 Reply with: files written, word count per lesson (`wc -w`), any unit you could not place and why.

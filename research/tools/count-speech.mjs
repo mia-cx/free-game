@@ -3,7 +3,7 @@
 // Usage: node research/tools/count-speech.mjs
 import { readdir, readFile } from 'node:fs/promises';
 
-const CONTENT = new URL('../../src/content/', import.meta.url).pathname;
+const CONTENT = new URL('../../content/', import.meta.url).pathname;
 
 /** Turns lesson markdown into the text a narrator would say. */
 const speakable = (markdown, { prompts }) =>
@@ -30,7 +30,7 @@ const checksOnly = (markdown) =>
 
 const rows = [];
 for (const dir of (await readdir(CONTENT)).sort()) {
-	const files = (await readdir(CONTENT + dir)).filter((f) => f.endsWith('.md') && f !== '_module.md');
+	const files = (await readdir(CONTENT + dir)).filter((f) => f.endsWith('.md') && f !== 'index.md');
 	const texts = await Promise.all(files.map((f) => readFile(`${CONTENT}${dir}/${f}`, 'utf8')));
 	const titles = texts.map((t) => t.match(/^title: (.*)$/m)?.[1] ?? '').join(' ');
 	const prose = `${titles} ${texts.map((t) => speakable(t, { prompts: false })).join(' ')}`;

@@ -20,7 +20,8 @@ export const GET = ({ url }) => {
 		...course.modules.flatMap((m) => [
 			`## ${m.number}. ${m.title}`,
 			'',
-			...m.lessons.map((l) => `- [${l.title}](${at(l.href)}): ${l.summary}`),
+			// Each lesson links its Markdown copy, which Svartz writes beside the page.
+			...m.lessons.map((l) => `- [${l.title}](${at(l.markdownHref ?? l.href)}): ${l.summary}`),
 			''
 		])
 	].join('\n');

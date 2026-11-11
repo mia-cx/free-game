@@ -67,6 +67,7 @@
 <Seo
 	title="{data.lesson.title} · Free Game"
 	description={data.lesson.summary}
+	markdown={data.lesson.markdownHref}
 	crumbs={[
 		{ name: module.title, href: module.href },
 		{ name: data.lesson.title, href: data.lesson.href }

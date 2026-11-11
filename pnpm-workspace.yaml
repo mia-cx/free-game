@@ -1,4 +1,8 @@
 engineStrict: true
 allowBuilds:
+  core-js: false
   esbuild: true
+  sharp: true
   workerd: true
+patchedDependencies:
+  svartz@2.3.0: patches/svartz@2.3.0.patch

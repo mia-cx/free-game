@@ -12,13 +12,16 @@
 		description,
 		noindex = false,
 		crumbs = [],
-		schema = []
+		schema = [],
+		markdown
 	}: {
 		title: string;
 		description?: string;
 		noindex?: boolean;
 		crumbs?: { name: string; href: string }[];
 		schema?: object[];
+		/** The page's Markdown copy, linked so an agent reading the page finds it. */
+		markdown?: string;
 	} = $props();
 
 	const absolute = (path: string) => new URL(path, page.url.origin).href;
@@ -53,6 +56,7 @@
 	{:else}
 		{#if description}<meta name="description" content={description} />{/if}
 		<link rel="canonical" href={canonical} />
+		{#if markdown}<link rel="alternate" type="text/markdown" href={markdown} />{/if}
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Free Game" />
 		<meta property="og:title" content={title} />

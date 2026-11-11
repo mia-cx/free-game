@@ -9,7 +9,7 @@ Free Game is a marketing and growth course for builders learning it from zero, r
 1. `research/tools/links.txt` lists the source posts. `research/tools/scrape.mjs` fetches each one through the fxtwitter API (threads, long-form articles and quoted posts) into `research/sources/`.
 2. Five analysts extracted knowledge units into `research/analysis/`, each tagged durable or trick, with evidence and risk.
 3. `research/tools/course-outline.md` deduplicates the units and orders them into 13 modules. Every unit lives in exactly one lesson.
-4. Writers followed `research/tools/writing-brief.md` to produce the lessons in `src/content/`.
+4. Writers followed `research/tools/writing-brief.md` to produce the lessons in `content/`.
 
 To add sources: append to `links.txt`, scrape, analyse into a new batch file, place the units in the outline, then write or revise the affected lessons.
 
@@ -17,6 +17,8 @@ To add sources: append to `links.txt`, scrape, analyse into a new batch file, pl
 
 - SvelteKit on Cloudflare Workers, every page prerendered. No accounts or database: progress lives in the reader's browser. The Worker leaves room for server features later.
 - `/` is a landing page for visitors; the reader's progress map is `/map`. Marketing pages follow the seo skills: one intent per page, title matching the H1, canonical, sitemap, robots.txt open to search and AI crawlers.
+- Svartz is the index, the app is the host: `content/` is a Svartz vault that indexes the lessons and writes a Markdown copy of each for agents, and the app renders every page with its own design. A full Svartz theme was ruled out: its three-column shell with a file explorer works against "start the next thing without deciding".
+- Agents get the course two ways: the gtm, seo and marketing-agents skills at `/.well-known/agent-skills/` (installable with `npx skills add <site>`), and `/llms.txt` with every lesson's Markdown copy.
 - Lessons are plain markdown with GitHub-style callouts (`[!TLDR]`, `[!TRICK]`, `[!RISK]`, `[!DO]`), so they read fine on GitHub too.
 - Unverified numbers stay in, labelled as one person's claim. Risky tricks stay in with a concrete Watch out note; the reader decides.
 - Sources are credited and linked on every lesson.

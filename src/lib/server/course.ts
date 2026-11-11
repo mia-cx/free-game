@@ -1,45 +1,41 @@
 /**
- * Builds the course from markdown in `src/content/`.
+ * Builds the course from the `course` vault's Svartz index (svartz.config.ts). Svartz finds the
+ * notes, reads their frontmatter and hands over each body as Markdown; the course renders them.
  *
- * Layout: `src/content/<NN-module>/_module.md` holds the module's frontmatter
- * (`title`, `summary`, optional `diagram`), `src/content/<NN-module>/<NN-lesson>.md`
- * holds one lesson. The `NN-` prefix sets the order and is dropped from the URL.
+ * Layout: `content/<module>/index.md` holds the module's frontmatter (`title`, `description`,
+ * `order`, optional `diagram`), `content/<module>/<lesson>.md` holds one lesson (`title`,
+ * `description`, `order`). `order` sets the sequence; the file and folder names are the URL.
  *
  * Lessons use GitHub-style callouts:
  * - `> [!TLDR]`, `> [!TRICK] Title`, `> [!RISK] Title`, `> [!DO] Title` render as `<aside class="callout">`.
  * - `> [!CHECK] Question?` with the answer as its body becomes a review card, kept out of the lesson body.
  * - `> [!DIAGRAM] name` places the component `src/lib/diagrams/<name>.svelte` at that point.
  */
+
+import { index } from 'virtual:course-index';
 import { Marked, type Tokens } from 'marked';
 import type { Block, Callout, CalloutKind, Check, Course, Lesson, Module, Trick } from '#lib/course.ts';
 
-const files = import.meta.glob<string>('/src/content/*/*.md', {
-	query: '?raw',
-	import: 'default',
-	eager: true
-});
+/** The fields of a Svartz index entry the course reads. */
+export type Note = {
+	/** Vault-relative path, such as `foundations/positioning.md`. */
+	path: string;
+	title: string;
+	description?: string;
+	properties: Readonly<Record<string, unknown>>;
+	/** The body without frontmatter, from `index: { markdown: true }`. */
+	markdown?: string;
+	/** The Markdown copy Svartz writes beside the page, for agents. */
+	markdownHref?: string;
+};
 
 const CALLOUT = /^\[!(TLDR|TRICK|RISK|DO|CHECK|DIAGRAM)\][ \t]*(.*)(?:\n|$)/;
-const ORDER_PREFIX = /^\d+-/;
+const FOLDER_NOTE = 'index.md';
 const DIAGRAM_MARKER = /<!--diagram:([\w-]+)-->/;
 const SOURCES_HEADING = '<h2 id="sources">Sources</h2>';
 const WORDS_PER_MINUTE = 200;
 /** Module hues in course order: a walk round the colour wheel that skips the olive yellows, which turn muddy at text contrast. */
 const MODULE_HUES = [25, 50, 72, 145, 168, 190, 215, 240, 265, 290, 315, 340, 5];
-
-/** Splits `---` frontmatter of flat `key: value` lines from the body. */
-export const parseFrontmatter = (raw: string) => {
-	const match = raw.match(/^---\n([\s\S]*?)\n---\n?/);
-	if (!match) return { data: {} as Record<string, string>, body: raw };
-	const data = Object.fromEntries(
-		match[1]
-			.split('\n')
-			.map((line) => line.match(/^(\w+):\s*(.*)$/))
-			.filter((m) => m !== null)
-			.map(([, key, value]) => [key, value.replace(/^(['"])(.*)\1$/, '$2')])
-	);
-	return { data, body: raw.slice(match[0].length) };
-};
 
 /** Reads a callout marker from a blockquote, or null for a plain quote. */
 export const readCallout = (quote: string): Callout | null => {
@@ -139,30 +135,40 @@ const splitSources = (html: string) => {
 	return { blocks: toBlocks(body), sources: sources.trim() };
 };
 
-const build = (): Course => {
-	const byModule = Object.groupBy(
-		Object.entries(files).sort(([a], [b]) => a.localeCompare(b)),
-		([path]) => path.split('/').at(-2) ?? ''
-	);
+const orderOf = (note: Note) => {
+	const order = Number(note.properties.order);
+	if (!Number.isFinite(order)) throw new Error(`content/${note.path} needs a numeric \`order\``);
+	return order;
+};
+const byOrder = (a: Note, b: Note) => orderOf(a) - orderOf(b);
 
-	const drafts = Object.entries(byModule).map(([dir, entries = []], index) => {
-		const slug = dir.replace(ORDER_PREFIX, '');
-		const meta = parseFrontmatter(entries.find(([path]) => path.endsWith('/_module.md'))?.[1] ?? '').data;
-		const lessons = entries
-			.filter(([path]) => !path.endsWith('/_module.md'))
-			.map(([path, raw], lessonIndex) => {
-				const lessonSlug = (path.split('/').at(-1) ?? '').replace(/\.md$/, '').replace(ORDER_PREFIX, '');
+/** Builds the course from the vault's notes: each folder is a module, its `index.md` the module itself. */
+export const buildCourse = (notes: readonly Note[]): Course => {
+	const byModule = Object.groupBy(notes, (note) => note.path.split('/')[0]);
+	const folderNote = (slug: string) => byModule[slug]?.find((n) => n.path === `${slug}/${FOLDER_NOTE}`);
+	const slugs = Object.keys(byModule)
+		.filter((slug) => folderNote(slug))
+		.sort((a, b) => byOrder(folderNote(a) as Note, folderNote(b) as Note));
+
+	const drafts = slugs.map((slug, index) => {
+		const meta = folderNote(slug) as Note;
+		const lessons = (byModule[slug] ?? [])
+			.filter((note) => note !== meta)
+			.sort(byOrder)
+			.map((note, lessonIndex) => {
+				const lessonSlug = note.path.split('/').at(-1)?.replace(/\.md$/, '') ?? '';
 				const id = `${slug}/${lessonSlug}`;
-				const { data, body } = parseFrontmatter(raw);
+				const body = note.markdown ?? '';
 				return {
 					lesson: {
 						id,
-						href: `/${slug}/${lessonSlug}`,
+						href: `/${id}`,
 						module: slug,
 						number: lessonIndex + 1,
-						title: data.title ?? lessonSlug,
-						summary: data.summary ?? '',
+						title: note.title,
+						summary: note.description ?? '',
 						minutes: minutesToRead(body),
+						markdownHref: note.markdownHref,
 						...extract(body, id)
 					},
 					html: render(body)
@@ -173,9 +179,10 @@ const build = (): Course => {
 			href: `/${slug}`,
 			number: index + 1,
 			hue: MODULE_HUES[index % MODULE_HUES.length],
-			title: meta.title ?? slug,
-			summary: meta.summary ?? '',
-			diagram: meta.diagram || undefined
+			title: meta.title,
+			summary: meta.description ?? '',
+			diagram: typeof meta.properties.diagram === 'string' ? meta.properties.diagram : undefined,
+			markdownHref: meta.markdownHref
 		};
 		return { module, lessons };
 	});
@@ -223,4 +230,4 @@ const linker = (targets: (readonly [title: string, href: string])[]) => {
 };
 
 /** The whole course, parsed once per server process (prerendered at build). */
-export const course = build();
+export const course = buildCourse(index.entries);

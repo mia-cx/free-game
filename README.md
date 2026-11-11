@@ -11,7 +11,9 @@ pnpm install
 pnpm dev
 ```
 
-`pnpm test` checks every lesson has the parts the reader relies on. `pnpm lint` runs Biome and svelte-check.
+`pnpm dev` and `pnpm build` run through [Svartz](https://github.com/mia-cx/svartz), which indexes the lessons in `content/` as a vault (`svartz.config.ts`) and writes a Markdown copy of every lesson beside its page. The app renders every page itself. `pnpm test` checks every lesson has the parts the reader relies on. `pnpm lint` runs Biome and svelte-check.
+
+Two workarounds keep Svartz 2.3 working with SvelteKit 3, until Svartz supports it: `patches/svartz@2.3.0.patch` makes `svartz build` build the server too, and `vite.config.ts` imports the vault's index alone instead of Svartz's page runtime.
 
 ## Agent skills
 
@@ -39,12 +41,13 @@ Lesson narration in `static/audio/` is kept out of git, so deploy from a checkou
 
 ## Write a lesson
 
-Lessons live in `src/content/<NN-module>/<NN-lesson>.md`. The number prefix sets the order and is left out of the URL. Each module has a `_module.md` with its title and summary.
+Lessons live in `content/<module>/<lesson>.md`, and the folder and file names are the URL. `order` sets the sequence. Each module folder has an `index.md` with its title, order, description and signature `diagram`. The folder opens as an Obsidian vault.
 
 ```md
 ---
 title: Say what you are, for whom, against what
-summary: Write a positioning doc you can test today.
+order: 2
+description: Write a positioning doc you can test today.
 ---
 
 > [!TLDR]

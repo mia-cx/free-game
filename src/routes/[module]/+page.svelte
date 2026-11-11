@@ -18,6 +18,7 @@
 <Seo
 	title="{module.title}: {module.lessons.length} short lessons · Free Game"
 	description="{module.summary} Lessons: {module.lessons.map((l) => l.title).join(', ')}."
+	markdown={module.markdownHref}
 	crumbs={[
 		{ name: 'Course map', href: '/map' },
 		{ name: module.title, href: module.href }

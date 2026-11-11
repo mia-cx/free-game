@@ -21,6 +21,8 @@ export type Lesson = {
 	title: string;
 	summary: string;
 	minutes: number;
+	/** The lesson's Markdown copy for agents, written by Svartz. */
+	markdownHref?: string;
 	blocks: Block[];
 	/** The lesson's source list (HTML), shown after the review cards. */
 	sources: string;
@@ -44,6 +46,8 @@ export type Module = {
 	summary: string;
 	/** Signature diagram shown on the module page. */
 	diagram?: string;
+	/** The module's Markdown copy for agents, written by Svartz. */
+	markdownHref?: string;
 	lessons: Lesson[];
 };
 

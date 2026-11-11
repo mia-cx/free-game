@@ -4,7 +4,7 @@ You are a subagent. Don't run memo.
 
 Working directory: /Users/mia/.t3/scratch/2026-11-08-earlier-posts-bloggersarvesh-https-x-83f0ee82
 
-Free Game is a marketing course for builders with ADHD (lessons in `src/content/<NN-module>/<NN-lesson>.md`). Each lesson gets **retrieval practice**: three short questions the reader answers from memory before revealing the answer. The same cards come back later in a spaced review deck, so each one must make sense on its own, weeks later, without the lesson open.
+Free Game is a marketing course for builders with ADHD (lessons in `content/<module>/<lesson>.md`). Each lesson gets **retrieval practice**: three short questions the reader answers from memory before revealing the answer. The same cards come back later in a spaced review deck, so each one must make sense on its own, weeks later, without the lesson open.
 
 ## What to add
 

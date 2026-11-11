@@ -6,6 +6,8 @@ node_modules
 .netlify
 .wrangler
 /.svelte-kit
+# Svartz's generated vault modules and artifacts
+/.svartz
 /build
 
 # OS

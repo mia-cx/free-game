@@ -8,7 +8,7 @@ You are turning part of **Free Game**, a 62-lesson marketing course, into agent 
 
 1. `/Users/mia/.agents/skills/agent-copy/SKILL.md`, in full. Every file you write follows it: steps end on a completion criterion, reference is flat and co-located, you use leading words, and you state positive targets instead of prohibitions.
 2. The skill files you own (listed in your task) and the current files they replace or extend. Existing content was researched against primary sources. Keep every fact in it unless the course gives a better-sourced replacement.
-3. Every course lesson in your task, in full: `/Users/mia/.t3/scratch/2026-11-08-earlier-posts-bloggersarvesh-https-x-83f0ee82/src/content/<module>/<lesson>.md`. When a claim is unclear, its source post is in `research/sources/<post id>.md` in the same repo.
+3. Every course lesson in your task, in full: `/Users/mia/.t3/scratch/2026-11-08-earlier-posts-bloggersarvesh-https-x-83f0ee82/content/<module>/<lesson>.md`. When a claim is unclear, its source post is in `research/sources/<post id>.md` in the same repo.
 
 ## Layout
 
