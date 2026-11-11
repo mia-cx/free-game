@@ -98,8 +98,10 @@ jobs:
       - name: Open or update the release pull request
         uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2
         with:
-          version: pnpm changeset version
-          commit: 'chore(release): version packages'
-          title: 'chore(release): version packages'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+          version-script: pnpm changeset version
+          commit-message: 'chore(release): version packages'
+          pr-title: 'chore(release): version packages'
+          pr-base-branch: main
+          # The tag job tags and releases the merged version after production deploys.
+          create-github-releases: false
+          push-git-tags: false
