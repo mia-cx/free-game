@@ -103,14 +103,18 @@ const minutesToRead = (body: string) => {
 	return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 };
 
-/** Pulls the `##` sections and the trick and check callouts out of a lesson body. */
+/** Pulls the `##` sections and the TLDR, task, trick and check callouts out of a lesson body. */
 const extract = (body: string, lessonId: string) => {
 	const tokens = marked.lexer(body);
 	const callouts = tokens
 		.filter((t): t is Tokens.Blockquote => t.type === 'blockquote')
 		.map((t) => readCallout(t.text))
 		.filter((c) => c !== null);
+	const tldr = callouts.find((c) => c.kind === 'tldr');
+	const task = callouts.find((c) => c.kind === 'do');
 	return {
+		tldr: tldr ? render(tldr.body) : '',
+		task: { title: task?.title ?? '', html: task ? render(task.body) : '' },
 		sections: tokens
 			.filter((t): t is Tokens.Heading => t.type === 'heading' && t.depth === 2)
 			.map((t) => ({ id: slugify(t.text), title: plain(t.text) }))
@@ -188,6 +192,8 @@ const build = (): Course => {
 				({ lesson, html }): Lesson => ({
 					...lesson,
 					...splitSources(link(html)),
+					tldr: link(lesson.tldr),
+					task: { ...lesson.task, html: link(lesson.task.html) },
 					tricks: lesson.tricks.map((t) => ({ ...t, html: link(t.html) })),
 					checks: lesson.checks.map((c) => ({ ...c, answer: link(c.answer) }))
 				})

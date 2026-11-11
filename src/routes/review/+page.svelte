@@ -2,6 +2,7 @@
 	import CheckCard from '#lib/CheckCard.svelte';
 	import { progress } from '#lib/progress.svelte.ts';
 	import { review } from '#lib/review.svelte.ts';
+	import Seo from '#lib/Seo.svelte';
 
 	let { data } = $props();
 
@@ -62,9 +63,7 @@
 
 <svelte:window {onkeydown} />
 
-<svelte:head>
-	<title>Review · Free Game</title>
-</svelte:head>
+<Seo title="Review · Free Game" noindex />
 
 <div class="mx-auto max-w-2xl">
 	<h1 class="text-4xl font-[800] tracking-tight">Review</h1>

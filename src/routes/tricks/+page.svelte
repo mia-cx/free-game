@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import Seo from '#lib/Seo.svelte';
 
 	let { data } = $props();
 
@@ -20,12 +21,13 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Tricks · Free Game</title>
-</svelte:head>
+<Seo
+	title="{data.tricks.length} cheap marketing tricks you can try today · Free Game"
+	description="Specific marketing moves for builders, from cold email and X posts to SEO and launches, each linked to the lesson that explains it."
+/>
 
 <div class="flex flex-wrap items-end gap-4">
-	<h1 class="mr-auto text-4xl font-[800] tracking-tight">Tricks</h1>
+	<h1 class="mr-auto text-4xl font-[800] tracking-tight">{data.tricks.length} cheap tricks</h1>
 	<button
 		type="button"
 		onclick={pick}

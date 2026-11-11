@@ -7,7 +7,7 @@ export const entries = () => course.lessons.map((l) => ({ module: l.module, less
 export const load = ({ params }) => {
 	const lesson = course.lessons.find((l) => l.id === `${params.module}/${params.lesson}`);
 	if (!lesson) error(404, 'No lesson here');
-	const { tricks, ...rest } = lesson;
+	const { tricks, tldr, task, ...rest } = lesson;
 	// Narration made by research/tools/voice.mjs, when it exists for this lesson.
 	const audio = existsSync(`static/audio/${lesson.id}.mp3`) ? `/audio/${lesson.id}.mp3` : null;
 	return { lesson: rest, audio };

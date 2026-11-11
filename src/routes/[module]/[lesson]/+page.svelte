@@ -5,6 +5,7 @@
 	import ListenBar from '#lib/ListenBar.svelte';
 	import { progress } from '#lib/progress.svelte.ts';
 	import { checkIds, review } from '#lib/review.svelte.ts';
+	import Seo from '#lib/Seo.svelte';
 
 	let { data } = $props();
 
@@ -63,10 +64,14 @@
 
 <svelte:window {onkeydown} />
 
-<svelte:head>
-	<title>{data.lesson.title} · Free Game</title>
-	<meta name="description" content={data.lesson.summary} />
-</svelte:head>
+<Seo
+	title="{data.lesson.title} · Free Game"
+	description={data.lesson.summary}
+	crumbs={[
+		{ name: module.title, href: module.href },
+		{ name: data.lesson.title, href: data.lesson.href }
+	]}
+/>
 
 <div data-hue style="--hue: {module.hue}">
 	<div class="reading" aria-hidden="true"></div>

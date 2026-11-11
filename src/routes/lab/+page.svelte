@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { diagrams } from '#lib/diagrams/index.ts';
+	import Seo from '#lib/Seo.svelte';
 
 	/** Every diagram at lesson width, under each module's colour. For building and checking diagrams. */
 	let { data } = $props();
@@ -8,10 +9,7 @@
 	const names = Object.keys(diagrams).sort();
 </script>
 
-<svelte:head>
-	<title>Diagram lab · Free Game</title>
-	<meta name="robots" content="noindex" />
-</svelte:head>
+<Seo title="Diagram lab · Free Game" noindex />
 
 <h1 class="text-3xl font-[800]">Diagram lab</h1>
 <div class="diagram-chips mt-4" role="group" aria-label="Module colour">

@@ -26,6 +26,10 @@ export type Lesson = {
 	sources: string;
 	/** The lesson's `##` headings, for the on-page outline. */
 	sections: { id: string; title: string }[];
+	/** The `[!TLDR]` body (HTML), also inside `blocks`; pulled out for previews. */
+	tldr: string;
+	/** The `[!DO]` callout, also inside `blocks`; pulled out for previews. */
+	task: Trick;
 	tricks: Trick[];
 	checks: Check[];
 };

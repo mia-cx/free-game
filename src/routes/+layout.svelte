@@ -30,10 +30,10 @@
 	Skip to content
 </a>
 
-<header class="mx-auto flex max-w-6xl items-center gap-4 px-4 py-4 sm:px-6">
+<header class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 sm:px-6">
 	<a href="/" class="mr-auto text-lg font-[800] tracking-tight whitespace-nowrap">Free Game</a>
 	<nav class="flex items-center gap-3 text-[0.95rem] sm:gap-5">
-		<a href="/" aria-current={current('/')} class="nav-link">Map</a>
+		<a href="/map" aria-current={current('/map')} class="nav-link">Map</a>
 		<a href="/review" aria-current={current('/review')} class="nav-link">
 			Review{#if due}<span class="badge"><span class="sr-only">,</span> {due}<span class="sr-only"> due</span></span>{/if}
 		</a>

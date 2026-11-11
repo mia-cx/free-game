@@ -11,7 +11,27 @@ pnpm install
 pnpm dev
 ```
 
-`pnpm build` writes a static site to `build/`. `pnpm test` checks every lesson has the parts the reader relies on. `pnpm lint` runs Biome and svelte-check.
+`pnpm test` checks every lesson has the parts the reader relies on. `pnpm lint` runs Biome and svelte-check.
+
+## Deploy to Cloudflare
+
+The app runs on Cloudflare Workers through `@sveltejs/adapter-cloudflare`. Every page is prerendered into static assets, so the Worker only answers requests no page matches.
+
+```sh
+SITE_URL=https://your-domain pnpm run deploy
+```
+
+(`pnpm deploy` without `run` is a different, built-in pnpm command.)
+
+`SITE_URL` is the public origin. Canonical URLs, the sitemap, robots.txt and the share image use it, and the build fails without it. `pnpm exec wrangler dev` serves the last build locally.
+
+After the first deploy:
+
+1. Add the custom domain to the `free-game` Worker, and a redirect rule from `www.` to the bare domain.
+2. Check Security → Bots: AI bot blocking and Bot Fight Mode can stop the search and AI crawlers that robots.txt lets in.
+3. Submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+
+Lesson narration in `static/audio/` is kept out of git, so deploy from a checkout that has it.
 
 ## Write a lesson
 

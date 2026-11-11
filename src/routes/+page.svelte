@@ -1,311 +1,361 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import CheckCard from '#lib/CheckCard.svelte';
+	import Diagram from '#lib/Diagram.svelte';
 	import { progress } from '#lib/progress.svelte.ts';
-	import { review } from '#lib/review.svelte.ts';
+	import Route from '#lib/Route.svelte';
+	import Seo from '#lib/Seo.svelte';
 
 	let { data } = $props();
 
 	const lessons = $derived(data.outline.flatMap((m) => m.lessons));
+	const first = $derived(lessons[0]);
 	const next = $derived(lessons.find((l) => !progress.done.has(l.id)));
-	const nextModule = $derived(data.outline.find((m) => m.slug === next?.module));
-	const percent = $derived(Math.round((progress.done.size / lessons.length) * 100));
-	const due = $derived(review.due().length);
-
-	const doneIn = (module: (typeof data.outline)[number]) =>
-		module.lessons.filter((l) => progress.done.has(l.id)).length;
+	const minutes = $derived(Math.round(lessons.reduce((n, l) => n + l.minutes, 0) / lessons.length));
+	const show = $derived(data.showcase);
 </script>
 
-<svelte:head>
-	<title>Free Game</title>
-	<meta name="description" content="Marketing and growth from zero, rewritten from the best free posts on X." />
-</svelte:head>
+<Seo
+	title="Free Game: a free marketing course for builders with ADHD"
+	description="{lessons.length} short lessons on positioning, writing, launches, SEO and marketing with AI agents, rewritten from the best free posts on X. Short version first, one small task per lesson, no sign-up."
+	schema={[
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: 'Free Game',
+			url: new URL('/', page.url.origin).href
+		}
+	]}
+/>
 
-<section
-	class="next grid items-center gap-6 rounded-3xl bg-ink p-6 text-paper sm:grid-cols-[1fr_auto] sm:p-10"
-	data-hue
-	style="--hue: {nextModule?.hue ?? 155}"
->
-	<div>
-		{#if next && nextModule}
-			<a href={nextModule.href} class="font-semibold text-accent-line hover:underline">
-				Module {nextModule.number} · {nextModule.title}
-			</a>
-			<h1 class="mt-2 text-3xl leading-tight font-[800] tracking-tight sm:text-5xl">{next.title}</h1>
-			<p class="mt-3 max-w-2xl text-lg opacity-80">{next.summary}</p>
-			<div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-				<a
-					href={next.href}
-					class="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-lg font-bold text-accent-ink hover:brightness-110"
-				>
-					{progress.done.size ? 'Continue' : 'Start the course'} <span aria-hidden="true">→</span>
-				</a>
-				{#if due}
-					<a href="/review" class="font-semibold underline underline-offset-4 opacity-90 hover:opacity-100">
-						Review {due} {due === 1 ? 'card' : 'cards'} first
-					</a>
-				{/if}
-				<span class="text-sm opacity-70 tabular-nums">{next.minutes} min</span>
-			</div>
-		{:else}
-			<h1 class="text-3xl font-[800] tracking-tight sm:text-5xl">You finished every lesson.</h1>
-			<a
-				href="/review"
-				class="mt-7 inline-flex rounded-full bg-accent px-7 py-3.5 text-lg font-bold text-accent-ink"
-			>
-				Keep it fresh in review <span aria-hidden="true">→</span>
-			</a>
-		{/if}
+<section class="hero">
+	<h1>A free marketing course for builders with ADHD</h1>
+	<p class="facts tabular-nums">
+		{lessons.length} lessons · about {minutes} minutes each · {data.tricks} cheap tricks · no sign-up
+	</p>
+	<div class="actions">
+		<a href={first.href} class="cta">Start lesson 1 <span aria-hidden="true">→</span></a>
+		<!-- Space is held for returning readers, so the page doesn't jump when their progress loads. -->
+		<span class="resume">
+			{#if progress.done.size && next}
+				<a href={next.href}>Continue with {next.title}</a>
+			{/if}
+		</span>
 	</div>
-	<div class="overall max-sm:hidden" role="img" aria-label="{percent}% of the course done">
-		<svg viewBox="0 0 120 120" aria-hidden="true">
-			<circle cx="60" cy="60" r="52" pathLength="100" class="track" />
-			<circle cx="60" cy="60" r="52" pathLength="100" class="fill" style="stroke-dasharray: {percent} 100" />
-		</svg>
-		<span class="tabular-nums"><strong>{percent}%</strong>{progress.done.size}/{lessons.length}</span>
-	</div>
+	<nav class="strip" aria-label="Modules">
+		{#each data.outline as module (module.slug)}
+			<a href={module.href} data-hue style="--hue: {module.hue}" title={module.title}>
+				<span class="sr-only">Module {module.number}: {module.title}</span>
+				<span aria-hidden="true">{module.number}</span>
+			</a>
+		{/each}
+	</nav>
 </section>
 
-<h2 class="sr-only">Modules</h2>
-<ol class="route mt-14">
-	{#each data.outline as module, i (module.slug)}
-		{@const done = doneIn(module)}
-		{@const state = done === module.lessons.length ? 'done' : module === nextModule ? 'here' : 'ahead'}
-		<li
-			id={module.slug}
-			class="station"
-			data-hue
-			data-state={state}
-			data-side={i % 2 ? 'right' : 'left'}
-			style="--hue: {module.hue}; --next-hue: {data.outline[i + 1]?.hue ?? module.hue}"
-		>
-			{#if i < data.outline.length - 1}<span class="trail" aria-hidden="true"></span>{/if}
-			<a href={module.href} class="node" tabindex="-1" aria-hidden="true">
-				<svg viewBox="0 0 64 64">
-					<circle cx="32" cy="32" r="28" pathLength="100" class="track" />
-					<circle
-						cx="32"
-						cy="32"
-						r="28"
-						pathLength="100"
-						class="fill"
-						style="stroke-dasharray: {(done / module.lessons.length) * 100} 100"
-					/>
-				</svg>
-				<span>{module.number}</span>
-			</a>
-			<div class="card">
-				<h3 class="text-xl font-[800] tracking-tight">
-					<a href={module.href} class="hover:underline">
-						<span class="sr-only">Module {module.number}: </span>{module.title}
-					</a>
-				</h3>
-				<p class="mt-1 text-muted">{module.summary}</p>
-				<ol class="pips mt-3" aria-label="Lessons in {module.title}">
-					{#each module.lessons as lesson (lesson.id)}
-						<li>
-							<a
-								href={lesson.href}
-								title={lesson.title}
-								aria-label="{lesson.title}{progress.done.has(lesson.id) ? ', done' : ''}"
-								data-done={progress.done.has(lesson.id) || undefined}
-								aria-current={lesson === next ? 'step' : undefined}
-							></a>
-						</li>
-					{/each}
-				</ol>
-				<p class="mt-2 text-sm text-muted tabular-nums">
-					{done}/{module.lessons.length} done · {module.lessons.reduce((n, l) => n + l.minutes, 0)} min
-				</p>
+<section class="anatomy" data-hue style="--hue: {show.hue}" aria-labelledby="anatomy">
+	<h2 id="anatomy">How a lesson works</h2>
+	<ol class="steps">
+		<li class="step">
+			<div class="say">
+				<h3>Short version first</h3>
+				<p>Read the box at the top and you have the lesson. Everything under it is detail for when you want it.</p>
+			</div>
+			<div class="piece lesson">
+				<p class="from">From <a href={show.href}>{show.title}</a></p>
+				<aside class="callout" data-kind="tldr">{@html show.tldr}</aside>
 			</div>
 		</li>
-	{/each}
-</ol>
+		{#if show.diagram}
+			<li class="step">
+				<div class="say">
+					<h3>Diagrams you can use</h3>
+					<p>Pick a symptom and see its cause. The idea works in front of you instead of being described.</p>
+				</div>
+				<div class="piece"><Diagram name={show.diagram} /></div>
+			</li>
+		{/if}
+		{#if show.trick}
+			<li class="step">
+				<div class="say">
+					<h3>Cheap tricks</h3>
+					<p>Specific moves you can copy today, marked in yellow so you can find them again.</p>
+				</div>
+				<div class="piece lesson">
+					<aside class="callout" data-kind="trick">
+						<p class="callout-title">{show.trick.title}</p>
+						{@html show.trick.html}
+					</aside>
+				</div>
+			</li>
+		{/if}
+		<li class="step">
+			<div class="say">
+				<h3>One small task</h3>
+				<p>Every lesson ends with something to do right away, while it's fresh.</p>
+			</div>
+			<div class="piece lesson">
+				<aside class="callout" data-kind="do">
+					<p class="callout-title">{show.task.title}</p>
+					{@html show.task.html}
+				</aside>
+			</div>
+		</li>
+		{#if show.check}
+			<li class="step">
+				<div class="say">
+					<h3>Questions that come back</h3>
+					<p>
+						Answer in your head, then check. Finished lessons return as review cards after 3, 7, 16 and 35 days.
+					</p>
+				</div>
+				<div class="piece"><CheckCard question={show.check.question} answer={show.check.answer} /></div>
+			</li>
+		{/if}
+	</ol>
+	<a href={show.href} class="more">Read the whole lesson <span aria-hidden="true">→</span></a>
+</section>
+
+<section id="modules" class="modules" aria-labelledby="modules-title">
+	<h2 id="modules-title">{data.outline.length} modules, from positioning to AI agents</h2>
+	<Route outline={data.outline} />
+</section>
+
+<section class="credits" aria-labelledby="credits-title">
+	<h2 id="credits-title">Rewritten from free posts, with credit</h2>
+	<p>
+		Every lesson links the posts it came from: {data.posts} posts by {data.authors.length} people who shared what
+		worked for them on X.
+	</p>
+	<ul>
+		{#each data.authors as handle (handle)}
+			<li><a href="https://x.com/{handle}" target="_blank" rel="noopener">@{handle}</a></li>
+		{/each}
+	</ul>
+</section>
+
+<section class="end">
+	<h2>Lesson 1 takes {first.minutes} minutes</h2>
+	<a href={first.href} class="cta">Start lesson 1 <span aria-hidden="true">→</span></a>
+</section>
 
 <style>
-	.overall {
-		position: relative;
-		width: 9rem;
-		justify-self: center;
-		& svg {
-			rotate: -90deg;
-		}
-		& circle {
-			fill: none;
-			stroke-width: 9;
-		}
-		& .track {
-			stroke: color-mix(in oklch, var(--paper) 18%, transparent);
-		}
-		& .fill {
-			stroke: var(--accent);
-			stroke-linecap: round;
-			transition: stroke-dasharray var(--duration-very-slow) var(--ease-smooth-out);
-		}
-		& span {
-			position: absolute;
-			inset: 0;
-			display: grid;
-			place-content: center;
-			text-align: center;
-			font-size: 0.8rem;
-			opacity: 0.85;
-		}
-		& strong {
-			display: block;
-			font-size: 1.6rem;
-			line-height: 1.1;
-		}
-	}
-
-	/* The route: one station per module on a trail that changes colour as it goes. */
-	.route {
-		--node: 4rem;
-		--gap: 2.5rem;
-		display: grid;
-		gap: var(--gap);
-	}
-
-	.station {
-		position: relative;
-		display: grid;
-		grid-template-columns: var(--node) minmax(0, 1fr);
-		column-gap: 1.25rem;
-		align-items: start;
-		scroll-margin-top: 1.5rem;
-	}
-
-	.trail {
-		position: absolute;
-		left: calc(var(--node) / 2 - 3px);
-		top: var(--node);
-		bottom: calc(-1 * var(--gap));
-		width: 6px;
-		border-radius: 3px;
-		background: linear-gradient(oklch(0.62 0.13 var(--hue)), oklch(0.62 0.13 var(--next-hue)));
-		transform-origin: top;
-		animation: draw linear both;
-		animation-timeline: view();
-		animation-range: entry 10% cover 45%;
-	}
-
-	.station[data-state='ahead'] .trail,
-	.station[data-state='here'] .trail {
-		opacity: 0.35;
-		mask: repeating-linear-gradient(#000 0 8px, transparent 8px 16px);
-	}
-
-	@keyframes draw {
-		from {
-			scale: 1 0;
-		}
-	}
-
-	.node {
-		position: relative;
-		display: grid;
-		place-items: center;
-		width: var(--node);
-		height: var(--node);
-		border-radius: 50%;
-		background: var(--paper);
+	h2 {
+		font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem);
+		line-height: 1.05;
 		font-weight: 800;
-		font-variant-numeric: tabular-nums;
-		color: var(--accent);
-		& svg {
-			position: absolute;
-			inset: 0;
-			rotate: -90deg;
-		}
-		& circle {
-			fill: var(--accent-soft);
-			stroke-width: 5;
-		}
-		& .track {
-			stroke: var(--accent-line);
-		}
-		& .fill {
-			fill: none;
-			stroke: var(--accent);
-			stroke-linecap: round;
-		}
-		& span {
-			position: relative;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+
+	.cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.9rem 1.8rem;
+		border-radius: 999px;
+		background: var(--go);
+		color: var(--go-ink);
+		font-size: 1.15rem;
+		font-weight: 800;
+		transition: filter var(--duration-quick) var(--ease-out);
+		&:hover {
+			filter: brightness(1.1);
 		}
 	}
 
-	.station[data-state='here'] .node {
-		box-shadow:
-			0 0 0 4px var(--paper),
-			0 0 0 7px var(--accent);
-	}
-
-	.station[data-state='done'] .node {
-		color: var(--accent-ink);
-		& circle {
-			fill: var(--accent);
+	/* Hero: the promise, the facts, one action, and the whole route as a strip of module colours. */
+	.hero {
+		padding-block: clamp(1.5rem, 6vw, 5rem) 0;
+		& h1 {
+			max-width: 14ch;
+			font-size: clamp(2.6rem, 1.4rem + 6vw, 6.25rem);
+			line-height: 0.95;
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			text-wrap: balance;
 		}
 	}
 
-	.card {
-		padding-top: 0.6rem;
+	.facts {
+		margin-top: 1.5rem;
+		font-size: 1.1rem;
+		color: var(--muted);
 	}
 
-	.pips {
+	.actions {
+		margin-top: 2rem;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 5px;
+		align-items: center;
+		gap: 1rem 1.75rem;
+	}
+
+	.resume {
+		min-height: 1.5em;
 		& a {
-			display: block;
-			width: 1.6rem;
-			height: 0.6rem;
+			font-weight: 650;
+			text-decoration: underline;
+			text-underline-offset: 5px;
+		}
+	}
+
+	.strip {
+		margin-top: clamp(2.5rem, 7vw, 4.5rem);
+		display: grid;
+		grid-template-columns: repeat(13, minmax(0, 1fr));
+		gap: 4px;
+		& a {
+			display: grid;
+			place-items: end center;
+			height: clamp(3.5rem, 9vw, 6rem);
+			padding-bottom: 0.4rem;
+			border-radius: 10px;
+			background: var(--accent);
+			color: var(--accent-ink);
+			font-weight: 800;
+			font-size: clamp(0.7rem, 0.5rem + 0.8vw, 1rem);
+			font-variant-numeric: tabular-nums;
+			transform-origin: bottom;
+			transition: scale var(--duration-fast) var(--ease-bounce);
+			&:hover,
+			&:focus-visible {
+				scale: 1 1.12;
+			}
+		}
+	}
+
+	/* A real lesson, taken apart: each step's piece rises in as it scrolls into view. */
+	.anatomy {
+		margin-top: clamp(5rem, 12vw, 9rem);
+	}
+
+	.steps {
+		margin-top: 2.5rem;
+		display: grid;
+		gap: 3.5rem;
+	}
+
+	.step {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.say {
+		max-width: 26rem;
+		& h3 {
+			font-size: 1.5rem;
+			font-weight: 800;
+			letter-spacing: -0.01em;
+		}
+		& p {
+			margin-top: 0.4rem;
+			font-size: 1.1rem;
+			line-height: 1.5;
+			color: var(--muted);
+		}
+	}
+
+	.piece {
+		min-width: 0;
+		max-width: 40rem;
+		& :global(.callout),
+		& :global(.diagram) {
+			margin: 0;
+		}
+	}
+
+	.from {
+		margin-bottom: 0.75rem;
+		font-size: 0.95rem;
+		color: var(--muted);
+	}
+
+	.more {
+		display: inline-block;
+		margin-top: 2.5rem;
+		font-weight: 700;
+		color: var(--accent);
+		text-decoration: underline;
+		text-underline-offset: 5px;
+	}
+
+	@media (min-width: 60rem) {
+		.steps {
+			gap: 0;
+		}
+		.step {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+			gap: 4rem;
+			align-items: start;
+			padding-block: 3rem;
+			border-top: 1px solid var(--line);
+		}
+		.say {
+			position: sticky;
+			top: 30vh;
+		}
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.piece {
+				animation: rise linear both;
+				animation-timeline: view();
+				animation-range: entry 5% cover 35%;
+			}
+		}
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			translate: 0 3rem;
+			scale: 0.96;
+		}
+	}
+
+	.modules {
+		margin-top: clamp(5rem, 12vw, 9rem);
+		scroll-margin-top: 1.5rem;
+		& h2 {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.credits {
+		margin-top: clamp(5rem, 12vw, 9rem);
+		& p {
+			margin-top: 1rem;
+			max-width: 40rem;
+			font-size: 1.1rem;
+			line-height: 1.55;
+		}
+		& ul {
+			margin-top: 1.75rem;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+		}
+		& li a {
+			display: inline-block;
+			padding: 0.3rem 0.7rem;
 			border-radius: 999px;
-			background: var(--accent-line);
-			transition: background-color var(--duration-quick) var(--ease-out);
+			background: var(--surface);
+			font-size: 0.9rem;
+			font-weight: 650;
 			&:hover {
-				background: var(--accent);
-			}
-			&[data-done] {
-				background: var(--accent);
-			}
-			&[aria-current='step'] {
-				background: var(--paper);
-				box-shadow: inset 0 0 0 2px var(--accent);
+				background: var(--line);
 			}
 		}
 	}
 
-	/* Wide screens: the trail runs down the middle and stations alternate sides. */
-	@media (min-width: 52rem) {
-		.route {
-			--node: 4.5rem;
-			--gap: 1rem;
-		}
-		.station {
-			grid-template-columns: minmax(0, 1fr) var(--node) minmax(0, 1fr);
-			column-gap: 2rem;
-		}
-		.node {
-			grid-column: 2;
-			grid-row: 1;
-		}
-		.trail {
-			left: calc(50% - 3px);
-		}
-		.station[data-side='left'] .card {
-			grid-column: 1;
-			grid-row: 1;
-			text-align: right;
-			& .pips {
-				justify-content: flex-end;
-			}
-		}
-		.station[data-side='right'] .card {
-			grid-column: 3;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.trail {
-			animation: none;
-		}
+	.end {
+		margin-top: clamp(5rem, 12vw, 9rem);
+		padding: clamp(2rem, 6vw, 4rem);
+		border-radius: 28px;
+		background: var(--surface);
+		display: grid;
+		justify-items: start;
+		gap: 1.75rem;
 	}
 </style>

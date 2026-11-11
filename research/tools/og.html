@@ -1,0 +1,72 @@
+<!doctype html>
+<!--
+	The share image, static/og.png (1200x630). Render it again after changing this file:
+	"/Applications/Chromium.app/Contents/MacOS/Chromium" --headless --hide-scrollbars \
+	  --window-size=1200,630 --screenshot=static/og.png "file://$PWD/research/tools/og.html"
+	Module hues match MODULE_HUES in src/lib/server/course.ts.
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			@font-face {
+				font-family: 'Atkinson';
+				src: url('../../node_modules/@fontsource-variable/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-wght-normal.woff2')
+					format('woff2');
+				font-weight: 200 800;
+			}
+			html,
+			body {
+				margin: 0;
+				width: 1200px;
+				height: 630px;
+				background: #fbf8f2;
+				color: #1d1b18;
+				font-family: 'Atkinson', system-ui, sans-serif;
+			}
+			main {
+				box-sizing: border-box;
+				height: 100%;
+				padding: 64px 72px 56px;
+				display: grid;
+				grid-template-rows: auto 1fr auto;
+			}
+			p {
+				margin: 0;
+				font-size: 30px;
+				font-weight: 800;
+			}
+			h1 {
+				margin: 28px 0 0;
+				font-size: 92px;
+				line-height: 0.95;
+				font-weight: 800;
+				letter-spacing: -0.035em;
+				max-width: 15ch;
+			}
+			.strip {
+				display: grid;
+				grid-template-columns: repeat(13, 1fr);
+				gap: 6px;
+			}
+			.strip span {
+				height: 72px;
+				border-radius: 12px;
+				background: oklch(0.52 0.13 var(--hue));
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<p>Free Game</p>
+			<h1>A free marketing course for builders with ADHD</h1>
+			<div class="strip">
+				<span style="--hue: 25"></span><span style="--hue: 50"></span><span style="--hue: 72"></span>
+				<span style="--hue: 145"></span><span style="--hue: 168"></span><span style="--hue: 190"></span>
+				<span style="--hue: 215"></span><span style="--hue: 240"></span><span style="--hue: 265"></span>
+				<span style="--hue: 290"></span><span style="--hue: 315"></span><span style="--hue: 340"></span>
+				<span style="--hue: 5"></span>
+			</div>
+		</main>
+	</body>
+</html>

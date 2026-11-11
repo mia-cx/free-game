@@ -2,6 +2,7 @@
 	import Check from '#lib/Check.svelte';
 	import Diagram from '#lib/Diagram.svelte';
 	import { progress } from '#lib/progress.svelte.ts';
+	import Seo from '#lib/Seo.svelte';
 
 	let { data } = $props();
 
@@ -14,14 +15,18 @@
 	const nextLesson = $derived(module.lessons.find((l) => !progress.done.has(l.id)));
 </script>
 
-<svelte:head>
-	<title>{module.title} · Free Game</title>
-	<meta name="description" content={module.summary} />
-</svelte:head>
+<Seo
+	title="{module.title}: {module.lessons.length} short lessons · Free Game"
+	description="{module.summary} Lessons: {module.lessons.map((l) => l.title).join(', ')}."
+	crumbs={[
+		{ name: 'Course map', href: '/map' },
+		{ name: module.title, href: module.href }
+	]}
+/>
 
 <div data-hue style="--hue: {module.hue}">
 	<nav aria-label="Modules" class="flex items-center gap-4 text-sm font-semibold">
-		<a href="/#{module.slug}" class="mr-auto text-muted hover:text-ink"><span aria-hidden="true">←</span> Map</a>
+		<a href="/map#{module.slug}" class="mr-auto text-muted hover:text-ink"><span aria-hidden="true">←</span> Map</a>
 		{#if prev}<a href={prev.href} class="text-muted hover:text-ink" title={prev.title}>Module {prev.number}</a>{/if}
 		{#if next}<a href={next.href} class="text-muted hover:text-ink" title={next.title}>Module {next.number}</a>{/if}
 	</nav>
