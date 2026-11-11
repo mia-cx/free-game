@@ -105,6 +105,17 @@ These checks repeat, so hand them to an agent with a written playbook. Borja Fat
 
 *Give the bot your context, not clever prompts* goes deeper on playbooks.
 
+## New domain? Save this for month three
+
+Everything above runs on Search Console data. **A new domain doesn't have that data yet.** Striking-distance fixes, title tests and pruning all need months of queries and positions, so start them in month three, and wait 2 to 3 months before you judge any change.
+
+> [!TRICK] The order for a new domain
+> From TheoAGI's playbook, distilled from the articles they read:
+> - **Week 0:** the checks in *Get your site found at all*, Bing Webmaster Tools, and a first run of your buyer questions (see *Track the questions buyers ask AI*).
+> - **Launch:** Search Console, sitemap, directories.
+> - **Month 1 on:** one decision page a week, with a video for each.
+> - **Month 3:** open Search Console and start the refreshes in this lesson.
+
 > [!DO] Refresh your top page
 > Export the last 3 months of queries for your top page from Search Console, run the refresh prompt above, and add the first suggested section to the page.
 
@@ -123,3 +134,4 @@ These checks repeat, so hand them to an agent with a written playbook. Borja Fat
 - [@borjafat: refresh moves, internal links and the Claude SEO playbook](https://x.com/borjafat/status/2116164330014007296)
 - [@borjafat: running SEO with Claude and Search Console](https://x.com/borjafat/status/2119227612258054502)
 - [@NicholasDulait: the weekly positions 5 to 15 loop](https://x.com/NicholasDulait/status/2120063043614716174)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

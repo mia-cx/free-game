@@ -6,6 +6,7 @@ summary: Make your site crawlable and indexable with one checklist your coding a
 > [!TLDR]
 > - Most technical SEO is a mechanical checklist. A coding agent can apply almost all of it.
 > - The last two items, human writing and earned links, are yours.
+> - Let the AI search bots in, and set up Bing Webmaster Tools. Block a search bot and you vanish from that assistant's answers.
 > - Fix pages tied to real buying questions first. Warnings on unimportant pages can wait.
 
 ## Technical SEO is a checklist
@@ -54,9 +55,52 @@ An agent saying "done" is not the same as Google seeing the page. Confirm each f
 - Make sure every page is in your navigation and sitemap, reached by normal crawlable links.
 - After every publish, check the new page is in the sitemap. Sitemaps can stop updating without any warning: one founder found a live page missing from his the day after he published it.
 - Check the rendered page actually shows the answer, not an empty shell waiting for JavaScript.
+- Open `www.yoursite.com`: it should redirect to your main address.
 - Keep structured data matching the facts visible on the page. Test it with Google's Rich Results Test.
 - Compress images, remove scripts you don't need, and fix anything broken on mobile.
 - Optionally add an `llms.txt` file as an index for AI agents that read it.
+
+## Let the AI search bots in
+
+AI companies run two kinds of bot. **Training bots collect pages to train models. Search bots fetch pages so assistants can cite them in answers.** Block a training bot and you opt out of training. Block a search bot and you disappear from that assistant's answers.
+
+| Company | Training | Search and live answers |
+| --- | --- | --- |
+| OpenAI | GPTBot | OAI-SearchBot (ChatGPT search) |
+| Anthropic | ClaudeBot | Claude-SearchBot, Claude-User |
+| Perplexity | none | PerplexityBot |
+| Google | Google-Extended | Googlebot |
+| Microsoft | none listed | Bingbot (feeds Copilot) |
+
+Each setting is separate: you can block GPTBot and still show up in ChatGPT search. Google-Extended is only a word you use in robots.txt, not a bot that visits. It controls Gemini training and doesn't affect Google Search.
+
+> [!TRICK] Test what the search bots get
+> 1. Open your **live** robots.txt in a browser (`https://yoursite.com/robots.txt`), not the copy in your project. Your CDN can add rules you never wrote.
+> 2. Ask for your homepage as each search bot:
+>
+> ```
+> curl -A "OAI-SearchBot" -s -o /dev/null -w "%{http_code}" https://yoursite.com/
+> ```
+>
+> 3. Repeat with `Claude-SearchBot`, `PerplexityBot` and `bingbot`. Anything but 200 is a problem.
+>
+> Your curl doesn't come from the bot's real addresses, so a firewall that checks them may block it even when the real bot gets through. Your firewall's event log tells the two apart. OpenAI says a robots.txt change takes about 24 hours to reach ChatGPT search.
+
+> [!RISK] Cloudflare can block bots for you
+> If your site runs behind Cloudflare, three settings change what bots see:
+> - **AI Crawler and Agent access policies** (Security → Settings → Bot traffic) have separate Search, Agent and Training settings. Search set to Block shuts out AI search bots. Training rules also hit bots that do both search and training.
+> - **Managed robots.txt**: when training is disallowed, Cloudflare adds its own block of rules at the top of your robots.txt.
+> - **Bot Fight Mode** challenges traffic that looks automated, and firewall rules can't make exceptions to it. One reading list (i365dev/awesome-seo) warns it can challenge legitimate crawlers. After launch, open Security → Analytics → Events and look for requests labelled Bot Fight Mode.
+
+## Set up Bing too
+
+**Bing's index feeds Microsoft Copilot, and Bing shows you where AI answers cited you.** Google doesn't. Setup takes about ten minutes.
+
+> [!TRICK] Bing Webmaster Tools in ten minutes
+> 1. Sign in to Bing Webmaster Tools, open My Sites → Import, and import your site from Google Search Console. That verifies the site and brings your sitemaps along.
+> 2. Check the sitemap is listed. Submit it if not.
+> 3. Turn on IndexNow, which tells Bing (and other engines that use it, not Google) the moment a page changes. Many site builders have it built in or as a plugin. On Cloudflare, switch on Crawler Hints.
+> 4. Open **AI Performance**: how often Copilot, Bing's AI summaries and some partners cited each of your pages, plus a sample of "grounding queries", the searches the AI ran to find you. It counts citations, not clicks, and it's the closest thing to free citation data you'll get.
 
 ## Fix buyer pages first
 
@@ -82,3 +126,4 @@ This order comes from a case study of Granola's AI search work, relayed secondha
 - [@borjafat: indexability, rendering and structured data checks](https://x.com/borjafat/status/2116164330014007296)
 - [@wespreadjam: Granola case study, fixing buyer pages first](https://x.com/wespreadjam/status/2115568290307469548)
 - [@NicholasDulait: the sitemap that stopped updating](https://x.com/NicholasDulait/status/2120063043614716174)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

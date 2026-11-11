@@ -22,14 +22,14 @@ The rules are simple. Put the topic in the headline and the answer in the openin
 
 ## Make videos where Google shows videos
 
-For some questions, Google puts videos on the results page. **Those are openings for a product demo.** Search your buyer questions and note which ones show video results.
+For some questions, Google puts videos on the results page. **Those are openings for a product demo.** Search your buyer questions and note which ones show video results. If you sell software, search your "best X" query on a phone too: a row of videos there means you should make the video.
 
 > [!TRICK] Publish a demo for a video search
 > 1. Confirm videos appear for the query.
 > 2. Pick one specific product question.
-> 3. Record the product completing that exact task.
+> 3. Record the product completing that exact task. Make the long-form video first; cut short clips from it later.
 > 4. Name the task in the video title.
-> 5. Add captions and chapters.
+> 5. Add chapters starting at 00:00, and captions you've corrected by hand.
 > 6. Answer related buyer questions in the description.
 > 7. Embed the video next to the written answer on your site.
 
@@ -61,3 +61,4 @@ For reshaping one piece of research into each platform's own format, see *Turn o
 ## Sources
 
 - [@borjafat: parasite SEO, YouTube demos and Google Trends](https://x.com/borjafat/status/2116164330014007296)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

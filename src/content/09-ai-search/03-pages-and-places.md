@@ -26,7 +26,7 @@ The commercial pages themselves are covered in *Build the pages buyers check bef
 
 Reddit threads are among the third-party sources AI cites. Your tracked buyer questions tell you which conversations matter: when a thread shows up as a cited source for a question you track, that is where to participate. Focus on communities close to your product and buyer instead of posting everywhere.
 
-Post things the community would value even without your link, and participate before you promote. The wider community list lives in *Find your first 100 users*.
+Post things the community would value even without your link, and participate before you promote. Answer on Reddit and Quora as yourself, and say you work on the product. Mention your company in at most one answer per subreddit per week. The wider community list lives in *Find your first 100 users*.
 
 > [!RISK] Links without context are spam
 > On Reddit and Hacker News, a link dropped without context gets treated as spam. Answer the question in full in the thread, and add your link only where it genuinely helps.
@@ -66,3 +66,4 @@ AI assistants look for tools to use on a person's behalf. If your product has an
 - [@wespreadjam: Granola's Reddit targeting from tracked questions](https://x.com/wespreadjam/status/2115568290307469548)
 - [@2whazzuup: links without context on Reddit and Hacker News](https://x.com/2whazzuup/status/2119247229601062993)
 - [@tarasshyn: listing an agent skill on skills.sh](https://x.com/tarasshyn/status/2119165493470974378)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

@@ -23,7 +23,9 @@ From those categories, shortlist 20 prospects and score each one as in *Know wha
 
 Most submissions ask for the same things. Gather them once in a folder: website URL, short description, long description, logo, screenshots, founder bio and story, tagline, project examples.
 
-Write several descriptions, each tailored to an audience, instead of pasting the same promotional copy everywhere.
+**Keep the name, the one-line description and the logo identical everywhere**, so Google and AI tools recognise every listing as the same product. Tailor the longer descriptions to each audience instead of pasting the same promotional copy everywhere.
+
+Pick 20 to 30 launch platforms and software directories where your buyers look, not 300.
 
 > [!TRICK] The five-a-week routine
 > - **Monday:** research and qualify five prospects.
@@ -85,3 +87,4 @@ These lists are for discovery: pick only entries where you qualify and your buye
 
 - [@2whazzuup: 200 backlink opportunities and a weekly workflow](https://x.com/2whazzuup/status/2119247229601062993)
 - [@borjafat: claiming business listings and keeping details consistent](https://x.com/borjafat/status/2116164330014007296)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

@@ -15,6 +15,13 @@ summary: Weigh four risky link shortcuts and decide which, if any, you will use.
 
 None of this means the tactics never work. It means the upside is rankings and visibility, and the downside is links Google treats as spam. Weigh each one on its own.
 
+> [!RISK] What gets you burned
+> TheoAGI's list of what to refuse outright, from 66 SEO articles:
+> - Link exchange and credit networks. Even the articles selling them admit Google calls it link spam.
+> - Paid Reddit and Quora "tasks", fake accounts, and reviews you wrote yourself.
+> - 1,500 AI posts spread across a network of sites.
+> - City × service template pages.
+
 ## Pay for a spot in a roundup
 
 One bootstrapped SaaS builder says the cited sources for buying queries are mostly listicles, and the boring way in is to pay. Others in this course push the earned route instead (see *Give people a reason to link*).
@@ -84,3 +91,4 @@ Press-release sites host your announcement; they are not news coverage. Use them
 - [@margatix: exact-match "best X" domains in data labelling](https://x.com/margatix/status/2119089991217262884)
 - [@andrewrosener: domain broker amplifying the exact-match claim](https://x.com/andrewrosener/status/2119362694713078139)
 - [@2whazzuup: press-release sites and their limits](https://x.com/2whazzuup/status/2119247229601062993)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

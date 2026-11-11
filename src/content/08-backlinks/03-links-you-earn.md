@@ -24,8 +24,9 @@ For most buying queries, the sources Google and ChatGPT cite are listicles: "bes
 > 2. Collect the site owners' emails. An agent can find them for you.
 > 3. Find a buyer need the list misses.
 > 4. Send a tested feature or a fresh example that covers that need.
-> 5. Include the exact text you propose, so the author can paste it in.
-> 6. Later, check your entry and send updates so details stay accurate.
+> 5. Include the exact text you propose, so the author can paste it in. Keep the pitch to 120 to 180 words, with your evidence.
+> 6. Follow up once after a week. If there's still no answer, stop.
+> 7. Later, check your entry and send updates so details stay accurate.
 >
 > Paying for a spot is a separate route with separate risks: see *Tricks with a price tag*.
 
@@ -67,7 +68,7 @@ Existing articles already have readers. Find what they're missing and offer it.
 
 ## Collect links you're already owed
 
-- **Unlinked mentions:** find places that name your brand without linking, and ask for the link.
+- **Unlinked mentions:** search Google for `"your brand" -site:yoursite.com` to find pages that name you without linking, and ask for the link.
 - **Reused assets:** search for your charts and quotes used without credit.
 - **Dead pages:** restore removed pages that still have live backlinks, or redirect old URLs to equivalent replacements.
 - **Tools you use:** list your software, document your workflow and result, and send the case study to the vendor's relevant editor. Vendors often feature customer stories with a link.
@@ -89,3 +90,4 @@ Existing articles already have readers. Find what they're missing and offer it.
 - [@borjafat: 69 backlink tactics, ranked by tier](https://x.com/borjafat/status/2116164330014007296)
 - [@SimonHoiberg: finding the listicles Google and ChatGPT cite](https://x.com/SimonHoiberg/status/2119368837208686724)
 - [@2whazzuup: journalist platforms and free tools on developer platforms](https://x.com/2whazzuup/status/2119247229601062993)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

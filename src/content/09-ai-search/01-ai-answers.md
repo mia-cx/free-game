@@ -13,7 +13,7 @@ summary: Build a list of buyer questions and log who AI recommends for each one.
 
 **Your unit of measurement is a question a buyer asks before choosing.** "What's the best meeting notes app for a sales team?" tells you more than the keyword "meeting notes app", because it carries the decision.
 
-List the decisions people make before buying something like yours. Turn each one into two things: a Google keyword and an AI prompt. Then check where you show up for both.
+List the decisions people make before buying something like yours. Take the wording from your inbox, sales calls and reviews, not your imagination. Turn each one into two things: a Google keyword and an AI prompt. Then check where you show up for both.
 
 For each question, ask:
 
@@ -30,6 +30,21 @@ The two public examples in this module come from Granola (meeting notes) and Ram
 ## Count customers, not mentions
 
 Visibility is a signal. The test is whether qualified visitors and customers arrive, so track new active users from AI search next to your citation counts.
+
+Analytics undercounts AI. **Add "How did you hear about us?" to your signup form.** One founder compared the answers with analytics: the referrer credited Google with 3.4 times more signups than the customers themselves did.
+
+> [!TRICK] Measure AI search for free
+> Skip paid visibility trackers at first. From TheoAGI's playbook:
+> 1. Write 15 to 30 real buyer questions.
+> 2. Run each one at least twice per engine, logged out: ChatGPT, Claude, Perplexity, Gemini.
+> 3. Log brands named and URLs cited in separate columns. Being cited and being recommended are two different numbers.
+> 4. Under about 100 AI visits a month, report counts, not percentages.
+> 5. Add Bing's AI Performance report for Copilot citations (setup in *Get your site found at all*).
+>
+> The free stack: Google Search Console, Bing Webmaster Tools, Ahrefs Webmaster Tools, Screaming Frog (free up to 500 URLs).
+
+> [!RISK] One run proves nothing
+> Answers move. One study the articles quote says ChatGPT swaps most of its sources from one week to the next. Judge a change on repeated runs over weeks, never on a single answer.
 
 > [!TRICK] A weekly citation log
 > One marketing engineer's routine:
@@ -61,3 +76,4 @@ You don't need the script on day one. A spreadsheet and ten questions asked by h
 - [@wespreadjam: Ramp's questions for finding AI gaps](https://x.com/wespreadjam/status/2117333079106932897)
 - [@borjafat: saving real buying questions for repeatable checks](https://x.com/borjafat/status/2116164330014007296)
 - [@korzhov_dm: asking three AIs 100 buyer questions every Monday](https://x.com/korzhov_dm/status/2118984106335756532)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)

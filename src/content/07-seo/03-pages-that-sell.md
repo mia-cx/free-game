@@ -48,6 +48,18 @@ Before someone pays, they look for the same handful of answers. Make each one a 
 
 Put a trial or demo button on every one of them.
 
+These decision pages ("X vs Y", "X alternatives", "best X for one kind of person", "X pricing") are also the pages AI answers cite most, because people read them right before choosing.
+
+> [!TRICK] Rules for a decision page
+> The numbers come from the SEO skills TheoAGI reviewed. They are rules of thumb, not tested thresholds.
+> - Google the query first. If 6 or more of the top 10 are the same type of page, build that type. If they're all blog posts and you sell a product, skip it.
+> - Two keywords share one page when 4 or more of their top 10 results match.
+> - Answer in the first 40 to 80 words, and name your product. AI engines lift passages, not whole pages.
+> - A "best of" list has 5 to 8 options. 3 reads as an advert, 25 as a directory.
+> - Take every price from the vendor's own page and mark it "checked on" with the date.
+> - Give every option one real drawback, yours included. Don't rank yourself first in your own list.
+> - Add one thing the top 10 lack (your own number, test or screenshot) and show how you got it.
+
 ## Grow topics from a product page
 
 Topical authority means covering a subject well enough that Google treats you as a source on it. **Start from the product page, not from a blog idea.**
@@ -76,7 +88,7 @@ Programmatic SEO means generating many pages from one template and a data source
 > [!RISK] Scaled content abuse
 > Google's spam policy on scaled content abuse targets mass-produced pages with little unique value. Hundreds of near-identical pages can get dropped or penalised. If a row has no facts of its own, don't make it a page.
 >
-> Pace matters on a new site too. Dulait's earlier product, a business plan generator, had real demand and low competition, and never ranked: a brand-new domain with no brand searches and no backlinks, publishing at a rate that looked like generated content. Start slower than you can produce.
+> Pace matters on a new site too. Dulait's earlier product, a business plan generator, had real demand and low competition, and never ranked: a brand-new domain with no brand searches and no backlinks, publishing at a rate that looked like generated content. Start slower than you can produce: the authors TheoAGI read suggest 1 to 4 new pages a week. They disagree on the number, not the direction.
 
 > [!DO] List your purchase pages
 > Write down the five purchase pages from the list above, mark which ones you already have, and draft the headline and three bullet points for the first missing one.
@@ -96,3 +108,4 @@ Programmatic SEO means generating many pages from one template and a data source
 - [@korzhov_dm: programmatic SEO from one spreadsheet](https://x.com/korzhov_dm/status/2118984106335756532)
 - [@hridoyreh: keyword research tools](https://x.com/hridoyreh/status/2118957811581526027)
 - [@NicholasDulait: keyword filters, duplicate pages and a new domain that never ranked](https://x.com/NicholasDulait/status/2120063043614716174)
+- [@TheoAGI: the one SEO/GEO playbook distilled from 66 articles](https://x.com/TheoAGI/status/2120163220312699025)
