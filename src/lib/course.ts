@@ -1,4 +1,4 @@
-/** Callout kinds a lesson can use. `check` and `diagram` are pulled out of the body; see `server/course.ts`. */
+/** Callout kinds a lesson can use. `check` and `diagram` are pulled out of the body; see `server/build-course.ts`. */
 export type CalloutKind = 'tldr' | 'trick' | 'risk' | 'do' | 'check' | 'diagram';
 
 export type Callout = { kind: CalloutKind; title: string; body: string };

@@ -1,8 +1,7 @@
-import { describe, expect, it, vi } from 'vitest';
-import { buildCourse, type Note } from './course.ts';
+import { describe, expect, it } from 'vitest';
+import { buildCourse, type Note } from './build-course.ts';
 
 // The site reads the notes from Svartz's index; the tests read the same files from disk.
-vi.mock('virtual:course-index', () => ({ index: { entries: [] } }));
 
 const files = import.meta.glob<string>('/content/*/*.md', { query: '?raw', import: 'default', eager: true });
 
