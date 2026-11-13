@@ -28,7 +28,11 @@ Free Game is read by people with ADHD who are learning marketing from zero. The 
 
 ## Lesson anatomy
 
-Enforced by `src/lib/server/course.spec.ts`: title, summary, TLDR first, a DO, exactly three CHECK cards, and only diagrams that exist. Callouts render by kind: **Cheap trick** (highlighter yellow), **Watch out** (red), **Do it now** (green).
+Enforced by `src/lib/server/build-course.spec.ts`: title, summary, TLDR first, a DO, exactly three CHECK cards, only diagrams that exist, and forms with questions. Callouts render by kind: **TL;DR** (the lesson's idea in one sentence, then numbered key points on a rail), **Cheap trick** (highlighter yellow), **Watch out** (red), **Do it now** (green).
+
+## Worksheets
+
+Where a lesson asks the reader questions to answer, `> [!FORM] Title` with the questions as a list places a worksheet right there in the lesson (`src/lib/Worksheet.svelte`): one answer field per question, saved in the browser as the reader types. **Download Markdown** saves the questions and answers as a `.md` file; **Save as PDF** prints the worksheet alone from a hidden frame. Both name the lesson it came from.
 
 ## Diagrams
 

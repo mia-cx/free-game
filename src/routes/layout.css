@@ -170,7 +170,7 @@ html {
 		margin-top: var(--space-paragraph);
 	}
 	/* Boxes and figures stand apart from the prose around them; adjacent margins collapse. */
-	& > :is(pre, blockquote, table, .callout, .diagram) {
+	& > :is(pre, blockquote, table, .callout, .diagram, .worksheet) {
 		margin-block: var(--space-block);
 	}
 	/* The lesson's one action is its own topic. */
@@ -180,20 +180,20 @@ html {
 	& > :first-child {
 		margin-top: 0;
 	}
-	& h2:not(.diagram *) {
+	& h2:not(.diagram *, .worksheet *) {
 		margin-top: var(--space-topic);
 		font-size: 1.5rem;
 		line-height: 1.25;
 		font-weight: 750;
 		letter-spacing: -0.01em;
 	}
-	& h3:not(.diagram *) {
+	& h3:not(.diagram *, .worksheet *) {
 		margin-top: var(--space-block);
 		font-size: 1.15rem;
 		font-weight: 700;
 	}
 	/* A heading sits close to what it introduces. */
-	& :is(h2, h3):not(.diagram *) + * {
+	& :is(h2, h3):not(.diagram *, .worksheet *) + * {
 		margin-top: var(--space-heading);
 	}
 	& strong:not(.diagram *) {
@@ -205,20 +205,20 @@ html {
 		text-underline-offset: 3px;
 		text-decoration-thickness: 1px;
 	}
-	& ul:not(.diagram *),
-	& ol:not(.diagram *) {
+	& ul:not(.diagram *, .worksheet *),
+	& ol:not(.diagram *, .worksheet *) {
 		padding-left: 1.25rem;
 	}
-	& ul:not(.diagram *) {
+	& ul:not(.diagram *, .worksheet *) {
 		list-style: disc;
 	}
-	& ol:not(.diagram *) {
+	& ol:not(.diagram *, .worksheet *) {
 		list-style: decimal;
 	}
-	& li:not(.diagram *) + li {
+	& li:not(.diagram *, .worksheet *) + li {
 		margin-top: 0.6rem;
 	}
-	& li:not(.diagram *)::marker {
+	& li:not(.diagram *, .worksheet *)::marker {
 		color: var(--muted);
 	}
 	& code:not(.diagram *) {
@@ -228,7 +228,7 @@ html {
 		padding: 0.1em 0.3em;
 		border-radius: 4px;
 	}
-	& pre:not(.diagram *) {
+	& pre:not(.diagram *, .worksheet *) {
 		position: relative;
 		font-family: var(--font-mono);
 		font-size: 0.85rem;
@@ -261,26 +261,26 @@ html {
 			}
 		}
 	}
-	& blockquote:not(.diagram *) {
+	& blockquote:not(.diagram *, .worksheet *) {
 		border-left: 3px solid var(--line);
 		padding-left: 1rem;
 		color: var(--muted);
 	}
-	& table:not(.diagram *) {
+	& table:not(.diagram *, .worksheet *) {
 		width: 100%;
 		border-collapse: collapse;
 		font-size: 0.9rem;
 		display: block;
 		overflow-x: auto;
 	}
-	& th:not(.diagram *),
-	& td:not(.diagram *) {
+	& th:not(.diagram *, .worksheet *),
+	& td:not(.diagram *, .worksheet *) {
 		text-align: left;
 		padding: 0.5rem 0.75rem 0.5rem 0;
 		border-bottom: 1px solid var(--line);
 		vertical-align: top;
 	}
-	& hr:not(.diagram *) {
+	& hr:not(.diagram *, .worksheet *) {
 		border: 0;
 		border-top: 1px solid var(--line);
 		margin: 2.5rem 0;

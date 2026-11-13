@@ -11,10 +11,12 @@
  * - `> [!TLDR]`, `> [!TRICK] Title`, `> [!RISK] Title`, `> [!DO] Title` render as `<aside class="callout">`.
  * - `> [!CHECK] Question?` with the answer as its body becomes a review card, kept out of the lesson body.
  * - `> [!DIAGRAM] name` places the component `src/lib/diagrams/<name>.svelte` at that point.
+ * - `> [!FORM] Title` with a list of questions as its body places a worksheet at that point: an
+ *   answer field per question, saved in the browser and downloadable as Markdown or PDF.
  */
 
 import { Marked, type Tokens } from 'marked';
-import type { Block, Callout, CalloutKind, Check, Course, Lesson, Module, Trick } from '#lib/course.ts';
+import type { Block, Callout, CalloutKind, Check, Course, Form, Lesson, Module, Trick } from '#lib/course.ts';
 
 /** The fields of a Svartz index entry the course reads. */
 export type Note = {
@@ -29,9 +31,10 @@ export type Note = {
 	markdownHref?: string;
 };
 
-const CALLOUT = /^\[!(TLDR|TRICK|RISK|DO|CHECK|DIAGRAM)\][ \t]*(.*)(?:\n|$)/;
+const CALLOUT = /^\[!(TLDR|TRICK|RISK|DO|CHECK|DIAGRAM|FORM)\][ \t]*(.*)(?:\n|$)/;
 const FOLDER_NOTE = 'index.md';
-const DIAGRAM_MARKER = /<!--diagram:([\w-]+)-->/;
+/** Where a diagram or form mounts in the rendered body: `<!--diagram:name-->` or `<!--form:id-->`. */
+const MOUNT_MARKER = /<!--(diagram|form):([\w-]+)-->/;
 const SOURCES_HEADING = '<h2 id="sources">Sources</h2>';
 const WORDS_PER_MINUTE = 200;
 /** Module hues in course order: a walk round the colour wheel that skips the olive yellows, which turn muddy at text contrast. */
@@ -55,6 +58,7 @@ const marked: Marked = new Marked({
 			if (!callout) return `<blockquote>${this.parser.parse(tokens)}</blockquote>`;
 			if (callout.kind === 'check') return '';
 			if (callout.kind === 'diagram') return `<!--diagram:${callout.title}-->`;
+			if (callout.kind === 'form') return `<!--form:${slugify(callout.title)}-->`;
 			const title = callout.title ? `<p class="callout-title">${inline(callout.title)}</p>` : '';
 			return `<aside class="callout" data-kind="${callout.kind}">${title}${render(callout.body)}</aside>`;
 		},
@@ -99,7 +103,17 @@ const minutesToRead = (body: string) => {
 	return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 };
 
-/** Pulls the `##` sections and the TLDR, task, trick and check callouts out of a lesson body. */
+/** Reads a `[!FORM]` callout: its title, and each item of the list in its body as a question. */
+const toForm = (callout: Callout): Form => {
+	const list = marked.lexer(callout.body).find((t): t is Tokens.List => t.type === 'list');
+	return {
+		id: slugify(callout.title),
+		title: plain(callout.title),
+		questions: (list?.items ?? []).map((item) => ({ text: item.text.trim(), html: inline(item.text.trim()) }))
+	};
+};
+
+/** Pulls the `##` sections and the TLDR, task, trick, form and check callouts out of a lesson body. */
 const extract = (body: string, lessonId: string) => {
 	const tokens = marked.lexer(body);
 	const callouts = tokens
@@ -116,23 +130,32 @@ const extract = (body: string, lessonId: string) => {
 			.map((t) => ({ id: slugify(t.text), title: plain(t.text) }))
 			.filter((s) => s.id !== 'sources'),
 		tricks: callouts.filter((c) => c.kind === 'trick').map((c): Trick => ({ title: c.title, html: render(c.body) })),
+		forms: callouts.filter((c) => c.kind === 'form').map(toForm),
 		checks: callouts
 			.filter((c) => c.kind === 'check')
 			.map((c, i): Check => ({ id: `${lessonId}#${i}`, question: inline(c.title), answer: render(c.body) }))
 	};
 };
 
-/** Splits rendered HTML at diagram markers into alternating HTML and diagram blocks. */
-const toBlocks = (html: string): Block[] =>
-	html
-		.split(DIAGRAM_MARKER)
-		.map((part, i): Block => (i % 2 ? { kind: 'diagram', name: part } : { kind: 'html', html: part }))
-		.filter((b) => b.kind === 'diagram' || b.html.trim() !== '');
+/** Splits rendered HTML at mount markers into HTML, diagram and form blocks, in reading order. */
+const toBlocks = (html: string, forms: Form[]): Block[] => {
+	// Splitting on a regex with two groups yields [html, kind, name, html, kind, name, …, html].
+	const parts = html.split(MOUNT_MARKER);
+	return parts.flatMap((part, i): Block[] => {
+		if (i % 3 === 0) return part.trim() ? [{ kind: 'html', html: part }] : [];
+		if (i % 3 === 2) return [];
+		const name = parts[i + 1];
+		if (part === 'diagram') return [{ kind: 'diagram', name }];
+		const form = forms.find((f) => f.id === name);
+		if (!form) throw new Error(`No form with id ${name}`);
+		return [{ kind: 'form', form }];
+	});
+};
 
 /** Separates the closing `## Sources` list so the page can place the review cards before it. */
-const splitSources = (html: string) => {
+const splitSources = (html: string, forms: Form[]) => {
 	const [body, sources = ''] = html.split(SOURCES_HEADING);
-	return { blocks: toBlocks(body), sources: sources.trim() };
+	return { blocks: toBlocks(body, forms), sources: sources.trim() };
 };
 
 const orderOf = (note: Note) => {
@@ -196,9 +219,12 @@ export const buildCourse = (notes: readonly Note[]): Course => {
 		({ module, lessons }): Module => ({
 			...module,
 			lessons: lessons.map(
-				({ lesson, html }): Lesson => ({
+				({ lesson: { forms, ...lesson }, html }): Lesson => ({
 					...lesson,
-					...splitSources(link(html)),
+					...splitSources(
+						link(html),
+						forms.map((f) => ({ ...f, questions: f.questions.map((q) => ({ ...q, html: link(q.html) })) }))
+					),
 					tldr: link(lesson.tldr),
 					task: { ...lesson.task, html: link(lesson.task.html) },
 					tricks: lesson.tricks.map((t) => ({ ...t, html: link(t.html) })),

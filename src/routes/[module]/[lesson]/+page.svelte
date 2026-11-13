@@ -6,6 +6,7 @@
 	import { progress } from '#lib/progress.svelte.ts';
 	import { checkIds, review } from '#lib/review.svelte.ts';
 	import Seo from '#lib/Seo.svelte';
+	import Worksheet from '#lib/Worksheet.svelte';
 
 	let { data } = $props();
 
@@ -121,7 +122,13 @@
 
 		<div class="lesson mt-8">
 			{#each data.lesson.blocks as block, i (i)}
-				{#if block.kind === 'html'}{@html block.html}{:else}<Diagram name={block.name} />{/if}
+				{#if block.kind === 'html'}
+					{@html block.html}
+				{:else if block.kind === 'diagram'}
+					<Diagram name={block.name} />
+				{:else}
+					<Worksheet form={block.form} lesson={data.lesson} />
+				{/if}
 			{/each}
 		</div>
 

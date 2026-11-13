@@ -14,12 +14,14 @@ description: Write a positioning doc that says what you do, who it's for and wha
 
 Positioning is your answer to "what is this, who is it for, and why this instead of something else?" Write it in one document before any marketing work. If you can't answer a question below, that's the finding: **you don't understand the product well enough yet** to market it.
 
-1. What do we do? What problem do we solve? Give one short, precise answer.
-2. Which market category do we compete in?
-3. Why is our approach the best? What sets us apart?
-4. What are our unique attributes or features, and their key benefits? Think about approach, process or intellectual property.
-5. Who would be most interested? What do the most excited users have in common, and where can we find them?
-6. If not us, what would users choose instead? Include doing nothing.
+> [!FORM] Your positioning doc
+> 1. What do we do? What problem do we solve? Give one short, precise answer.
+> 2. Which market category do we compete in?
+> 3. Why is our approach the best? What sets us apart?
+> 4. What are our unique attributes or features, and their key benefits? Think about approach, process or intellectual property.
+> 5. Who would be most interested? What do the most excited users have in common, and where can we find them?
+> 6. If not us, what would users choose instead? Include doing nothing.
+> 7. What are we against? Name a status quo, a bad habit or an incumbent way of doing things.
 
 For a deeper version, work through April Dunford's [positioning exercise](https://hackernoon.com/obviously-awesome-a-product-positioning-exercise-604e8ced841e).
 
@@ -39,17 +41,18 @@ Win the conviction battle before the distribution battle. Decide who or what you
 
 ## Picture one reader
 
-Your positioning names a group. Your writing needs a person. Before you write anything, picture one specific reader, and get more detailed the closer the piece is to a sale. Ask:
+Your positioning names a group. Your writing needs a person. Before you write anything, picture one specific reader, and get more detailed the closer the piece is to a sale.
 
-- What are they struggling with right now?
-- Where do they read? Are they even on X?
-- What do they want out of this?
-- What are they feeling right now?
+> [!FORM] Your reader
+> - What are they struggling with right now?
+> - Where do they read? Are they even on X?
+> - What do they want out of this?
+> - What are they feeling right now?
 
 *Write for one reader and one action* picks this up when you start writing posts.
 
 > [!DO] Write your positioning doc
-> Open a blank doc and answer the six questions in one or two sentences each, then add one line: "We are against ___." Leave a blank where you're unsure; that blank is your research list for *Research a market in an afternoon*.
+> Fill in the positioning doc above, one or two sentences per question, then download it. Leave a blank where you're unsure; that blank is your research list for *Research a market in an afternoon*.
 
 > [!CHECK] In positioning, what does it mean when you can't answer one of the six positioning questions?
 > It means you don't understand the product well enough yet to market it. The blank becomes your research list.

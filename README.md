@@ -56,6 +56,10 @@ description: Write a positioning doc you can test today.
 > [!RISK] What can go wrong
 > The downside and how to avoid it.
 
+> [!FORM] Your positioning doc
+> 1. A question the reader answers on the page.
+> 2. Each list item becomes an answer field; answers download as Markdown or PDF.
+
 > [!DO] One small action
 > Something you can finish in 20 minutes.
 

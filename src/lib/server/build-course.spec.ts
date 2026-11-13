@@ -50,6 +50,14 @@ describe.each(course.lessons.map((l) => [l.id, l] as const))('%s', (_, lesson) =
 		for (const trick of lesson.tricks) expect(trick.title).not.toBe('');
 	});
 
+	// Proves a form placed in a lesson gives the reader a field per question, not an empty box.
+	it('gives every form questions to answer', () => {
+		const empty = lesson.blocks.flatMap((b) =>
+			b.kind === 'form' && (b.form.questions.length === 0 || b.form.questions.some((q) => !q.text)) ? [b.form.id] : []
+		);
+		expect(empty).toEqual([]);
+	});
+
 	// Proves a diagram placed in a lesson actually renders instead of leaving a silent gap.
 	it('only places diagrams that exist', () => {
 		const missing = lesson.blocks.flatMap((b) => (b.kind === 'diagram' && !diagramNames.has(b.name) ? [b.name] : []));
