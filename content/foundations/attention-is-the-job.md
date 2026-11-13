@@ -4,7 +4,7 @@ order: 1
 description: See marketing as getting the right people to notice a product worth noticing.
 ---
 
-> [!TLDR]
+> [!TLDR] Marketing is getting the right people to notice a product worth noticing.
 > - Your income is capped by how many of the right people know your product exists.
 > - Most of marketing happens inside the product. Ads and hype are only the outer ring.
 > - A community grows around a good product. It can't replace one.
