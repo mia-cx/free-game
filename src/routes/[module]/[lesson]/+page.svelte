@@ -26,6 +26,7 @@
 
 	let finishing = $state(false);
 	let active = $state('');
+	let panel = $state<HTMLElement>();
 
 	const finish = async () => {
 		const wasDone = done;
@@ -74,7 +75,19 @@
 	]}
 />
 
-<div data-hue style="--hue: {module.hue}">
+{#snippet contents(onpick?: () => void)}
+	<ol class="toc">
+		{#each outline as section (section.id)}
+			<li>
+				<a href="#{section.id}" aria-current={active === section.id ? 'location' : undefined} onclick={onpick}>
+					{section.title}
+				</a>
+			</li>
+		{/each}
+	</ol>
+{/snippet}
+
+<div data-hue style="--hue: {module.hue}" class="page">
 	<div class="reading" aria-hidden="true"></div>
 
 	<nav aria-label="Lessons in this module" class="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -101,48 +114,50 @@
 		</span>
 	</nav>
 
-	<div class="mt-8 lg:grid lg:grid-cols-[minmax(0,42rem)_15rem] lg:justify-between lg:gap-12">
-		<article class="min-w-0">
-			<h1 class="text-4xl leading-[1.08] font-[800] tracking-tight text-balance sm:text-5xl">{data.lesson.title}</h1>
+	<article class="mt-8 min-w-0">
+		<h1 class="text-4xl leading-[1.08] font-[800] tracking-tight text-balance sm:text-5xl">{data.lesson.title}</h1>
 
-			{#if data.audio}<div class="mt-6"><ListenBar src={data.audio} /></div>{/if}
+		{#if data.audio}<div class="mt-6"><ListenBar src={data.audio} /></div>{/if}
 
-			<div class="lesson mt-8">
-				{#each data.lesson.blocks as block, i (i)}
-					{#if block.kind === 'html'}{@html block.html}{:else}<Diagram name={block.name} />{/if}
-				{/each}
-			</div>
+		<div class="lesson mt-8">
+			{#each data.lesson.blocks as block, i (i)}
+				{#if block.kind === 'html'}{@html block.html}{:else}<Diagram name={block.name} />{/if}
+			{/each}
+		</div>
 
-			{#if data.lesson.checks.length}
-				<section class="mt-14 max-w-[40rem]" aria-labelledby="check-yourself">
-					<h2 id="check-yourself" class="text-2xl font-[800] tracking-tight">Check yourself</h2>
-					<p class="mt-1 text-muted">Answer in your head first, then reveal. These come back in Review.</p>
-					<ol class="mt-5 grid gap-3">
-						{#each data.lesson.checks as check (check.id)}
-							<li><CheckCard question={check.question} answer={check.answer} /></li>
-						{/each}
-					</ol>
-				</section>
-			{/if}
-
-			<section class="sources lesson mt-14" aria-labelledby="sources">
-				<h2 id="sources">Sources</h2>
-				{@html data.lesson.sources}
+		{#if data.lesson.checks.length}
+			<section class="topic" aria-labelledby="check-yourself">
+				<h2 id="check-yourself" class="text-2xl font-[800] tracking-tight">Check yourself</h2>
+				<p class="mt-1 text-muted">Answer in your head first, then reveal. These come back in Review.</p>
+				<ol class="mt-5 grid gap-3">
+					{#each data.lesson.checks as check (check.id)}
+						<li><CheckCard question={check.question} answer={check.answer} /></li>
+					{/each}
+				</ol>
 			</section>
-		</article>
+		{/if}
 
-		<nav aria-label="In this lesson" class="hidden lg:block">
-			<ol class="toc sticky top-8">
-				{#each outline as section (section.id)}
-					<li>
-						<a href="#{section.id}" aria-current={active === section.id ? 'location' : undefined}>{section.title}</a>
-					</li>
-				{/each}
-			</ol>
-		</nav>
-	</div>
+		<section class="sources lesson topic" aria-labelledby="sources">
+			<h2 id="sources">Sources</h2>
+			{@html data.lesson.sources}
+		</section>
+	</article>
 
-	<footer class="mt-14 flex max-w-[42rem] flex-wrap items-center gap-4 border-t border-line pt-6">
+	<!-- Wide screens: the outline sits in the right gutter. -->
+	<nav aria-label="In this lesson" class="gutter max-xl:hidden">
+		{@render contents()}
+	</nav>
+
+	<!-- Narrower screens: the outline opens from its own button. -->
+	<button type="button" popovertarget="contents" class="contents-toggle">
+		<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13" /></svg>
+		Contents
+	</button>
+	<nav id="contents" popover aria-label="In this lesson" class="contents-panel" bind:this={panel}>
+		{@render contents(() => panel?.hidePopover())}
+	</nav>
+
+	<footer class="topic flex flex-wrap items-center gap-4 border-t border-line pt-6">
 		{#if prev}
 			<a href={prev.href} class="mr-auto text-muted hover:text-ink">
 				<span aria-hidden="true">←</span>
@@ -172,6 +187,96 @@
 </div>
 
 <style>
+	/* One centred reading column; the outline gets the right gutter on wide screens. */
+	.page {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 40rem) minmax(0, 1fr);
+		& > * {
+			grid-column: 2;
+		}
+		@media (width >= 80rem) {
+			column-gap: 3rem;
+		}
+	}
+
+	.gutter {
+		grid-column: 3;
+		grid-row: 2;
+		align-self: start;
+		position: sticky;
+		top: 2rem;
+		max-width: 15rem;
+		margin-top: 2rem;
+	}
+
+	.topic {
+		margin-top: var(--space-topic);
+	}
+
+	.contents-toggle {
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 30;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.1rem;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		background: var(--paper);
+		box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+		font-size: 0.95rem;
+		font-weight: 700;
+		@media (width >= 80rem) {
+			display: none;
+		}
+		& svg {
+			width: 1.1rem;
+			height: 1.1rem;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 2.5;
+			stroke-linecap: round;
+		}
+	}
+
+	.contents-panel {
+		position: fixed;
+		inset: auto 1rem 4.75rem auto;
+		margin: 0;
+		width: min(20rem, calc(100vw - 2rem));
+		max-height: min(70vh, 32rem);
+		overflow: auto;
+		padding: 1rem 1rem 1rem 0.5rem;
+		border: 1px solid var(--line);
+		border-radius: 14px;
+		background: var(--paper);
+		color: var(--ink);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.18);
+		transition:
+			opacity var(--duration-fast) var(--ease-smooth-out),
+			translate var(--duration-fast) var(--ease-smooth-out),
+			overlay var(--duration-fast) allow-discrete,
+			display var(--duration-fast) allow-discrete;
+		&:not(:popover-open) {
+			opacity: 0;
+			translate: 0 var(--distance-base);
+		}
+		@starting-style {
+			&:popover-open {
+				opacity: 0;
+				translate: 0 var(--distance-base);
+			}
+		}
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+		&::backdrop {
+			background: rgb(0 0 0 / 0.3);
+		}
+	}
+
 	/* Reading progress, driven by page scroll with no JavaScript. */
 	.reading {
 		position: fixed;

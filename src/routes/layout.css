@@ -96,25 +96,106 @@ html {
 	border-radius: 4px;
 }
 
+/* Callouts come before the lesson rules, which space them within a lesson. */
+.callout {
+	--bg: var(--surface);
+	--edge: var(--line);
+	background: var(--bg);
+	border-left: 5px solid var(--edge);
+	border-radius: 10px;
+	padding: 1rem 1.15rem;
+
+	& > * + * {
+		margin-top: 0.75rem;
+	}
+	&::before {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 750;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: 0.35rem;
+	}
+	& .callout-title {
+		font-weight: 750;
+		font-size: 1.05rem;
+	}
+	&[data-kind="tldr"] {
+		--edge: var(--ink);
+		font-size: 1.05rem;
+		&::before {
+			content: "Short version";
+		}
+	}
+	&[data-kind="trick"] {
+		--bg: var(--trick-bg);
+		--edge: var(--trick-edge);
+		&::before {
+			content: "Cheap trick";
+		}
+	}
+	&[data-kind="risk"] {
+		--bg: var(--risk-bg);
+		--edge: var(--risk-edge);
+		&::before {
+			content: "Watch out";
+		}
+	}
+	&[data-kind="do"] {
+		--bg: var(--do-bg);
+		--edge: var(--do-edge);
+		&::before {
+			content: "Do it now";
+		}
+	}
+}
+
+/*
+ * Reading rhythm: a blank line between paragraphs, more room around boxes, and close to a screen
+ * between topics, so each `##` section reads as its own page.
+ */
+:root {
+	--space-paragraph: 1.5rem;
+	--space-block: 2.5rem;
+	--space-topic: clamp(5rem, 16vh, 9rem);
+	--space-heading: 0.875rem;
+}
+
 /* Lesson body: short measure, generous rhythm, loud structure. */
 .lesson {
 	max-width: 40rem;
 	line-height: 1.65;
 
 	& > * + * {
-		margin-top: 1rem;
+		margin-top: var(--space-paragraph);
+	}
+	/* Boxes and figures stand apart from the prose around them; adjacent margins collapse. */
+	& > :is(pre, blockquote, table, .callout, .diagram) {
+		margin-block: var(--space-block);
+	}
+	/* The lesson's one action is its own topic. */
+	& > [data-kind="do"] {
+		margin-top: var(--space-topic);
+	}
+	& > :first-child {
+		margin-top: 0;
 	}
 	& h2:not(.diagram *) {
-		margin-top: 2.75rem;
+		margin-top: var(--space-topic);
 		font-size: 1.5rem;
 		line-height: 1.25;
 		font-weight: 750;
 		letter-spacing: -0.01em;
 	}
 	& h3:not(.diagram *) {
-		margin-top: 2rem;
+		margin-top: var(--space-block);
 		font-size: 1.15rem;
 		font-weight: 700;
+	}
+	/* A heading sits close to what it introduces. */
+	& :is(h2, h3):not(.diagram *) + * {
+		margin-top: var(--space-heading);
 	}
 	& strong:not(.diagram *) {
 		font-weight: 750;
@@ -136,7 +217,7 @@ html {
 		list-style: decimal;
 	}
 	& li:not(.diagram *) + li {
-		margin-top: 0.4rem;
+		margin-top: 0.6rem;
 	}
 	& li:not(.diagram *)::marker {
 		color: var(--muted);
@@ -204,63 +285,6 @@ html {
 		border: 0;
 		border-top: 1px solid var(--line);
 		margin: 2.5rem 0;
-	}
-}
-
-.callout {
-	--bg: var(--surface);
-	--edge: var(--line);
-	background: var(--bg);
-	border-left: 5px solid var(--edge);
-	border-radius: 10px;
-	padding: 1rem 1.15rem;
-	margin-top: 1.5rem;
-
-	& > * + * {
-		margin-top: 0.6rem;
-	}
-	&::before {
-		display: block;
-		font-size: 0.75rem;
-		font-weight: 750;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--muted);
-		margin-bottom: 0.35rem;
-	}
-	& .callout-title {
-		font-weight: 750;
-		font-size: 1.05rem;
-	}
-	&[data-kind="tldr"] {
-		--edge: var(--ink);
-		margin-top: 0;
-		font-size: 1.05rem;
-		&::before {
-			content: "Short version";
-		}
-	}
-	&[data-kind="trick"] {
-		--bg: var(--trick-bg);
-		--edge: var(--trick-edge);
-		&::before {
-			content: "Cheap trick";
-		}
-	}
-	&[data-kind="risk"] {
-		--bg: var(--risk-bg);
-		--edge: var(--risk-edge);
-		&::before {
-			content: "Watch out";
-		}
-	}
-	&[data-kind="do"] {
-		--bg: var(--do-bg);
-		--edge: var(--do-edge);
-		margin-top: 2.5rem;
-		&::before {
-			content: "Do it now";
-		}
 	}
 }
 
